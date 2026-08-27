@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { animate } from "animejs";
 import { companyRankings } from "./company-rankings";
+import { floatingActions, navStarAction } from "./floating-actions";
 import { interpolateSalary } from "./salary-interpolation";
 
 const experience = [
@@ -136,7 +137,10 @@ export default function Home() {
       <nav className="nav shell">
         <a className="brand" href="#top" aria-label="軟工薪資透視首頁"><span className="brand-mark">S</span>軟工薪資透視<span className="brand-en">SALARY LENS</span></a>
         <div className="nav-links"><a href="#distribution">薪資分布</a><a href="#insights">市場洞察</a><a href="#companies">推薦公司</a><a href="#advice">求職建議</a></div>
-        <a className="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSex_qWWtuEYO0rmxFs7bsJof4KAzlQ4qveLH4IGxhff7FXcDg/viewform?usp=publish-editor" target="_blank" rel="noreferrer">匿名貢獻資料 <ArrowUpRight /></a>
+        <div className="nav-actions">
+          <a className="nav-star" href={navStarAction.href} target="_blank" rel="noreferrer" aria-label="前往 GitHub 賞個 Star"><span aria-hidden="true">★</span><b>{navStarAction.label}</b><i>{navStarAction.shortLabel}</i></a>
+          <a className="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSex_qWWtuEYO0rmxFs7bsJof4KAzlQ4qveLH4IGxhff7FXcDg/viewform?usp=publish-editor" target="_blank" rel="noreferrer">匿名貢獻資料 <ArrowUpRight /></a>
+        </div>
       </nav>
 
       <figure className="hero-banner shell">
@@ -204,6 +208,9 @@ export default function Home() {
         <div className="footer-links"><span>DATA</span><a href="https://docs.google.com/spreadsheets/d/1GMYKVBxRlMv6oNVNzpXYoLUSyT8ZnLEjGcRbn0b4KsA/edit?gid=788239997#gid=788239997" target="_blank" rel="noreferrer">DCard 科技業版<br />軟體工程師調查表 ↗</a></div>
         <a className="footer-top" href="#top">回到頂端 ↑</a>
       </div><div className="shell footer-bottom"><span>© 2026 Hikari Tsai</span><span>公開資料僅供市場趨勢參考</span></div></footer>
+      <div className="floating-actions" aria-label="專案快速連結">
+        {floatingActions.map((action) => <a className={`github-star ${action.kind}`} href={action.href} target="_blank" rel="noreferrer" key={action.kind}><span aria-hidden="true">{action.icon}</span>{action.label}</a>)}
+      </div>
     </main>
   );
 }
