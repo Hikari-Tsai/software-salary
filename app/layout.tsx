@@ -10,5 +10,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="zh-Hant"><body>{children}</body></html>;
+  return <html lang="zh-Hant"><body>{children}<a className="github-star" href="https://github.com/Hikari-Tsai/software-salary" target="_blank" rel="noreferrer" aria-label="前往 GitHub 為這個專案加 Star"><span aria-hidden="true">⭐</span> 賞個 Star</a></body></html>;
 }
