@@ -1,0 +1,118 @@
+"use client";
+
+import { useMemo, useState } from "react";
+
+const experience = [
+  { label: "0–1 年", median: 84.5, p75: 120, n: 76 },
+  { label: "1–3 年", median: 77, p75: 109.5, n: 138 },
+  { label: "3–5 年", median: 98, p75: 130, n: 149 },
+  { label: "5–8 年", median: 120, p75: 180, n: 140 },
+  { label: "8–12 年", median: 150, p75: 198.8, n: 70 },
+  { label: "12 年＋", median: 153, p75: 240, n: 16 },
+];
+
+const roleData = [
+  { label: "一般軟體", median: 110, p75: 160, n: 293 },
+  { label: "資料 / AI", median: 120, p75: 151.5, n: 32 },
+  { label: "DevOps / SRE", median: 120, p75: 142, n: 17 },
+  { label: "後端", median: 82, p75: 105, n: 53 },
+  { label: "全端", median: 90, p75: 102, n: 9 },
+  { label: "行動端", median: 86.8, p75: 125, n: 13 },
+  { label: "QA / 測試", median: 85, p75: 91, n: 13 },
+  { label: "前端", median: 70, p75: 95, n: 32 },
+];
+
+const companyData = [
+  { label: "外商 / 大型科技", median: 200, p75: 300, n: 37 },
+  { label: "遊戲 / 博弈", median: 122.5, p75: 148.8, n: 18 },
+  { label: "電商 / 平台", median: 122, p75: 159.4, n: 22 },
+  { label: "資安", median: 115, p75: 140, n: 44 },
+  { label: "新創", median: 100, p75: 144.5, n: 43 },
+  { label: "傳統企業", median: 100, p75: 115, n: 17 },
+  { label: "半導體 / 硬體", median: 97.5, p75: 117.5, n: 19 },
+  { label: "金融", median: 94.5, p75: 118.8, n: 42 },
+  { label: "一般軟體公司", median: 90, p75: 131.5, n: 358 },
+  { label: "SI / 外包", median: 68.4, p75: 103, n: 35 },
+];
+
+const advice = [
+  { range: "0–2 年", title: "先累積可轉移的工程基本功", text: "優先選有 code review、測試、部署、監控與資深帶領的團隊。第一份薪水重要，但 1–2 年後的選擇權更重要。", accent: "lime" },
+  { range: "2–5 年", title: "把技術翻譯成可量化的影響", text: "這是第一次大跳薪窗口。履歷別只列工具，要說清楚你讓系統快多少、穩多少，或替團隊省下多少時間。", accent: "blue" },
+  { range: "5 年＋", title: "賣判斷力與槓桿，不只賣年資", text: "用架構決策、跨團隊推進、事故處理與成本優化證明資深價值。想突破 200 萬，英文與高價值領域很關鍵。", accent: "violet" },
+];
+
+function ArrowUpRight() {
+  return <span aria-hidden="true">↗</span>;
+}
+
+export default function Home() {
+  const [view, setView] = useState<"experience" | "role" | "company">("experience");
+  const [years, setYears] = useState(4);
+  const currentData = view === "experience" ? experience : view === "role" ? roleData : companyData;
+  const max = Math.max(...currentData.map((d) => d.p75));
+  const benchmark = useMemo(() => {
+    if (years < 1) return experience[0];
+    if (years < 3) return experience[1];
+    if (years < 5) return experience[2];
+    if (years < 8) return experience[3];
+    if (years < 12) return experience[4];
+    return experience[5];
+  }, [years]);
+
+  return (
+    <main>
+      <nav className="nav shell">
+        <a className="brand" href="#top" aria-label="薪資透視首頁"><span className="brand-mark">S</span>薪資透視<span className="brand-en">SALARY LENS</span></a>
+        <div className="nav-links"><a href="#distribution">薪資分布</a><a href="#insights">市場洞察</a><a href="#advice">求職建議</a></div>
+        <a className="nav-cta" href="#positioning">定位你的薪資 <ArrowUpRight /></a>
+      </nav>
+
+      <section className="hero shell" id="top">
+        <div className="eyebrow"><span></span>2025 台灣軟體職缺匿名資料</div>
+        <div className="hero-grid">
+          <div>
+            <h1>你的薪水，<br />在市場的<span>哪裡？</span></h1>
+            <p className="hero-copy">拆解 635 筆有效樣本，從年資、職務到公司類型，幫你看懂薪資落點，也看見下一步。</p>
+            <div className="hero-actions"><a className="primary" href="#distribution">查看市場分布 <ArrowUpRight /></a><a className="text-link" href="#method">了解資料怎麼讀 <span>↓</span></a></div>
+          </div>
+          <div className="hero-card" aria-label="年薪分布摘要">
+            <div className="card-kicker">TOTAL COMPENSATION · 萬／年</div>
+            <div className="median"><div><span>市場中位數</span><strong>100</strong><small>萬</small></div><div className="sample">有效樣本<br /><b>635</b> 筆</div></div>
+            <div className="range"><div className="range-line"><i style={{left:"8%"}}></i><i className="dot" style={{left:"29%"}}></i><i className="dot main" style={{left:"50%"}}></i><i className="dot" style={{left:"71%"}}></i><i style={{left:"92%"}}></i></div><div className="range-labels"><span>P10<br /><b>58</b></span><span>P25<br /><b>72</b></span><span className="active">P50<br /><b>100</b></span><span>P75<br /><b>140</b></span><span>P90<br /><b>200</b></span></div></div>
+            <div className="card-note"><span>↑</span><p>站上 P75，代表年薪超過市場中 <b>75%</b> 的樣本。</p></div>
+          </div>
+        </div>
+        <div className="hero-stats"><div><span>月底薪中位數</span><b>6.7<small> 萬</small></b></div><div><span>年薪平均</span><b>119.9<small> 萬</small></b></div><div><span>每日工時中位數</span><b>8<small> 小時</small></b></div><div><span>年薪 P90</span><b>200<small> 萬</small></b></div></div>
+      </section>
+
+      <section className="distribution" id="distribution">
+        <div className="shell">
+          <div className="section-head"><div><div className="section-no">01 — DISTRIBUTION</div><h2>市場不是一條線，<br />而是一段<span>選擇的距離。</span></h2></div><p>切換維度，比較各群體的年薪中位數與 P75。樣本小的類別波動較大，適合作為方向，不是定價表。</p></div>
+          <div className="tabs" role="tablist" aria-label="比較維度">{([['experience','依年資'],['role','依職務'],['company','依公司類型']] as const).map(([key,label])=><button key={key} onClick={()=>setView(key)} className={view===key?'active':''} role="tab" aria-selected={view===key}>{label}</button>)}</div>
+          <div className="chart-card">
+            <div className="chart-legend"><span><i className="median-key"></i>年薪中位數</span><span><i className="p75-key"></i>P75</span><small>單位：萬元／年</small></div>
+            <div className="bars">{currentData.map((d)=><div className="bar-row" key={d.label}><div className="bar-label"><b>{d.label}</b><small>n = {d.n}</small></div><div className="bar-track"><div className="p75-bar" style={{width:`${Math.max(12,d.p75/max*100)}%`}}><div className="median-bar" style={{width:`${d.median/d.p75*100}%`}}></div></div></div><div className="bar-value"><b>{d.median}</b><span>/ {d.p75}</span></div></div>)}</div>
+          </div>
+        </div>
+      </section>
+
+      <section className="insights shell" id="insights">
+        <div className="section-no">02 — WHAT THE DATA SAYS</div><div className="insights-title"><h2>數字背後，<br />有三個更重要的訊號。</h2><p>薪資不只由年資決定。產業位置、能力稀缺度，以及你承擔的問題規模，才是拉開差距的主因。</p></div>
+        <div className="insight-grid">
+          <article className="feature-insight"><div className="index">01</div><div className="visual-jump"><span>3–5 年</span><div><i></i><i></i><i className="hot"></i><i></i><i></i></div><strong>第一次明顯跳薪窗口</strong></div><h3>年資成長不是直線，<br />關鍵在能力是否跟著升級。</h3><p>3–5 年開始有明顯議價空間；5 年以上如果仍停在純執行，薪資曲線容易變平。</p></article>
+          <article><div className="index">02</div><div className="big-number">2<span>×</span></div><h3>外商／大型科技的中位數，約是一般軟體公司的 2.2 倍。</h3><p>高總包也伴隨英文、系統設計、跨國協作與績效門檻。不是免費溢價，而是不同競技場。</p><div className="compare"><span>一般軟體 <b>90 萬</b></span><span>外商科技 <b>200 萬</b></span></div></article>
+          <article><div className="index">03</div><div className="balance"><span>薪資</span><i></i><span>生活</span></div><h3>高薪不等於爽，<br />高壓也不一定有補償。</h3><p>高 loading 樣本年薪中位數 110 萬，僅比低 loading 的 88 萬多 22 萬。面試時要驗證這份交換值不值得。</p><div className="mini-stat"><b>90</b><span>筆高加班／高壓樣本<br />年薪中位數 115 萬</span></div></article>
+        </div>
+      </section>
+
+      <section className="positioning" id="positioning"><div className="shell positioning-grid"><div><div className="section-no light">03 — YOUR POSITION</div><h2>先知道位置，<br />才知道怎麼談。</h2><p>拖曳你的總年資，快速查看對應市場帶。談薪時建議把中位數當合理基準、P75 當有證據支撐的進取目標。</p></div><div className="calculator"><label htmlFor="years">你的軟體工作總年資 <output>{years} 年</output></label><input id="years" type="range" min="0" max="15" step="1" value={years} onChange={(e)=>setYears(Number(e.target.value))} /><div className="ticks"><span>0</span><span>3</span><span>5</span><span>8</span><span>12</span><span>15＋</span></div><div className="result"><div><span>市場中位數</span><b>{benchmark.median}<small> 萬／年</small></b></div><div><span>進取目標 · P75</span><b>{benchmark.p75}<small> 萬／年</small></b></div></div><p className="calc-note">基於「{benchmark.label}」的 {benchmark.n} 筆樣本；仍需搭配職務與公司類型判讀。</p></div></div></section>
+
+      <section className="advice shell" id="advice"><div className="section-head"><div><div className="section-no">04 — CAREER PLAYBOOK</div><h2>不同階段，<br />要累積不同的<span>籌碼。</span></h2></div><p>最好的下一份工作，不一定是此刻薪水最高，而是能同時提高收入、能力與未來選擇權。</p></div><div className="advice-grid">{advice.map((item,i)=><article key={item.range} className={item.accent}><span className="stage">STAGE 0{i+1}</span><div className="range-title">{item.range}</div><h3>{item.title}</h3><p>{item.text}</p><div className="line"></div></article>)}</div>
+        <div className="questions"><div><div className="section-no">INTERVIEW CHECKLIST</div><h3>別只問月薪。<br />這 6 題更接近真實報酬。</h3></div><ol><li><span>01</span>總年薪由哪些項目組成？保障月數、績效、分紅、RSU 各是多少？</li><li><span>02</span>過去兩年實際發放是否打折？平均調薪幅度多少？</li><li><span>03</span>每週工時、on-call 與假日支援頻率？補償制度是什麼？</li><li><span>04</span>團隊近半年流動率？上一位同事為什麼離開？</li><li><span>05</span>code review、測試、CI/CD、監控與事故檢討是否真的存在？</li><li><span>06</span>一年後，這份工作會讓履歷多出什麼市場認可的能力？</li></ol></div>
+      </section>
+
+      <section className="method" id="method"><div className="shell method-grid"><div><div className="section-no">ABOUT THE DATA</div><h2>把資料當羅盤，<br />別當成絕對答案。</h2></div><div><p>原始資料共 <b>769</b> 筆，排除測試、無效與無法合理判斷的極端資料後，薪資分析使用 <b>635</b> 筆。工時統計使用 590 筆。</p><p>資料來自匿名自填表單，可能有樣本偏差、欄位理解差異與時間差。適合觀察市場訊號與相對趨勢，不適合拿單一數字替任何職缺精準定價。</p><div className="method-tags"><span>金額單位：新台幣萬元</span><span>統計：中位數與百分位</span><span>資料年度：2025</span></div></div></div></section>
+      <footer><div className="shell"><div className="brand"><span className="brand-mark">S</span>薪資透視</div><p>看懂市場，也看清自己的下一步。</p><a href="#top">回到頂端 ↑</a></div></footer>
+    </main>
+  );
+}
