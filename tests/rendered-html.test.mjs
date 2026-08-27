@@ -30,7 +30,10 @@ test("server-renders the Taiwan software salary report", async () => {
   assert.match(html, /<title>台灣軟體工程師薪水分布｜薪資透視<\/title>/);
   assert.match(html, /台灣軟體(?:<br\/>|\s*)工程師/);
   assert.match(html, /635 筆有效樣本/);
+  assert.match(html, /同樣是軟體工程師，<br\/><span>薪資差距可以很大。<\/span>/);
+  assert.match(html, /資料先拿來抓方向，<br\/>再回到職缺條件判斷。/);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/);
+  assert.doesNotMatch(html, /市場不是一條線|把資料當羅盤|要累積不同的/);
 });
 
 test("renders contribution and GitHub Star actions", async () => {
@@ -43,4 +46,5 @@ test("renders contribution and GitHub Star actions", async () => {
   assert.match(html, /匿名貢獻資料/);
   assert.match(html, /DCard 科技業版/);
   assert.match(html, /僅列入有效樣本數 n ≥ 3 的公司/);
+  assert.equal((html.match(/class="github-star(?: [^"]*)?"/g) ?? []).length, 2);
 });

@@ -76,13 +76,13 @@ export function normalizeCompanyName(name: string) {
 }
 
 export const companyRankings: CompanyRanking[] = [
-  { rank: "01", company: "Synopsys 新思科技", salary: 255, chill: 5, 工作強度: 1.5, hours: 6, n: 8, tag: "高薪 × 體驗最佳", tone: "lime", logo: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Synopsys%20Logo.svg" },
-  { rank: "02", company: "Google 谷歌", salary: 350, chill: 3, 工作強度: 3, hours: 8, n: 9, tag: "薪資領先", tone: "blue", logo: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Google%202026%20logo.svg" },
-  { rank: "03", company: "Microsoft 微軟", salary: 245, chill: 4, 工作強度: 4, hours: 8, n: 7, tag: "高薪 × 高成長", tone: "violet", logo: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Microsoft%20logo%20%282012%29.svg" },
+  { rank: "01", company: "Synopsys 新思科技", salary: 255, chill: 5, 工作強度: 1.5, hours: 6, n: 8, tag: "高薪、工時短", tone: "lime", logo: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Synopsys%20Logo.svg" },
+  { rank: "02", company: "Google 谷歌", salary: 350, chill: 3, 工作強度: 3, hours: 8, n: 9, tag: "薪資中位數最高", tone: "blue", logo: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Google%202026%20logo.svg" },
+  { rank: "03", company: "Microsoft 微軟", salary: 245, chill: 4, 工作強度: 4, hours: 8, n: 7, tag: "高薪、爽度 4/5", tone: "violet", logo: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Microsoft%20logo%20%282012%29.svg" },
   { rank: "04", company: "Chunghwa Telecom 中華電信", salary: 130, chill: 5, 工作強度: 2, hours: 6.75, n: 5, tag: "工時友善", tone: "plain" },
-  { rank: "05", company: "GOGOX 高高客", salary: 176, chill: 3, 工作強度: 3, hours: 8, n: 3, tag: "均衡型", tone: "plain" },
-  { rank: "06", company: "Appier 沛星互動科技", salary: 175, chill: 3, 工作強度: 4, hours: 9, n: 8, tag: "高薪 × 高強度", tone: "plain" },
-  { rank: "07", company: "ITRI 工業技術研究院", salary: 160, chill: 3, 工作強度: 3, hours: 9.5, n: 4, tag: "薪資亮眼", tone: "plain" },
+  { rank: "05", company: "GOGOX 高高客", salary: 176, chill: 3, 工作強度: 3, hours: 8, n: 3, tag: "各項接近中間", tone: "plain" },
+  { rank: "06", company: "Appier 沛星互動科技", salary: 175, chill: 3, 工作強度: 4, hours: 9, n: 8, tag: "高薪、強度 4/5", tone: "plain" },
+  { rank: "07", company: "ITRI 工業技術研究院", salary: 160, chill: 3, 工作強度: 3, hours: 9.5, n: 4, tag: "中位數 160 萬", tone: "plain" },
   { rank: "08", company: "Synology 群暉科技", salary: 160, chill: 3, 工作強度: 4, hours: 8, n: 11, tag: "樣本較穩定", tone: "plain" },
   { rank: "09", company: "SHOPLINE 商線科技", salary: 120, chill: 4, 工作強度: 3, hours: 8, n: 3, tag: "體驗均衡", tone: "plain" },
   { rank: "10", company: "Wistron ITS 緯創軟體", salary: 86, chill: 3.5, 工作強度: 2, hours: 8, n: 8, tag: "負荷較低", tone: "plain" },
@@ -92,7 +92,7 @@ export const companyRankings: CompanyRanking[] = [
   { rank: "14", company: "ViewSonic 優派國際", salary: 84, chill: 4, 工作強度: 3, hours: 8, n: 3, tag: "體驗均衡", tone: "plain" },
   { rank: "15", company: "NEXT BANK 將來銀行", salary: 120, chill: 3, 工作強度: 3.5, hours: 9, n: 4, tag: "金融科技", tone: "plain" },
   { rank: "16", company: "CyCraft 奧義智慧", salary: 120, chill: 2.5, 工作強度: 3, hours: 8, n: 4, tag: "資安職涯", tone: "plain" },
-  { rank: "17", company: "IBM 國際商業機器", salary: 150, chill: 2, 工作強度: 4, hours: 9, n: 7, tag: "高薪 × 高強度", tone: "plain" },
+  { rank: "17", company: "IBM 國際商業機器", salary: 150, chill: 2, 工作強度: 4, hours: 9, n: 7, tag: "高薪、強度 4/5", tone: "plain" },
   { rank: "18", company: "SYSTEX 精誠資訊", salary: 60, chill: 4, 工作強度: 3, hours: 8, n: 7, tag: "體驗均衡", tone: "plain" },
   { rank: "19", company: "Far EasTone 遠傳電信", salary: 104, chill: 3, 工作強度: 3, hours: 8, n: 3, tag: "均衡型", tone: "plain" },
   { rank: "20", company: "CyberLink 訊連科技", salary: 115, chill: 3, 工作強度: 4, hours: 8, n: 7, tag: "薪資優勢", tone: "plain" },
@@ -104,7 +104,7 @@ export const companyRankings: CompanyRanking[] = [
   { rank: "26", company: "91APP 九易宇軒", salary: 124, chill: 2, 工作強度: 4, hours: 8, n: 3, tag: "薪資優勢", tone: "plain" },
   { rank: "27", company: "Eastern Home Shopping 東森購物", salary: 65, chill: 2, 工作強度: 3, hours: 8.5, n: 3, tag: "電商產業", tone: "plain" },
   { rank: "28", company: "Pinkoi 果翼科技", salary: 85, chill: 2, 工作強度: 4, hours: 9, n: 3, tag: "產品職涯", tone: "plain" },
-  { rank: "29", company: "TXOne Networks 睿控網安", salary: 113.5, chill: 1, 工作強度: 4.5, hours: 8, n: 6, tag: "高薪 × 高強度", tone: "plain" },
+  { rank: "29", company: "TXOne Networks 睿控網安", salary: 113.5, chill: 1, 工作強度: 4.5, hours: 8, n: 6, tag: "強度 4.5/5", tone: "plain" },
   { rank: "30", company: "Galaxy Software Services 叡揚資訊", salary: 56, chill: 2, 工作強度: 3.5, hours: 8.25, n: 6, tag: "企業軟體", tone: "plain" },
   { rank: "31", company: "Gamania 遊戲橘子", salary: 95, chill: 1, 工作強度: 4, hours: 8.5, n: 5, tag: "遊戲產業", tone: "plain" },
 ];
