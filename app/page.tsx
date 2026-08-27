@@ -81,7 +81,7 @@ export default function Home() {
         <div className="eyebrow"><span></span>2025 台灣軟體職缺匿名資料</div>
         <div className="hero-grid">
           <div>
-            <h1>你的薪水，<br />在市場的<span>哪裡？</span></h1>
+            <h1>台灣軟體<br />工程師<span>薪水分布</span></h1>
             <p className="hero-copy">拆解 635 筆有效樣本，從年資、職務到公司類型，幫你看懂薪資落點，也看見下一步。</p>
             <div className="hero-actions"><a className="primary" href="#distribution">查看市場分布 <ArrowUpRight /></a><a className="text-link" href="#method">了解資料怎麼讀 <span>↓</span></a></div>
           </div>
@@ -121,7 +121,7 @@ export default function Home() {
         <div className="questions"><div><div className="section-no">INTERVIEW CHECKLIST</div><h3>別只問月薪。<br />這 6 題更接近真實報酬。</h3></div><ol><li><span>01</span>總年薪由哪些項目組成？保障月數、績效、分紅、RSU 各是多少？</li><li><span>02</span>過去兩年實際發放是否打折？平均調薪幅度多少？</li><li><span>03</span>每週工時、on-call 與假日支援頻率？補償制度是什麼？</li><li><span>04</span>團隊近半年流動率？上一位同事為什麼離開？</li><li><span>05</span>code review、測試、CI/CD、監控與事故檢討是否真的存在？</li><li><span>06</span>一年後，這份工作會讓履歷多出什麼市場認可的能力？</li></ol></div>
       </section>
 
-      <section className="method" id="method"><div className="shell method-grid"><div><div className="section-no">ABOUT THE DATA</div><h2>把資料當羅盤，<br />別當成絕對答案。</h2></div><div><p>原始資料共 <b>769</b> 筆，排除測試、無效與無法合理判斷的極端資料後，薪資分析使用 <b>635</b> 筆。工時統計使用 590 筆。</p><p>資料來自匿名自填表單，可能有樣本偏差、欄位理解差異與時間差。適合觀察市場訊號與相對趨勢，不適合拿單一數字替任何職缺精準定價。</p><p><b>原始資料來源：</b><a href="https://docs.google.com/spreadsheets/d/1GMYKVBxRlMv6oNVNzpXYoLUSyT8ZnLEjGcRbn0b4KsA/edit?gid=788239997#gid=788239997" target="_blank" rel="noreferrer" style={{textDecoration:"underline",textUnderlineOffset:"4px",fontWeight:700}}>Google 試算表－軟體工程師薪資資料 ↗</a></p><div className="method-tags"><span>金額單位：新台幣萬元</span><span>統計：中位數與百分位</span><span>資料年度：2025</span></div></div></div></section>
+      <section className="method" id="method"><div className="shell method-grid"><div><div className="section-no">ABOUT THE DATA</div><h2>把資料當羅盤，<br />別當成絕對答案。</h2></div><div><p>原始資料共 <b>769</b> 筆，排除測試、無效與無法合理判斷的極端資料後，薪資分析使用 <b>635</b> 筆。工時統計使用 590 筆。</p><p>資料來自匿名自填表單，可能有樣本偏差、欄位理解差異與時間差。適合觀察市場訊號與相對趨勢，不適合拿單一數字替任何職缺精準定價。</p><p><b>資料來源：</b><a href="https://docs.google.com/spreadsheets/d/1GMYKVBxRlMv6oNVNzpXYoLUSyT8ZnLEjGcRbn0b4KsA/edit?gid=788239997#gid=788239997" target="_blank" rel="noreferrer" style={{textDecoration:"underline",textUnderlineOffset:"4px",fontWeight:700}}>DCard 科技業版－軟體工程師調查表 ↗</a></p><div className="method-tags"><span>金額單位：新台幣萬元</span><span>統計：中位數與百分位</span><span>資料年度：2025</span></div></div></div></section>
       <section className="companies" id="companies"><div className="shell">
         <div className="section-head"><div><div className="section-no">COMPANY SHORTLIST</div><h2>薪資夠高，<br />也值得放進<span>候選名單。</span></h2></div><p>綜合年薪中位數、爽度、工作負荷與樣本可信度排序。只納入至少 3 筆有效回報，並合併常見中英文公司名稱。</p></div>
         <div className="company-podium">{companyRankings.slice(0,3).map((c)=><article className={`company-card ${c.tone}`} key={c.company}><div className="company-rank">{c.rank}<span>{c.tag}</span></div><h3>{c.company}</h3><div className="company-salary"><b>{c.salary}</b><span>萬／年<br />薪資中位數</span></div><div className="company-signals"><span>爽度 <b>{c.chill}</b>/5</span><span>Loading <b>{c.loading}</b>/5</span><span>工時 <b>{c.hours}</b>h</span></div><small>有效樣本 n = {c.n}</small></article>)}</div>
