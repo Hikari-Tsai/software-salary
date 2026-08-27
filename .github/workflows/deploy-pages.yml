@@ -45,8 +45,10 @@ jobs:
           test -s /tmp/index.html || { cat /tmp/software-salary.log; exit 1; }
           mkdir -p _site
           cp -R dist/client/software-salary/. _site/
+          cp -R dist/client/images _site/
           cp dist/client/*.svg _site/ 2>/dev/null || true
           cp /tmp/index.html _site/index.html
+          test -s _site/images/salary-data-banner.webp
           touch _site/.nojekyll
       - name: Configure Pages
         uses: actions/configure-pages@v5
