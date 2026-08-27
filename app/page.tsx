@@ -133,10 +133,15 @@ export default function Home() {
   return (
     <main>
       <nav className="nav shell">
-        <a className="brand" href="#top" aria-label="薪資透視首頁"><span className="brand-mark">S</span>薪資透視<span className="brand-en">SALARY LENS</span></a>
+        <a className="brand" href="#top" aria-label="軟工薪資透視首頁"><span className="brand-mark">S</span>軟工薪資透視<span className="brand-en">SALARY LENS</span></a>
         <div className="nav-links"><a href="#distribution">薪資分布</a><a href="#insights">市場洞察</a><a href="#companies">推薦公司</a><a href="#advice">求職建議</a></div>
         <a className="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSex_qWWtuEYO0rmxFs7bsJof4KAzlQ4qveLH4IGxhff7FXcDg/viewform?usp=publish-editor" target="_blank" rel="noreferrer">匿名貢獻資料 <ArrowUpRight /></a>
       </nav>
+
+      <figure className="hero-banner shell">
+        <img src="images/salary-data-banner.webp" alt="台灣軟體工程師薪資成長與資料趨勢視覺" fetchPriority="high" />
+        <figcaption><span>TAIWAN SOFTWARE SALARY LENS</span><b>從資料看見你的市場位置</b></figcaption>
+      </figure>
 
       <section className="hero shell" id="top">
         <div className="eyebrow"><span></span>2025 台灣軟體職缺匿名資料</div>
