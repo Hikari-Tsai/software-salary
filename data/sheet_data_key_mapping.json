@@ -1,0 +1,18 @@
+{
+  "時間戳記": "timestamp",
+  "公司名稱": "company",
+  "職務": "job_title",
+  "職級": "job_level",
+  "相關年資": "total_exp_years",
+  "現職年資": "current_exp_years",
+  "月底薪(幾萬)": "base_salary_10k",
+  "Bonus (幾個月)": "bonus_months",
+  "總年薪(多萬) 分紅+年終+底薪": "total_comp_10k",
+  "每日平均工時": "daily_hours",
+  "每月加班": "monthly_overtime",
+  "加班頻率": "overtime_freq",
+  "爽度(1~5) 5最爽": "chill",
+  "Loading": "loading",
+  "心得 是否推薦 面試相關....etc": "notes",
+  "_sheet_row": "sheet_row"
+}

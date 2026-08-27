@@ -6,8 +6,7 @@
 
 ## 線上網站
 
-- [GitHub Pages 公開網站](https://hikari-tsai.github.io/software-salary/)
-- [Sites 私密版本](https://taiwan-software-salary-lens.aaatmy.chatgpt.site)
+- [GitHub 前端網站](https://hikari-tsai.github.io/software-salary/)
 
 ## 主要功能
 
@@ -71,3 +70,7 @@ npm run build
 ## 專案定位
 
 本專案是一個以公開資料為基礎的探索型作品，不代表 DCard、資料填寫者或任何被提及公司背書。公司與薪資排名應搭配職務、職級、部門、年份及樣本數一起判讀。
+
+## 授權
+
+本專案採用 [MIT License](./LICENSE) 授權。Copyright © 2026 Hikari Tsai.

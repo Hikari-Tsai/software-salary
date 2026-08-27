@@ -1,0 +1,1135 @@
+{
+  "input_records": 769,
+  "output_records": 769,
+  "columns": [
+    "時間戳記",
+    "公司名稱",
+    "職務",
+    "職級",
+    "相關年資",
+    "現職年資",
+    "月底薪(幾萬)",
+    "Bonus (幾個月)",
+    "總年薪(多萬) 分紅+年終+底薪",
+    "每日平均工時",
+    "每月加班",
+    "加班頻率",
+    "爽度(1~5) 5最爽",
+    "Loading",
+    "心得 是否推薦 面試相關....etc",
+    "_sheet_row"
+  ],
+  "numeric_type_counts": {
+    "時間戳記": {
+      "string": 769
+    },
+    "公司名稱": {
+      "string": 769
+    },
+    "職務": {
+      "string": 769
+    },
+    "職級": {
+      "string": 769
+    },
+    "相關年資": {
+      "number": 692,
+      "string": 77
+    },
+    "現職年資": {
+      "number": 673,
+      "string": 96
+    },
+    "月底薪(幾萬)": {
+      "number": 726,
+      "string": 43
+    },
+    "Bonus (幾個月)": {
+      "number": 654,
+      "string": 115
+    },
+    "總年薪(多萬) 分紅+年終+底薪": {
+      "number": 673,
+      "string": 96
+    },
+    "每日平均工時": {
+      "number": 703,
+      "string": 66
+    },
+    "每月加班": {
+      "number": 577,
+      "string": 192
+    },
+    "加班頻率": {
+      "number": 769
+    },
+    "爽度(1~5) 5最爽": {
+      "number": 769
+    },
+    "Loading": {
+      "number": 769
+    },
+    "心得 是否推薦 面試相關....etc": {
+      "string": 769
+    },
+    "_sheet_row": {
+      "number": 769
+    }
+  },
+  "unit_corrections": {
+    "月底薪(幾萬)": [
+      {
+        "_sheet_row": 17,
+        "change": "73 -> 7.3"
+      },
+      {
+        "_sheet_row": 19,
+        "change": "66000 -> 6.6"
+      },
+      {
+        "_sheet_row": 26,
+        "change": "65000 -> 6.5"
+      },
+      {
+        "_sheet_row": 27,
+        "change": "54000 -> 5.4"
+      },
+      {
+        "_sheet_row": 29,
+        "change": "52000 -> 5.2"
+      },
+      {
+        "_sheet_row": 34,
+        "change": "60000 -> 6"
+      },
+      {
+        "_sheet_row": 37,
+        "change": "58000 -> 5.8"
+      },
+      {
+        "_sheet_row": 38,
+        "change": "50000 -> 5"
+      },
+      {
+        "_sheet_row": 39,
+        "change": "80000 -> 8"
+      },
+      {
+        "_sheet_row": 47,
+        "change": "50000 -> 5"
+      },
+      {
+        "_sheet_row": 52,
+        "change": "93000 -> 9.3"
+      },
+      {
+        "_sheet_row": 54,
+        "change": "97.5 -> 9.75"
+      },
+      {
+        "_sheet_row": 55,
+        "change": "90000 -> 9"
+      },
+      {
+        "_sheet_row": 59,
+        "change": "76000 -> 7.6"
+      },
+      {
+        "_sheet_row": 71,
+        "change": "63000 -> 6.3"
+      },
+      {
+        "_sheet_row": 73,
+        "change": "60000 -> 6"
+      },
+      {
+        "_sheet_row": 74,
+        "change": "38000 -> 3.8"
+      },
+      {
+        "_sheet_row": 78,
+        "change": "999 -> 99.9"
+      },
+      {
+        "_sheet_row": 80,
+        "change": "42000 -> 4.2"
+      },
+      {
+        "_sheet_row": 83,
+        "change": "40 -> 4"
+      },
+      {
+        "_sheet_row": 86,
+        "change": "98000 -> 9.8"
+      },
+      {
+        "_sheet_row": 91,
+        "change": "52000 -> 5.2"
+      },
+      {
+        "_sheet_row": 110,
+        "change": "60000 -> 6"
+      },
+      {
+        "_sheet_row": 114,
+        "change": "82400 -> 8.24"
+      },
+      {
+        "_sheet_row": 116,
+        "change": "62000 -> 6.2"
+      },
+      {
+        "_sheet_row": 117,
+        "change": "62000 -> 6.2"
+      },
+      {
+        "_sheet_row": 118,
+        "change": "81000 -> 8.1"
+      },
+      {
+        "_sheet_row": 119,
+        "change": "57 -> 5.7"
+      },
+      {
+        "_sheet_row": 122,
+        "change": "60000 -> 6"
+      },
+      {
+        "_sheet_row": 127,
+        "change": "40000 -> 4"
+      },
+      {
+        "_sheet_row": 128,
+        "change": "34000 -> 3.4"
+      },
+      {
+        "_sheet_row": 133,
+        "change": "52000 -> 5.2"
+      },
+      {
+        "_sheet_row": 137,
+        "change": "61000 -> 6.1"
+      },
+      {
+        "_sheet_row": 138,
+        "change": "52 -> 5.2"
+      },
+      {
+        "_sheet_row": 139,
+        "change": "42000 -> 4.2"
+      },
+      {
+        "_sheet_row": 140,
+        "change": "60000 -> 6"
+      },
+      {
+        "_sheet_row": 141,
+        "change": "68250 -> 6.825"
+      },
+      {
+        "_sheet_row": 143,
+        "change": "43000 -> 4.3"
+      },
+      {
+        "_sheet_row": 155,
+        "change": "35 -> 3.5"
+      },
+      {
+        "_sheet_row": 158,
+        "change": "88000 -> 8.8"
+      },
+      {
+        "_sheet_row": 162,
+        "change": "74000 -> 7.4"
+      },
+      {
+        "_sheet_row": 163,
+        "change": "38000 -> 3.8"
+      },
+      {
+        "_sheet_row": 164,
+        "change": "85000 -> 8.5"
+      },
+      {
+        "_sheet_row": 169,
+        "change": "40000 -> 4"
+      },
+      {
+        "_sheet_row": 180,
+        "change": "50000 -> 5"
+      },
+      {
+        "_sheet_row": 184,
+        "change": "76 -> 7.6"
+      },
+      {
+        "_sheet_row": 193,
+        "change": "62000 -> 6.2"
+      },
+      {
+        "_sheet_row": 199,
+        "change": "45000 -> 4.5"
+      },
+      {
+        "_sheet_row": 200,
+        "change": "40000 -> 4"
+      },
+      {
+        "_sheet_row": 203,
+        "change": "46000 -> 4.6"
+      },
+      {
+        "_sheet_row": 204,
+        "change": "52000 -> 5.2"
+      },
+      {
+        "_sheet_row": 206,
+        "change": "33000 -> 3.3"
+      },
+      {
+        "_sheet_row": 211,
+        "change": "55000 -> 5.5"
+      },
+      {
+        "_sheet_row": 212,
+        "change": "68000 -> 6.8"
+      },
+      {
+        "_sheet_row": 218,
+        "change": "44.5 -> 4.45"
+      },
+      {
+        "_sheet_row": 224,
+        "change": "70000 -> 7"
+      },
+      {
+        "_sheet_row": 228,
+        "change": "59000 -> 5.9"
+      },
+      {
+        "_sheet_row": 235,
+        "change": "54800 -> 5.48"
+      },
+      {
+        "_sheet_row": 240,
+        "change": "53000 -> 5.3"
+      },
+      {
+        "_sheet_row": 245,
+        "change": "45000 -> 4.5"
+      },
+      {
+        "_sheet_row": 251,
+        "change": "42 -> 4.2"
+      },
+      {
+        "_sheet_row": 264,
+        "change": "43000 -> 4.3"
+      },
+      {
+        "_sheet_row": 265,
+        "change": "74620 -> 7.462"
+      },
+      {
+        "_sheet_row": 281,
+        "change": "80000 -> 8"
+      },
+      {
+        "_sheet_row": 288,
+        "change": "4000 -> 0.4"
+      },
+      {
+        "_sheet_row": 289,
+        "change": "43000 -> 4.3"
+      },
+      {
+        "_sheet_row": 291,
+        "change": "50 -> 5"
+      },
+      {
+        "_sheet_row": 293,
+        "change": "88600 -> 8.86"
+      },
+      {
+        "_sheet_row": 321,
+        "change": "30 -> 3"
+      },
+      {
+        "_sheet_row": 334,
+        "change": "96000 -> 9.6"
+      },
+      {
+        "_sheet_row": 347,
+        "change": "205000 -> 20.5"
+      },
+      {
+        "_sheet_row": 359,
+        "change": "55000 -> 5.5"
+      },
+      {
+        "_sheet_row": 361,
+        "change": "57000 -> 5.7"
+      },
+      {
+        "_sheet_row": 368,
+        "change": "57000 -> 5.7"
+      },
+      {
+        "_sheet_row": 369,
+        "change": "60 -> 6"
+      },
+      {
+        "_sheet_row": 381,
+        "change": "75000 -> 7.5"
+      },
+      {
+        "_sheet_row": 383,
+        "change": "61680 -> 6.168"
+      },
+      {
+        "_sheet_row": 395,
+        "change": "75000 -> 7.5"
+      },
+      {
+        "_sheet_row": 396,
+        "change": "65000 -> 6.5"
+      },
+      {
+        "_sheet_row": 405,
+        "change": "43000 -> 4.3"
+      },
+      {
+        "_sheet_row": 407,
+        "change": "73 -> 7.3"
+      },
+      {
+        "_sheet_row": 409,
+        "change": "45000 -> 4.5"
+      },
+      {
+        "_sheet_row": 434,
+        "change": "68000 -> 6.8"
+      },
+      {
+        "_sheet_row": 444,
+        "change": "58000 -> 5.8"
+      },
+      {
+        "_sheet_row": 446,
+        "change": "43 -> 4.3"
+      },
+      {
+        "_sheet_row": 471,
+        "change": "42000 -> 4.2"
+      },
+      {
+        "_sheet_row": 487,
+        "change": "90000 -> 9"
+      },
+      {
+        "_sheet_row": 488,
+        "change": "95000 -> 9.5"
+      },
+      {
+        "_sheet_row": 489,
+        "change": "56000 -> 5.6"
+      },
+      {
+        "_sheet_row": 490,
+        "change": "53000 -> 5.3"
+      },
+      {
+        "_sheet_row": 491,
+        "change": "60000 -> 6"
+      },
+      {
+        "_sheet_row": 493,
+        "change": "150000 -> 15"
+      },
+      {
+        "_sheet_row": 497,
+        "change": "48000 -> 4.8"
+      },
+      {
+        "_sheet_row": 498,
+        "change": "43 -> 4.3"
+      },
+      {
+        "_sheet_row": 504,
+        "change": "61000 -> 6.1"
+      },
+      {
+        "_sheet_row": 520,
+        "change": "43000 -> 4.3"
+      },
+      {
+        "_sheet_row": 528,
+        "change": "76500 -> 7.65"
+      },
+      {
+        "_sheet_row": 532,
+        "change": "70560 -> 7.056"
+      },
+      {
+        "_sheet_row": 534,
+        "change": "123 -> 12.3"
+      },
+      {
+        "_sheet_row": 541,
+        "change": "65000 -> 6.5"
+      },
+      {
+        "_sheet_row": 552,
+        "change": "130000 -> 13"
+      },
+      {
+        "_sheet_row": 556,
+        "change": "72000 -> 7.2"
+      },
+      {
+        "_sheet_row": 566,
+        "change": "35 -> 3.5"
+      },
+      {
+        "_sheet_row": 567,
+        "change": "80000 -> 8"
+      },
+      {
+        "_sheet_row": 603,
+        "change": "64000 -> 6.4"
+      },
+      {
+        "_sheet_row": 611,
+        "change": "60000 -> 6"
+      },
+      {
+        "_sheet_row": 644,
+        "change": "70000 -> 7"
+      },
+      {
+        "_sheet_row": 648,
+        "change": "55000 -> 5.5"
+      },
+      {
+        "_sheet_row": 652,
+        "change": "112000 -> 11.2"
+      },
+      {
+        "_sheet_row": 654,
+        "change": "120000 -> 12"
+      },
+      {
+        "_sheet_row": 655,
+        "change": "49000 -> 4.9"
+      },
+      {
+        "_sheet_row": 658,
+        "change": "96500 -> 9.65"
+      },
+      {
+        "_sheet_row": 667,
+        "change": "107000 -> 10.7"
+      },
+      {
+        "_sheet_row": 691,
+        "change": "50000 -> 5"
+      },
+      {
+        "_sheet_row": 707,
+        "change": "40000 -> 4"
+      },
+      {
+        "_sheet_row": 709,
+        "change": "66000 -> 6.6"
+      },
+      {
+        "_sheet_row": 710,
+        "change": "182000 -> 18.2"
+      },
+      {
+        "_sheet_row": 721,
+        "change": "60000 -> 6"
+      },
+      {
+        "_sheet_row": 723,
+        "change": "60000 -> 6"
+      },
+      {
+        "_sheet_row": 725,
+        "change": "62000 -> 6.2"
+      },
+      {
+        "_sheet_row": 737,
+        "change": "55000 -> 5.5"
+      },
+      {
+        "_sheet_row": 739,
+        "change": "100000 -> 10"
+      },
+      {
+        "_sheet_row": 745,
+        "change": "50000 -> 5"
+      },
+      {
+        "_sheet_row": 749,
+        "change": "45000 -> 4.5"
+      },
+      {
+        "_sheet_row": 755,
+        "change": "80000 -> 8"
+      },
+      {
+        "_sheet_row": 762,
+        "change": "110000 -> 11"
+      },
+      {
+        "_sheet_row": 765,
+        "change": "136 -> 13.6"
+      },
+      {
+        "_sheet_row": 768,
+        "change": "65000 -> 6.5"
+      },
+      {
+        "_sheet_row": 770,
+        "change": "53000 -> 5.3"
+      }
+    ],
+    "總年薪(多萬) 分紅+年終+底薪": [
+      {
+        "_sheet_row": 19,
+        "change": "1100000 -> 110"
+      },
+      {
+        "_sheet_row": 26,
+        "change": "868400 -> 86.84"
+      },
+      {
+        "_sheet_row": 36,
+        "change": "750000 -> 75"
+      },
+      {
+        "_sheet_row": 38,
+        "change": "650000 -> 65"
+      },
+      {
+        "_sheet_row": 52,
+        "change": "1330000 -> 133"
+      },
+      {
+        "_sheet_row": 73,
+        "change": "87000 -> 8.7"
+      },
+      {
+        "_sheet_row": 74,
+        "change": "532000 -> 53.2"
+      },
+      {
+        "_sheet_row": 80,
+        "change": "588000 -> 58.8"
+      },
+      {
+        "_sheet_row": 83,
+        "change": "550 -> 55"
+      },
+      {
+        "_sheet_row": 119,
+        "change": "684000 -> 68.4"
+      },
+      {
+        "_sheet_row": 121,
+        "change": "630000 -> 63"
+      },
+      {
+        "_sheet_row": 122,
+        "change": "780000 -> 78"
+      },
+      {
+        "_sheet_row": 133,
+        "change": "676000 -> 67.6"
+      },
+      {
+        "_sheet_row": 137,
+        "change": "900000 -> 90"
+      },
+      {
+        "_sheet_row": 140,
+        "change": "840000 -> 84"
+      },
+      {
+        "_sheet_row": 141,
+        "change": "1200000 -> 120"
+      },
+      {
+        "_sheet_row": 158,
+        "change": "1300000 -> 130"
+      },
+      {
+        "_sheet_row": 191,
+        "change": "56000 -> 5.6"
+      },
+      {
+        "_sheet_row": 193,
+        "change": "924000 -> 92.4"
+      },
+      {
+        "_sheet_row": 212,
+        "change": "850000 -> 85"
+      },
+      {
+        "_sheet_row": 224,
+        "change": "1200000 -> 120"
+      },
+      {
+        "_sheet_row": 228,
+        "change": "826000 -> 82.6"
+      },
+      {
+        "_sheet_row": 235,
+        "change": "750000 -> 75"
+      },
+      {
+        "_sheet_row": 264,
+        "change": "688000 -> 68.8"
+      },
+      {
+        "_sheet_row": 265,
+        "change": "1039640 -> 103.964"
+      },
+      {
+        "_sheet_row": 267,
+        "change": "1700000 -> 170"
+      },
+      {
+        "_sheet_row": 271,
+        "change": "494000 -> 49.4"
+      },
+      {
+        "_sheet_row": 288,
+        "change": "200000 -> 20"
+      },
+      {
+        "_sheet_row": 289,
+        "change": "516000 -> 51.6"
+      },
+      {
+        "_sheet_row": 322,
+        "change": "1320000 -> 132"
+      },
+      {
+        "_sheet_row": 347,
+        "change": "282500 -> 28.25"
+      },
+      {
+        "_sheet_row": 355,
+        "change": "681000 -> 68.1"
+      },
+      {
+        "_sheet_row": 368,
+        "change": "820000 -> 82"
+      },
+      {
+        "_sheet_row": 383,
+        "change": "1200000 -> 120"
+      },
+      {
+        "_sheet_row": 390,
+        "change": "600000 -> 60"
+      },
+      {
+        "_sheet_row": 392,
+        "change": "3.5 -> 35"
+      },
+      {
+        "_sheet_row": 394,
+        "change": "535000 -> 53.5"
+      },
+      {
+        "_sheet_row": 446,
+        "change": "600000 -> 60"
+      },
+      {
+        "_sheet_row": 468,
+        "change": "0.5 -> 50"
+      },
+      {
+        "_sheet_row": 493,
+        "change": "2000000 -> 200"
+      },
+      {
+        "_sheet_row": 497,
+        "change": "700000 -> 70"
+      },
+      {
+        "_sheet_row": 520,
+        "change": "700000 -> 70"
+      },
+      {
+        "_sheet_row": 549,
+        "change": "550000 -> 55"
+      },
+      {
+        "_sheet_row": 556,
+        "change": "872000 -> 87.2"
+      },
+      {
+        "_sheet_row": 566,
+        "change": "600 -> 60"
+      },
+      {
+        "_sheet_row": 594,
+        "change": "1300000 -> 130"
+      },
+      {
+        "_sheet_row": 654,
+        "change": "4000000 -> 400"
+      },
+      {
+        "_sheet_row": 655,
+        "change": "637000 -> 63.7"
+      },
+      {
+        "_sheet_row": 658,
+        "change": "1351000 -> 135.1"
+      },
+      {
+        "_sheet_row": 699,
+        "change": "600000 -> 60"
+      },
+      {
+        "_sheet_row": 707,
+        "change": "530000 -> 53"
+      },
+      {
+        "_sheet_row": 710,
+        "change": "3250000 -> 325"
+      },
+      {
+        "_sheet_row": 720,
+        "change": "742500 -> 74.25"
+      },
+      {
+        "_sheet_row": 722,
+        "change": "1120000 -> 112"
+      },
+      {
+        "_sheet_row": 739,
+        "change": "1400000 -> 140"
+      },
+      {
+        "_sheet_row": 755,
+        "change": "1120000 -> 112"
+      },
+      {
+        "_sheet_row": 768,
+        "change": "975000 -> 97.5"
+      }
+    ],
+    "每日平均工時": [
+      {
+        "_sheet_row": 76,
+        "change": "40 -> 8"
+      },
+      {
+        "_sheet_row": 118,
+        "change": "40 -> 8"
+      },
+      {
+        "_sheet_row": 135,
+        "change": "40 -> 8"
+      },
+      {
+        "_sheet_row": 154,
+        "change": "176 -> 8"
+      },
+      {
+        "_sheet_row": 255,
+        "change": "42 -> 8.4"
+      },
+      {
+        "_sheet_row": 289,
+        "change": "180 -> 8.1818"
+      },
+      {
+        "_sheet_row": 457,
+        "change": "40 -> 8"
+      },
+      {
+        "_sheet_row": 508,
+        "change": "45 -> 9"
+      },
+      {
+        "_sheet_row": 534,
+        "change": "123 -> 5.5909"
+      },
+      {
+        "_sheet_row": 570,
+        "change": "40 -> 8"
+      },
+      {
+        "_sheet_row": 571,
+        "change": "40 -> 8"
+      },
+      {
+        "_sheet_row": 577,
+        "change": "42 -> 8.4"
+      },
+      {
+        "_sheet_row": 627,
+        "change": "50 -> 10"
+      },
+      {
+        "_sheet_row": 628,
+        "change": "41 -> 8.2"
+      }
+    ],
+    "Bonus (幾個月)": [
+      {
+        "_sheet_row": 137,
+        "change": "150000 -> 2.459"
+      },
+      {
+        "_sheet_row": 235,
+        "change": "10000 -> 0.1825"
+      },
+      {
+        "_sheet_row": 288,
+        "change": "80000 -> 20"
+      },
+      {
+        "_sheet_row": 322,
+        "change": "120000 -> 1.4634"
+      },
+      {
+        "_sheet_row": 390,
+        "change": "3000 -> 0.075"
+      },
+      {
+        "_sheet_row": 413,
+        "change": "4200 -> 0.1111"
+      },
+      {
+        "_sheet_row": 546,
+        "change": "70 -> 3.0435"
+      },
+      {
+        "_sheet_row": 549,
+        "change": "5000 -> 0.125"
+      },
+      {
+        "_sheet_row": 560,
+        "change": "1000 -> 0.02"
+      },
+      {
+        "_sheet_row": 654,
+        "change": "150000 -> 1.25"
+      },
+      {
+        "_sheet_row": 658,
+        "change": "193000 -> 2"
+      },
+      {
+        "_sheet_row": 667,
+        "change": "350000 -> 3.271"
+      },
+      {
+        "_sheet_row": 680,
+        "change": "3500 -> 0.0875"
+      }
+    ]
+  },
+  "unit_correction_count": 213,
+  "unresolved_outliers": {
+    "Bonus (幾個月)": [
+      {
+        "_sheet_row": 50,
+        "value": 55
+      },
+      {
+        "_sheet_row": 78,
+        "value": 999
+      },
+      {
+        "_sheet_row": 321,
+        "value": 30
+      },
+      {
+        "_sheet_row": 435,
+        "value": 35
+      },
+      {
+        "_sheet_row": 534,
+        "value": 123
+      }
+    ],
+    "總年薪(多萬) 分紅+年終+底薪": [
+      {
+        "_sheet_row": 73,
+        "value": 8.7
+      },
+      {
+        "_sheet_row": 78,
+        "value": 999
+      },
+      {
+        "_sheet_row": 94,
+        "value": 13
+      },
+      {
+        "_sheet_row": 154,
+        "value": 14
+      },
+      {
+        "_sheet_row": 191,
+        "value": 5.6
+      },
+      {
+        "_sheet_row": 225,
+        "value": 0
+      },
+      {
+        "_sheet_row": 257,
+        "value": 715
+      },
+      {
+        "_sheet_row": 291,
+        "value": 13
+      },
+      {
+        "_sheet_row": 321,
+        "value": 750
+      }
+    ],
+    "相關年資": [
+      {
+        "_sheet_row": 78,
+        "value": 99
+      },
+      {
+        "_sheet_row": 534,
+        "value": 123
+      }
+    ],
+    "現職年資": [
+      {
+        "_sheet_row": 78,
+        "value": 99
+      },
+      {
+        "_sheet_row": 224,
+        "value": 1200000
+      },
+      {
+        "_sheet_row": 534,
+        "value": 123
+      },
+      {
+        "_sheet_row": 643,
+        "value": 160
+      }
+    ],
+    "月底薪(幾萬)": [
+      {
+        "_sheet_row": 78,
+        "value": 99.9
+      },
+      {
+        "_sheet_row": 225,
+        "value": 0
+      },
+      {
+        "_sheet_row": 288,
+        "value": 0.4
+      },
+      {
+        "_sheet_row": 759,
+        "value": 0
+      }
+    ],
+    "每日平均工時": [
+      {
+        "_sheet_row": 78,
+        "value": 999
+      }
+    ],
+    "每月加班": [
+      {
+        "_sheet_row": 78,
+        "value": 999
+      },
+      {
+        "_sheet_row": 654,
+        "value": 9999
+      }
+    ]
+  },
+  "unresolved_outlier_count": 27,
+  "numeric_column_stats": {
+    "相關年資": {
+      "count": 692,
+      "min": 0,
+      "median": 3.0,
+      "max": 123
+    },
+    "現職年資": {
+      "count": 673,
+      "min": 0,
+      "median": 2,
+      "max": 1200000
+    },
+    "月底薪(幾萬)": {
+      "count": 726,
+      "min": 0,
+      "median": 6.5,
+      "max": 99.9
+    },
+    "Bonus (幾個月)": {
+      "count": 654,
+      "min": 0,
+      "median": 2.0,
+      "max": 999
+    },
+    "總年薪(多萬) 分紅+年終+底薪": {
+      "count": 673,
+      "min": 0,
+      "median": 100,
+      "max": 999
+    },
+    "每日平均工時": {
+      "count": 703,
+      "min": 0,
+      "median": 8,
+      "max": 999
+    },
+    "每月加班": {
+      "count": 577,
+      "min": 0,
+      "median": 0,
+      "max": 9999
+    },
+    "加班頻率": {
+      "count": 769,
+      "min": 1,
+      "median": 1,
+      "max": 5
+    },
+    "爽度(1~5) 5最爽": {
+      "count": 769,
+      "min": 1,
+      "median": 3,
+      "max": 5
+    },
+    "Loading": {
+      "count": 769,
+      "min": 1,
+      "median": 3,
+      "max": 5
+    },
+    "_sheet_row": {
+      "count": 769,
+      "min": 2,
+      "median": 386,
+      "max": 770
+    }
+  }
+}

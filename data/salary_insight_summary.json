@@ -1,0 +1,361 @@
+{
+  "records_total": 769,
+  "salary_sample": 635,
+  "invalid_or_test_rows": 20,
+  "tc_stats": {
+    "n": 635,
+    "mean": 119.94961259842519,
+    "p10": 58.0,
+    "p25": 72.0,
+    "p50": 100.0,
+    "p75": 140.0,
+    "p90": 200.0,
+    "max": 520.0
+  },
+  "base_stats": {
+    "n": 635,
+    "mean": 7.786647244094488,
+    "p10": 4.0,
+    "p25": 5.0,
+    "p50": 6.7,
+    "p75": 9.0,
+    "p90": 13.0,
+    "max": 27.0
+  },
+  "hours_stats": {
+    "n": 590,
+    "mean": 8.028189491525424,
+    "p10": 7.0,
+    "p25": 8.0,
+    "p50": 8.0,
+    "p75": 8.0,
+    "p90": 9.0,
+    "max": 16.0
+  },
+  "role_summary": [
+    {
+      "group": "software_general",
+      "n": 293,
+      "median_tc": 110.0,
+      "p75_tc": 160.0,
+      "median_base": 7.0,
+      "median_chill": 3.0,
+      "median_loading": 3.0
+    },
+    {
+      "group": "other",
+      "n": 86,
+      "median_tc": 99.0,
+      "p75_tc": 140.0,
+      "median_base": 6.35,
+      "median_chill": 3.0,
+      "median_loading": 3.0
+    },
+    {
+      "group": "manager_pm",
+      "n": 77,
+      "median_tc": 95.0,
+      "p75_tc": 124.0,
+      "median_base": 6.5,
+      "median_chill": 3.0,
+      "median_loading": 3.0
+    },
+    {
+      "group": "backend",
+      "n": 53,
+      "median_tc": 82.0,
+      "p75_tc": 105.0,
+      "median_base": 6.0,
+      "median_chill": 3.0,
+      "median_loading": 3.0
+    },
+    {
+      "group": "data_ai",
+      "n": 32,
+      "median_tc": 120.0,
+      "p75_tc": 151.5,
+      "median_base": 8.0,
+      "median_chill": 3.0,
+      "median_loading": 3.0
+    },
+    {
+      "group": "frontend",
+      "n": 32,
+      "median_tc": 70.0,
+      "p75_tc": 95.0,
+      "median_base": 5.05,
+      "median_chill": 3.0,
+      "median_loading": 3.0
+    },
+    {
+      "group": "devops_sre",
+      "n": 17,
+      "median_tc": 120.0,
+      "p75_tc": 142.0,
+      "median_base": 7.0,
+      "median_chill": 4.0,
+      "median_loading": 3.0
+    },
+    {
+      "group": "mobile",
+      "n": 13,
+      "median_tc": 86.84,
+      "p75_tc": 125.0,
+      "median_base": 6.0,
+      "median_chill": 4.0,
+      "median_loading": 2.0
+    },
+    {
+      "group": "qa_test",
+      "n": 13,
+      "median_tc": 85.0,
+      "p75_tc": 91.0,
+      "median_base": 6.0,
+      "median_chill": 4.0,
+      "median_loading": 3.0
+    },
+    {
+      "group": "fullstack",
+      "n": 9,
+      "median_tc": 90.0,
+      "p75_tc": 102.0,
+      "median_base": 5.0,
+      "median_chill": 3.0,
+      "median_loading": 3.0
+    },
+    {
+      "group": "consultant_fae",
+      "n": 5,
+      "median_tc": 150.0,
+      "p75_tc": 190.0,
+      "median_base": 11.0,
+      "median_chill": 3.0,
+      "median_loading": 4.0
+    },
+    {
+      "group": "security",
+      "n": 5,
+      "median_tc": 91.0,
+      "p75_tc": 100.0,
+      "median_base": 6.5,
+      "median_chill": 2.0,
+      "median_loading": 5.0
+    }
+  ],
+  "company_summary": [
+    {
+      "group": "general_software",
+      "n": 358,
+      "median_tc": 90.0,
+      "p75_tc": 131.5,
+      "median_base": 6.0,
+      "median_chill": 3.0,
+      "median_loading": 3.0
+    },
+    {
+      "group": "security",
+      "n": 44,
+      "median_tc": 115.0,
+      "p75_tc": 140.0,
+      "median_base": 8.0,
+      "median_chill": 3.0,
+      "median_loading": 3.0
+    },
+    {
+      "group": "startup",
+      "n": 43,
+      "median_tc": 100.0,
+      "p75_tc": 144.5,
+      "median_base": 7.5,
+      "median_chill": 3.0,
+      "median_loading": 3.0
+    },
+    {
+      "group": "finance",
+      "n": 42,
+      "median_tc": 94.5,
+      "p75_tc": 118.75,
+      "median_base": 5.300000000000001,
+      "median_chill": 3.0,
+      "median_loading": 3.0
+    },
+    {
+      "group": "big_tech_foreign",
+      "n": 37,
+      "median_tc": 200.0,
+      "p75_tc": 300.0,
+      "median_base": 14.0,
+      "median_chill": 4.0,
+      "median_loading": 3.0
+    },
+    {
+      "group": "si_outsourcing",
+      "n": 35,
+      "median_tc": 68.4,
+      "p75_tc": 103.0,
+      "median_base": 5.0,
+      "median_chill": 3.0,
+      "median_loading": 3.0
+    },
+    {
+      "group": "ecommerce_platform",
+      "n": 22,
+      "median_tc": 122.0,
+      "p75_tc": 159.375,
+      "median_base": 8.75,
+      "median_chill": 3.0,
+      "median_loading": 3.5
+    },
+    {
+      "group": "semiconductor_hardware",
+      "n": 19,
+      "median_tc": 97.5,
+      "p75_tc": 117.5,
+      "median_base": 6.5,
+      "median_chill": 3.0,
+      "median_loading": 3.0
+    },
+    {
+      "group": "gaming_gambling",
+      "n": 18,
+      "median_tc": 122.5,
+      "p75_tc": 148.75,
+      "median_base": 8.0,
+      "median_chill": 3.0,
+      "median_loading": 3.5
+    },
+    {
+      "group": "traditional_enterprise",
+      "n": 17,
+      "median_tc": 100.0,
+      "p75_tc": 115.0,
+      "median_base": 5.5,
+      "median_chill": 3.0,
+      "median_loading": 3.0
+    }
+  ],
+  "exp_summary": [
+    {
+      "group": "0-1y",
+      "n": 76,
+      "median_tc": 84.5,
+      "p75_tc": 120.0,
+      "median_base": 6.0,
+      "median_chill": 3.0,
+      "median_loading": 3.0
+    },
+    {
+      "group": "1-3y",
+      "n": 138,
+      "median_tc": 77.0,
+      "p75_tc": 109.5,
+      "median_base": 5.3,
+      "median_chill": 3.0,
+      "median_loading": 3.0
+    },
+    {
+      "group": "3-5y",
+      "n": 149,
+      "median_tc": 98.0,
+      "p75_tc": 130.0,
+      "median_base": 6.5,
+      "median_chill": 3.0,
+      "median_loading": 3.0
+    },
+    {
+      "group": "5-8y",
+      "n": 140,
+      "median_tc": 120.0,
+      "p75_tc": 180.0,
+      "median_base": 7.675000000000001,
+      "median_chill": 3.0,
+      "median_loading": 3.0
+    },
+    {
+      "group": "8-12y",
+      "n": 70,
+      "median_tc": 150.0,
+      "p75_tc": 198.75,
+      "median_base": 9.0,
+      "median_chill": 3.0,
+      "median_loading": 3.0
+    },
+    {
+      "group": "12y+",
+      "n": 16,
+      "median_tc": 153.0,
+      "p75_tc": 240.0,
+      "median_base": 10.4,
+      "median_chill": 4.0,
+      "median_loading": 2.5
+    }
+  ],
+  "top_companies": [
+    [
+      "趨勢科技",
+      18
+    ],
+    [
+      "Google",
+      8
+    ],
+    [
+      "緯創軟體",
+      8
+    ],
+    [
+      "Synopsys",
+      8
+    ],
+    [
+      "IBM",
+      7
+    ],
+    [
+      "微軟",
+      7
+    ],
+    [
+      "昕力資訊",
+      7
+    ],
+    [
+      "新創",
+      7
+    ],
+    [
+      "玉山銀行",
+      6
+    ],
+    [
+      "群暉",
+      5
+    ],
+    [
+      "遊戲橘子",
+      4
+    ],
+    [
+      "訊連科技",
+      4
+    ],
+    [
+      "精誠",
+      4
+    ],
+    [
+      "Appier",
+      4
+    ],
+    [
+      "沛星",
+      4
+    ]
+  ],
+  "chill_good_median_tc": 100.0,
+  "chill_bad_median_tc": 96.25,
+  "load_high_median_tc": 110.0,
+  "load_low_median_tc": 88.0,
+  "overtime_heavy_count": 90,
+  "overtime_heavy_median_tc": 115.0
+}
