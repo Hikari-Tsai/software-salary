@@ -1,100 +1,73 @@
-# vinext-starter
+# 台灣軟體工程師薪水分布
 
-A clean full-stack starter running on
-[vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
-Drizzle support.
+以匿名薪資調查資料製作的互動式資料網站，協助台灣軟體工程師了解自己的薪資落點，並從年資、職務與公司類型等角度觀察市場差異。
 
-## Prerequisites
+網站不只呈現薪資數字，也整理了職涯洞察、推薦公司、談薪定位工具與面試問題，讓資料能實際應用在求職決策上。
 
-- Node.js `>=22.13.0`
+## 線上網站
 
-## Quick Start
+- [GitHub Pages 公開網站](https://hikari-tsai.github.io/software-salary/)
+- [Sites 私密版本](https://taiwan-software-salary-lens.aaatmy.chatgpt.site)
+
+## 主要功能
+
+- 顯示總年薪、月底薪與工時的市場百分位
+- 依年資、職務及公司類型比較薪資中位數與 P75
+- 依工作年資快速定位合理薪資與進取目標
+- 綜合薪資、爽度、Loading、工時及樣本數整理公司候選名單
+- 提供不同年資階段的職涯策略與面試檢核問題
+- 使用 Anime.js，在數字與圖表進入畫面時播放累加及展開動畫
+- 支援桌面與手機版面，並尊重「減少動態效果」設定
+
+## 資料來源
+
+資料來自 [DCard 科技業版－軟體工程師調查表](https://docs.google.com/spreadsheets/d/1GMYKVBxRlMv6oNVNzpXYoLUSyT8ZnLEjGcRbn0b4KsA/edit?gid=788239997#gid=788239997)。
+
+- 原始資料：769 筆
+- 薪資分析樣本：635 筆
+- 工時統計樣本：590 筆
+- 金額單位：新台幣萬元
+
+資料由使用者匿名自填，可能存在樣本偏差、欄位理解差異與時間差。網站適合用來觀察市場訊號與相對趨勢，不應把單一數字視為特定職缺的精準定價。
+
+## 技術組成
+
+- React 19
+- TypeScript
+- vinext / Vite
+- Tailwind CSS
+- Anime.js
+- GitHub Actions 與 GitHub Pages
+- Cloudflare Workers 相容建置
+
+## 本地開發
+
+需要 Node.js 22 或更新版本。
 
 ```bash
 npm install
 npm run dev
+```
+
+啟動後開啟 [http://localhost:3000](http://localhost:3000)。
+
+正式建置檢查：
+
+```bash
 npm run build
 ```
 
-This starter does not use `wrangler.jsonc`.
+## 自動部署
 
-## Included Shape
+推送到 `main` 後，[GitHub Actions](./.github/workflows/deploy-pages.yml) 會自動：
 
-- edit site code under `app/`
-- `.openai/hosting.json` declares optional Sites D1 and R2 bindings
-- `vite.config.ts` simulates declared bindings for local development
-- `db/schema.ts` starts intentionally empty
-- `examples/d1/` contains an optional D1 example surface
-- `drizzle.config.ts` supports local migration generation when needed
+1. 安裝相依套件。
+2. 建置網站。
+3. 產生適用於專案子路徑的靜態頁面。
+4. 發布至 GitHub Pages。
 
-## Workspace Auth Headers
+部署不需要 Cloudflare API Token，使用 GitHub Pages 內建權限完成。
 
-Signed-in visitors receive both `oai-authenticated-user-id` and `oai-authenticated-user-email`. Private Sites require every visitor to sign in; public Sites may also have anonymous visitors, for whom neither header is present.
+## 專案定位
 
-The user ID is stable for the same user on the same Site and different across Sites. Email and name are intended for display or contact purposes.
-
-SIWC-authenticated workspace sites may also receive
-`oai-authenticated-user-full-name` when the user's SIWC profile has a non-empty
-`name` claim. The full-name value is percent-encoded UTF-8 and is accompanied by
-`oai-authenticated-user-full-name-encoding: percent-encoded-utf-8`.
-
-Treat the full name as optional and fall back to email when it is absent:
-
-```tsx
-import { headers } from "next/headers";
-
-export default async function Home() {
-  const requestHeaders = await headers();
-  const userId = requestHeaders.get("oai-authenticated-user-id");
-  const email = requestHeaders.get("oai-authenticated-user-email");
-  const encodedFullName = requestHeaders.get("oai-authenticated-user-full-name");
-  const fullName =
-    encodedFullName &&
-    requestHeaders.get("oai-authenticated-user-full-name-encoding") ===
-      "percent-encoded-utf-8"
-      ? decodeURIComponent(encodedFullName)
-      : null;
-
-  const displayName = fullName ?? email;
-  // ...
-}
-```
-
-## Optional Dispatch-Owned ChatGPT Sign-In
-
-Import the ready-to-use helpers from `app/chatgpt-auth.ts` when the site needs
-optional or required ChatGPT sign-in:
-
-- Use `getChatGPTUser()` for optional signed-in UI.
-- Use `requireChatGPTUser(returnTo)` for server-rendered pages that should send
-  anonymous visitors through Sign in with ChatGPT.
-- Use `chatGPTSignInPath(returnTo)` and `chatGPTSignOutPath(returnTo)` for
-  browser links or actions.
-- Pass a same-origin relative `returnTo` path for the destination after sign-in
-  or sign-out. The helper validates and safely encodes it.
-- Mark protected pages with `export const dynamic = "force-dynamic"` because
-  they depend on per-request identity headers.
-
-Dispatch owns `/signin-with-chatgpt`, `/signout-with-chatgpt`, `/callback`, the
-OAuth cookies, and identity header injection. Do not implement app routes for
-those reserved paths. Routes that do not import and call the helper remain
-anonymous-compatible.
-
-SIWC establishes identity only; it does not prove workspace membership. Use the
-Sites hosting platform's access policy controls for workspace-wide restrictions,
-or enforce explicit server-side membership or allowlist checks.
-
-Use SIWC for account pages, user-specific dashboards, saved records, and write
-actions tied to the current ChatGPT user. Leave public content anonymous.
-
-## Useful Commands
-
-- `npm run dev`: start local development
-- `npm run build`: verify the vinext build output
-- `npm test`: build the starter and verify its rendered loading skeleton
-- `npm run db:generate`: generate Drizzle migrations after schema changes
-
-## Learn More
-
-- [vinext Documentation](https://github.com/cloudflare/vinext)
-- [Drizzle D1 Guide](https://orm.drizzle.team/docs/get-started/d1-new)
+本專案是一個以公開資料為基礎的探索型作品，不代表 DCard、資料填寫者或任何被提及公司背書。公司與薪資排名應搭配職務、職級、部門、年份及樣本數一起判讀。
