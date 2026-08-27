@@ -135,7 +135,7 @@ export default function Home() {
       <nav className="nav shell">
         <a className="brand" href="#top" aria-label="薪資透視首頁"><span className="brand-mark">S</span>薪資透視<span className="brand-en">SALARY LENS</span></a>
         <div className="nav-links"><a href="#distribution">薪資分布</a><a href="#insights">市場洞察</a><a href="#companies">推薦公司</a><a href="#advice">求職建議</a></div>
-        <a className="nav-cta" href="#positioning">定位你的薪資 <ArrowUpRight /></a>
+        <a className="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSex_qWWtuEYO0rmxFs7bsJof4KAzlQ4qveLH4IGxhff7FXcDg/viewform?usp=publish-editor" target="_blank" rel="noreferrer">匿名貢獻資料 <ArrowUpRight /></a>
       </nav>
 
       <section className="hero shell" id="top">
@@ -191,7 +191,12 @@ export default function Home() {
       </div></section>
       <style>{`.companies{background:#dddcd3;padding:130px 0}.company-podium{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:56px 0 18px}.company-card{background:#f7f5ed;padding:28px;min-height:310px;display:flex;flex-direction:column;border-top:9px solid #aeb7b1}.company-card.lime{border-color:var(--lime)}.company-card.blue{border-color:var(--blue)}.company-card.violet{border-color:var(--violet)}.company-rank{display:flex;justify-content:space-between;font:700 12px monospace}.company-rank span{font:700 10px sans-serif;border:1px solid #aeb7b1;border-radius:99px;padding:5px 9px}.company-card h3{font-size:27px;margin:34px 0 13px}.company-salary{display:flex;align-items:end;gap:12px}.company-salary b{font-size:62px;line-height:1;letter-spacing:-.06em}.company-salary span{font-size:10px;line-height:1.45;color:var(--muted);padding-bottom:5px}.company-signals{display:flex;gap:7px;margin-top:auto}.company-signals span{font-size:10px;background:#e4e3db;padding:7px}.company-card small{font:10px monospace;color:#7c8781;margin-top:15px}.company-table{background:#f7f5ed;padding:0 25px;overflow-x:auto}.company-row{display:grid;grid-template-columns:1.6fr 1fr .7fr .8fr .7fr .65fr 1fr;align-items:center;min-width:900px;border-bottom:1px solid #d5d9d4;padding:16px 0;font-size:12px}.company-row.head{font:10px monospace;color:#738078;text-transform:uppercase}.company-row>span:first-child{display:flex;align-items:center;gap:14px}.company-row i{font:11px monospace;color:#7b8780;font-style:normal}.company-row strong{font-size:18px}.company-row em{font-style:normal;background:#e5e4dc;padding:6px 8px;border-radius:99px;font-size:10px}.company-caveat{display:grid;grid-template-columns:170px 1fr;gap:20px;margin-top:22px;border-top:1px solid #b9c0bb;padding-top:22px}.company-caveat b{font-size:13px}.company-caveat p{margin:0;color:var(--muted);font-size:12px;line-height:1.7}@media(max-width:800px){.companies{padding:90px 0}.company-podium{grid-template-columns:1fr}.company-caveat{grid-template-columns:1fr;gap:8px}}`}</style>
       <style>{`.company-card{min-height:360px}.company-logo{height:58px;margin:28px 0 4px;display:flex;align-items:center}.company-logo img{display:block;max-width:180px;max-height:46px;width:auto;height:auto;object-fit:contain}.company-logo+h3{margin-top:18px}`}</style>
-      <footer><div className="shell"><div className="brand"><span className="brand-mark">S</span>薪資透視</div><p>看懂市場，也看清自己的下一步。</p><a href="#top">回到頂端 ↑</a></div></footer>
+      <footer><div className="shell footer-grid">
+        <div className="footer-about"><div className="brand"><span className="brand-mark">S</span>薪資透視</div><p><b>作者 Hikari Tsai</b><br />關注軟體開發、資料分析與 AI 應用，希望把公開資料整理成真正能幫助求職決策的工具。</p></div>
+        <div className="footer-links"><span>PROJECT</span><a href="https://github.com/Hikari-Tsai/software-salary" target="_blank" rel="noreferrer">GitHub Repo ↗</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSex_qWWtuEYO0rmxFs7bsJof4KAzlQ4qveLH4IGxhff7FXcDg/viewform?usp=publish-editor" target="_blank" rel="noreferrer">匿名貢獻資料 ↗</a></div>
+        <div className="footer-links"><span>DATA</span><a href="https://docs.google.com/spreadsheets/d/1GMYKVBxRlMv6oNVNzpXYoLUSyT8ZnLEjGcRbn0b4KsA/edit?gid=788239997#gid=788239997" target="_blank" rel="noreferrer">DCard 科技業版<br />軟體工程師調查表 ↗</a></div>
+        <a className="footer-top" href="#top">回到頂端 ↑</a>
+      </div><div className="shell footer-bottom"><span>© 2026 Hikari Tsai</span><span>公開資料僅供市場趨勢參考</span></div></footer>
     </main>
   );
 }
