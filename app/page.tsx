@@ -205,10 +205,7 @@ export default function Home() {
       <footer><div className="shell footer-grid">
         <div className="footer-about"><div className="brand"><span className="brand-mark">S</span>軟工薪資透視</div><p><b>作者 Hikari Tsai</b><br />平常關注軟體開發、資料分析和 AI 應用。這個網站把公開回報整理成容易比較的資料，供求職與談薪時參考。</p></div>
         <div className="footer-links"><span>PROJECT</span><a href="https://github.com/Hikari-Tsai/software-salary" target="_blank" rel="noreferrer">GitHub Repo ↗</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSex_qWWtuEYO0rmxFs7bsJof4KAzlQ4qveLH4IGxhff7FXcDg/viewform?usp=publish-editor" target="_blank" rel="noreferrer">匿名貢獻資料 ↗</a></div>
-        <div className="footer-links"><span>DATA</span>
-          <a href="https://docs.google.com/spreadsheets/d/1GMYKVBxRlMv6oNVNzpXYoLUSyT8ZnLEjGcRbn0b4KsA/edit?gid=788239997#gid=788239997" target="_blank" rel="noreferrer">DCard 科技業版<br />軟體工程師調查表 ↗</a>
-          <a href="http://github.com/Hikari-Tsai/software-salary/tree/main/data" target="_blank" rel="noreferrer">ETL資料清洗與結構化 ↗</a>
-        </div>
+        <div className="footer-links"><span>DATA</span><a href="https://docs.google.com/spreadsheets/d/1GMYKVBxRlMv6oNVNzpXYoLUSyT8ZnLEjGcRbn0b4KsA/edit?gid=788239997#gid=788239997" target="_blank" rel="noreferrer">DCard 科技業版<br />軟體工程師調查表 ↗</a></div>
         <a className="footer-top" href="#top">回到頂端 ↑</a>
       </div><div className="shell footer-bottom"><span>© 2026 Hikari Tsai</span><span>公開資料僅供市場趨勢參考</span></div></footer>
       <div className="floating-actions" aria-label="專案快速連結">

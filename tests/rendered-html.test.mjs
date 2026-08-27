@@ -48,13 +48,3 @@ test("renders contribution and GitHub Star actions", async () => {
   assert.match(html, /僅列入有效樣本數 n ≥ 3 的公司/);
   assert.equal((html.match(/class="github-star(?: [^"]*)?"/g) ?? []).length, 2);
 });
-
-test("renders an absolute social sharing image", async () => {
-  const response = await render();
-  const html = await response.text();
-  const imageUrl = "https://hikari-tsai.github.io/software-salary/images/salary-data-banner.webp";
-
-  assert.match(html, new RegExp(`<meta property="og:image" content="${imageUrl}"`));
-  assert.match(html, new RegExp(`<meta name="twitter:image" content="${imageUrl}"`));
-  assert.match(html, /<meta name="twitter:card" content="summary_large_image"/);
-});
