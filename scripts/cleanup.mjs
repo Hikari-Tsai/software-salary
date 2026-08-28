@@ -44,7 +44,7 @@ const packageJsonPath = resolve(root, "package.json");
 
 try {
   const packageJson = JSON.parse(await readFile(packageJsonPath, "utf8"));
-  if (packageJson.name !== "site-creator-vinext-starter") {
+  if (packageJson.name !== "taiwan-software-salary") {
     throw new Error("專案名稱不符");
   }
 } catch {
@@ -88,4 +88,3 @@ for (const target of existingTargets) {
 if (apply && args.has("--include-dependencies")) {
   console.log("node_modules 已清除；請執行 npm ci 重新安裝依賴。");
 }
-

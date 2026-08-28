@@ -20,7 +20,10 @@
 
 ## 資料來源
 
-資料來自 [DCard 科技業版－軟體工程師調查表](https://docs.google.com/spreadsheets/d/1GMYKVBxRlMv6oNVNzpXYoLUSyT8ZnLEjGcRbn0b4KsA/edit?gid=788239997#gid=788239997)。
+資料來自：
+
+- [DCard 科技業版－軟體工程師調查表](https://docs.google.com/spreadsheets/d/1GMYKVBxRlMv6oNVNzpXYoLUSyT8ZnLEjGcRbn0b4KsA/edit?gid=788239997#gid=788239997)
+- [自行調查匿名表單](https://docs.google.com/spreadsheets/d/134kDFDnJIBFJLr1HEHktWnlZ015ATELy8YwahHE3ZDo/edit?usp=sharing)
 
 - 原始資料：786 筆
 - 薪資分析樣本：652 筆
@@ -37,7 +40,6 @@
 - Tailwind CSS
 - Anime.js
 - GitHub Actions 與 GitHub Pages
-- Cloudflare Workers 相容建置
 
 ## 主要檔案結構
 

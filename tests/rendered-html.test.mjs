@@ -55,6 +55,8 @@ test("renders contribution and GitHub Star actions", async () => {
   assert.match(html, /提供資料/);
   assert.match(html, /匿名貢獻資料/);
   assert.match(html, /DCard 科技業版/);
+  assert.match(html, /自行調查匿名表單/);
+  assert.match(html, /https:\/\/docs\.google\.com\/spreadsheets\/d\/134kDFDnJIBFJLr1HEHktWnlZ015ATELy8YwahHE3ZDo\/edit\?usp=sharing/);
   assert.match(html, /僅列入有效樣本數 n ≥ 3 的公司/);
   assert.equal((html.match(/class="github-star(?: [^"]*)?"/g) ?? []).length, 2);
 });

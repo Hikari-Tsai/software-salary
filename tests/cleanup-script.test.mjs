@@ -34,7 +34,7 @@ async function createFixture(t) {
   for (const file of files) {
     const path = join(root, file);
     await mkdir(dirname(path), { recursive: true });
-    await writeFile(path, file === "package.json" ? '{"name":"site-creator-vinext-starter"}' : "fixture");
+    await writeFile(path, file === "package.json" ? '{"name":"taiwan-software-salary"}' : "fixture");
   }
 
   return root;
