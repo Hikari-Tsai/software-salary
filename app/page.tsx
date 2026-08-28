@@ -167,7 +167,7 @@ export default function Home() {
 
       <figure className="hero-banner shell">
         <img src="images/salary-data-banner.webp" alt="台灣軟體工程師薪資成長與資料趨勢視覺" fetchPriority="high" />
-        <figcaption><span>TAIWAN SOFTWARE SALARY LENS</span><b>用公開回報，對照你的薪資位置</b></figcaption>
+        <figcaption><span>TAIWAN SOFTWARE SALARY LENS</span><b>找尋自己定位，尋找未來的方向</b></figcaption>
       </figure>
 
       <section className="hero shell" id="top">
