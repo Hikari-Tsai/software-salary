@@ -56,6 +56,29 @@ npm run dev
 npm run build
 ```
 
+## 清理本地檔案
+
+請在專案根目錄執行清理指令。預設只會列出準備清除的項目，不會刪除檔案：
+
+```bash
+npm run cleanup
+```
+
+確認清單後，再執行實際清理：
+
+```bash
+npm run cleanup:apply
+```
+
+這會清除建置快取、輸出目錄和專案內已停用的重複檔案，並保留 `node_modules`。若需要連相依套件一起刪除，可執行：
+
+```bash
+node scripts/cleanup.mjs --apply --include-dependencies
+npm ci
+```
+
+刪除 `node_modules` 後，必須先執行 `npm ci` 重新安裝套件，才能再次啟動或建置網站。
+
 ## 自動部署
 
 推送到 `main` 後，[GitHub Actions](./.github/workflows/deploy-pages.yml) 會依序：

@@ -36,6 +36,15 @@ test("server-renders the Taiwan software salary report", async () => {
   assert.doesNotMatch(html, /市場不是一條線|把資料當羅盤|要累積不同的/);
 });
 
+test("renders an absolute social sharing image", async () => {
+  const response = await render();
+  const html = await response.text();
+  const imageUrl = "https://hikari-tsai.github.io/software-salary/images/salary-data-banner.webp";
+
+  assert.match(html, new RegExp(`<meta property="og:image" content="${imageUrl}"`));
+  assert.match(html, new RegExp(`<meta name="twitter:image" content="${imageUrl}"`));
+});
+
 test("renders contribution and GitHub Star actions", async () => {
   const response = await render();
   const html = await response.text();
