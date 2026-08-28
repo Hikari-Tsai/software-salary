@@ -39,6 +39,32 @@
 - GitHub Actions 與 GitHub Pages
 - Cloudflare Workers 相容建置
 
+## 主要檔案結構
+
+```text
+software-salary/
+├── app/
+│   ├── page.tsx                 # 首頁內容、圖表與互動介面
+│   ├── layout.tsx               # 全站版型、SEO 與社群分享設定
+│   ├── globals.css              # 全站樣式與響應式版面
+│   ├── company-rankings.ts      # 公司名稱統一與排行資料
+│   ├── salary-interpolation.ts  # 年資薪資的線性內插計算
+│   └── floating-actions.ts      # Star 與提供資料按鈕設定
+├── public/                      # 圖片、Logo 與 favicon 等靜態資源
+├── data/                        # 原始資料、清理結果與分析摘要
+├── scripts/
+│   └── cleanup.mjs             # 本地快取與舊檔清理工具
+├── tests/                       # 頁面輸出、排行與計算邏輯測試
+├── .github/workflows/
+│   └── deploy-pages.yml        # GitHub Pages 自動部署流程
+├── next.config.ts              # 網站路徑與 GitHub Pages 建置設定
+├── vite.config.ts              # vinext／Vite 設定
+├── package.json                # 套件、開發指令與測試指令
+└── README.md                   # 專案說明
+```
+
+一般文字與頁面區塊主要在 `app/page.tsx` 修改；視覺樣式集中在 `app/globals.css`。網站標題、說明與 `og:image` 等分享資訊則放在 `app/layout.tsx`。
+
 ## 本地開發
 
 需要 Node.js 22 或更新版本。
