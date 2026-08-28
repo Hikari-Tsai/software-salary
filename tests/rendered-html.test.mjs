@@ -57,3 +57,31 @@ test("renders contribution and GitHub Star actions", async () => {
   assert.match(html, /僅列入有效樣本數 n ≥ 3 的公司/);
   assert.equal((html.match(/class="github-star(?: [^"]*)?"/g) ?? []).length, 2);
 });
+
+test("renders a closing career roadmap with four planning directions", async () => {
+  const response = await render();
+  const html = await response.text();
+
+  assert.match(html, /05 — NEXT MOVE/);
+  assert.match(html, /找到適合你的路線，<br\/>再把下一步走具體。/);
+  assert.match(html, /薪資突破/);
+  assert.match(html, /技術成長/);
+  assert.match(html, /穩定生活/);
+  assert.match(html, /轉型升級/);
+  assert.match(html, /現在/);
+  assert.match(html, /未來 6–12 個月/);
+  assert.match(html, /下一次選 offer/);
+});
+
+test("renders six expandable offer questions with practical guidance", async () => {
+  const response = await render();
+  const html = await response.text();
+
+  assert.equal((html.match(/<details class="offer-question"/g) ?? []).length, 6);
+  assert.match(html, /為什麼要問/);
+  assert.match(html, /你能看出什麼/);
+  assert.match(html, /可以這樣追問/);
+  assert.match(html, /確認固定薪資與浮動薪酬的比例/);
+  assert.match(html, /辨認團隊是否長期處於人力不足/);
+  assert.match(html, /判斷這份工作能不能提高下一次轉職的選擇權/);
+});
