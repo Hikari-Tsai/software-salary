@@ -39,7 +39,7 @@ test("server-renders the Taiwan software salary report", async () => {
 test("renders an absolute social sharing image", async () => {
   const response = await render();
   const html = await response.text();
-  const imageUrl = "https://hikari-tsai.github.io/software-salary/images/salary-data-banner.webp";
+  const imageUrl = "https://hikari-tsai.github.io/software-salary/images/og-salary-thumbnail.png";
 
   assert.match(html, new RegExp(`<meta property="og:image" content="${imageUrl}"`));
   assert.match(html, new RegExp(`<meta name="twitter:image" content="${imageUrl}"`));
