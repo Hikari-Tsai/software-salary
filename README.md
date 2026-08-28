@@ -22,9 +22,9 @@
 
 資料來自 [DCard 科技業版－軟體工程師調查表](https://docs.google.com/spreadsheets/d/1GMYKVBxRlMv6oNVNzpXYoLUSyT8ZnLEjGcRbn0b4KsA/edit?gid=788239997#gid=788239997)。
 
-- 原始資料：769 筆
-- 薪資分析樣本：635 筆
-- 工時統計樣本：590 筆
+- 原始資料：786 筆
+- 薪資分析樣本：652 筆
+- 資料更新：2026 年 8 月 28 日 13:11
 - 金額單位：新台幣萬元
 
 資料由使用者匿名填寫，可能受到樣本組成、欄位理解和填寫時間影響。這些數字適合用來比較相對差異和大致區間，不能直接代表某個職缺的合理薪資。
@@ -52,6 +52,8 @@ software-salary/
 │   └── floating-actions.ts      # Star 與提供資料按鈕設定
 ├── public/                      # 圖片、Logo 與 favicon 等靜態資源
 ├── data/                        # 原始資料、清理結果與分析摘要
+├── etl/
+│   └── csv_to_readable_json.py # 將表單 CSV 轉成網站分析用 JSON
 ├── scripts/
 │   └── cleanup.mjs             # 本地快取與舊檔清理工具
 ├── tests/                       # 頁面輸出、排行與計算邏輯測試
@@ -64,6 +66,48 @@ software-salary/
 ```
 
 一般文字與頁面區塊主要在 `app/page.tsx` 修改；視覺樣式集中在 `app/globals.css`。網站標題、說明與 `og:image` 等分享資訊則放在 `app/layout.tsx`。
+
+## ETL：將表單 CSV 轉成 JSON
+
+`etl/csv_to_readable_json.py` 會讀取 Google 表單匯出的 CSV，保留既有 JSON key，並將可辨識的數字轉成數值格式。薪資欄位統一使用「萬元」：例如 `54,000` 會轉成 `5.4`，`1,050,000` 會轉成 `105`；填成 `66萬` 或明顯多出一萬倍的數字也會自動修正。
+
+在專案根目錄執行：
+
+```bash
+python3 etl/csv_to_readable_json.py \
+  "data/軟體工程師薪資調查(匿名) (回覆) - 表單回覆 1.csv" \
+  --output data/sheet_data_readable_keys_from_csv.json
+```
+
+程式會自動在輸出檔名後加上執行時間，例如：
+
+```text
+data/sheet_data_readable_keys_from_csv_20260828_131146.json
+```
+
+執行 ETL 測試：
+
+```bash
+python3 -m unittest tests/test_csv_to_readable_json.py
+```
+
+## 更新網站資料
+
+1. 從 Google 表單下載最新 CSV，放進 `data/`。
+2. 執行上述 ETL，產生帶有時間戳記的新 JSON。
+3. 將新 JSON 與 `data/sheet_data_readable_dcard.json` 比對，先排除重複填答、測試資料、無效值和無法合理判讀的極端值。
+4. 合併公司別名。同一家公司常見的中英文名稱與縮寫統一放在 `app/company-rankings.ts` 的 `companyAliases`。
+5. 重新計算有效樣本數、薪資平均、中位數、百分位與公司排行，再更新 `app/page.tsx` 和 `app/company-rankings.ts`。若樣本數改變，也同步更新 `app/layout.tsx` 的網站說明及本 README。
+6. 在公司排行下方更新資料日期與時間。
+7. 執行完整驗證：
+
+```bash
+python3 -m unittest tests/test_csv_to_readable_json.py
+npm test
+npm run lint
+```
+
+所有檢查通過後再提交並推送；推送到 `main` 會觸發 GitHub Pages 自動部署。
 
 ## 本地開發
 

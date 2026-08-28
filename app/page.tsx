@@ -171,21 +171,21 @@ export default function Home() {
       </figure>
 
       <section className="hero shell" id="top">
-        <div className="eyebrow"><span></span>2025 台灣軟體職缺匿名資料</div>
+        <div className="eyebrow"><span></span>2025–2026 台灣軟體職缺匿名資料</div>
         <div className="hero-grid">
           <div>
             <h1>台灣軟體<br />工程師<span>薪水分布</span></h1>
-            <p className="hero-copy">整理 635 筆有效樣本，依年資、職務和公司類型比較薪資。先確認自己大致落在哪裡，再決定下一步怎麼談。</p>
+            <p className="hero-copy">整理 652 筆有效樣本，依年資、職務和公司類型比較薪資。先確認自己大致落在哪裡，再決定下一步怎麼談。</p>
             <div className="hero-actions"><a className="primary" href="#distribution">查看市場分布 <ArrowUpRight /></a><a className="text-link" href="#method">了解資料怎麼讀 <span>↓</span></a></div>
           </div>
           <div className="hero-card" aria-label="年薪分布摘要">
             <div className="card-kicker">TOTAL COMPENSATION · 萬／年</div>
-            <div className="median"><div><span>市場中位數</span><AnimatedNumber value={100} strong /><small>萬</small></div><div className="sample">有效樣本<br /><b><AnimatedNumber value={635} /></b> 筆</div></div>
+            <div className="median"><div><span>市場中位數</span><AnimatedNumber value={100} strong /><small>萬</small></div><div className="sample">有效樣本<br /><b><AnimatedNumber value={652} /></b> 筆</div></div>
             <div className="range"><div className="range-line"><i style={{left:"8%"}}></i><i className="dot" style={{left:"29%"}}></i><i className="dot main" style={{left:"50%"}}></i><i className="dot" style={{left:"71%"}}></i><i style={{left:"92%"}}></i></div><div className="range-labels"><span>P10<br /><b><AnimatedNumber value={58} /></b></span><span>P25<br /><b><AnimatedNumber value={72} /></b></span><span className="active">P50<br /><b><AnimatedNumber value={100} /></b></span><span>P75<br /><b><AnimatedNumber value={140} /></b></span><span>P90<br /><b><AnimatedNumber value={200} /></b></span></div></div>
             <div className="card-note"><span>↑</span><p>P75 表示這筆年薪高於資料中 <b>75%</b> 的有效樣本。</p></div>
           </div>
         </div>
-        <div className="hero-stats"><div><span>月底薪中位數</span><AnimatedNumber value={6.7} strong /><small> 萬</small></div><div><span>年薪平均</span><AnimatedNumber value={119.9} strong /><small> 萬</small></div><div><span>每日工時中位數</span><AnimatedNumber value={8} strong /><small> 小時</small></div><div><span>年薪 P90</span><AnimatedNumber value={200} strong /><small> 萬</small></div></div>
+        <div className="hero-stats"><div><span>月底薪中位數</span><AnimatedNumber value={6.7} strong /><small> 萬</small></div><div><span>年薪平均</span><AnimatedNumber value={120.3} strong /><small> 萬</small></div><div><span>每日工時中位數</span><AnimatedNumber value={8} strong /><small> 小時</small></div><div><span>年薪 P90</span><AnimatedNumber value={200} strong /><small> 萬</small></div></div>
       </section>
 
       <section className="distribution" id="distribution">
@@ -214,12 +214,12 @@ export default function Home() {
         <div className="questions"><div><div className="section-no">INTERVIEW CHECKLIST</div><h3>談 offer 時，<br />這 6 題比月薪更有用。</h3><p>點開每一題，了解它能幫你確認哪些風險，以及面試時可以怎麼繼續追問。</p></div><div className="offer-questions">{offerQuestions.map((item,index)=><details className="offer-question" key={item.question}><summary><span>0{index + 1}</span><b>{item.question}</b><i aria-hidden="true"></i></summary><div className="offer-answer"><div><strong>為什麼要問</strong><p>{item.why}</p></div><div><strong>你能看出什麼</strong><p>{item.benefit}</p></div><div className="follow-up"><strong>可以這樣追問</strong><p>「{item.followUp}」</p></div></div></details>)}</div></div>
       </section>
 
-      <section className="method" id="method"><div className="shell method-grid"><div><div className="section-no">ABOUT THE DATA</div><h2>資料先拿來抓方向，<br />再回到職缺條件判斷。</h2></div><div><p>原始資料有 <b>769</b> 筆。排除測試資料、無效值和無法合理判讀的極端值後，薪資分析採用 <b>635</b> 筆，工時統計採用 590 筆。</p><p>這些資料由使用者匿名填寫，可能受到樣本組成、欄位理解和填寫時間影響。適合比較相對差異與大致區間，不能直接代表某一個職缺的合理薪資。</p><p><b>資料來源：</b><a href="https://docs.google.com/spreadsheets/d/1GMYKVBxRlMv6oNVNzpXYoLUSyT8ZnLEjGcRbn0b4KsA/edit?gid=788239997#gid=788239997" target="_blank" rel="noreferrer" style={{textDecoration:"underline",textUnderlineOffset:"4px",fontWeight:700}}>DCard 科技業版－軟體工程師調查表 ↗</a></p><div className="method-tags"><span>金額單位：新台幣萬元</span><span>統計：中位數與百分位</span><span>資料年度：2025</span></div></div></div></section>
+      <section className="method" id="method"><div className="shell method-grid"><div><div className="section-no">ABOUT THE DATA</div><h2>資料先拿來抓方向，<br />再回到職缺條件判斷。</h2></div><div><p>原始資料有 <b>786</b> 筆。排除測試資料、無效值和無法合理判讀的極端值後，薪資分析採用 <b>652</b> 筆；工時統計另排除明顯不合理的每日工時。</p><p>這些資料由使用者匿名填寫，可能受到樣本組成、欄位理解和填寫時間影響。適合比較相對差異與大致區間，不能直接代表某一個職缺的合理薪資。</p><p><b>資料來源：</b><a href="https://docs.google.com/spreadsheets/d/1GMYKVBxRlMv6oNVNzpXYoLUSyT8ZnLEjGcRbn0b4KsA/edit?gid=788239997#gid=788239997" target="_blank" rel="noreferrer" style={{textDecoration:"underline",textUnderlineOffset:"4px",fontWeight:700}}>DCard 科技業版－軟體工程師調查表 ↗</a></p><div className="method-tags"><span>金額單位：新台幣萬元</span><span>統計：中位數與百分位</span><span>資料年度：2025–2026</span></div></div></div></section>
       <section className="companies" id="companies"><div className="shell">
         <div className="section-head"><div><div className="section-no">COMPANY SHORTLIST</div><h2>哪些公司<br />值得<span>優先研究？</span></h2></div><p>排行綜合年薪中位數、爽度、工作強度和樣本數計算。只列入至少 3 筆有效回報的公司，常見中英文別名已合併。</p></div>
         <div className="company-podium">{companyRankings.slice(0,3).map((c)=><article className={`company-card ${c.tone}`} key={c.company}><div className="company-rank">{c.rank}<span>{c.tag}</span></div>{c.logo && <div className="company-logo"><img src={c.logo} alt={`${c.company} Logo`} loading="lazy" /></div>}<div className="company-salary"><AnimatedNumber value={c.salary} strong /><span>萬／年<br />薪資中位數</span></div><div className="company-signals"><span>爽度 <b><AnimatedNumber value={c.chill} /></b>/5</span><span>工作強度 <b><AnimatedNumber value={c.工作強度} /></b>/5</span><span>工時 <b><AnimatedNumber value={c.hours} /></b>h</span></div><small>有效樣本 n = {c.n}</small></article>)}</div>
         <div className="company-table" role="table" aria-label="符合樣本門檻的完整公司薪資比較"><div className="company-row head" role="row"><span>排名／公司</span><span>年薪中位數</span><span>爽度</span><span>工作強度</span><span>工時</span><span>樣本</span><span>觀察</span></div>{companyRankings.slice(3).map((c)=><div className="company-row" role="row" key={c.company}><span><i>{c.rank}</i><b>{c.company}</b></span><span><AnimatedNumber value={c.salary} strong /> 萬</span><span><AnimatedNumber value={c.chill} /> / 5</span><span><AnimatedNumber value={c.工作強度} /> / 5</span><span><AnimatedNumber value={c.hours} /> h</span><span>n = {c.n}</span><span><em>{c.tag}</em></span></div>)}</div>
-        <p className="company-threshold-note">僅列入有效樣本數 n ≥ 3 的公司。</p>
+        <p className="company-threshold-note">僅列入有效樣本數 n ≥ 3 的公司。資料更新：2026 年 8 月 28 日 13:11。</p>
         <div className="company-caveat"><b>這份排行怎麼看？</b><p>排名較前表示樣本中的薪資和工作體驗整體較好，不代表每個部門或職缺都一樣。職務、職級和填寫年份都會影響結果；n = 3 的數字尤其容易波動，面試時仍需逐項確認。</p></div>
       </div></section>
       <section className="career-summary" id="summary"><div className="shell">

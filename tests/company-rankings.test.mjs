@@ -10,16 +10,20 @@ test("company aliases resolve to one display name", () => {
   assert.equal(normalizeCompanyName("群暉科技"), "Synology 群暉科技");
   assert.equal(normalizeCompanyName("沛星"), "Appier 沛星互動科技");
   assert.equal(normalizeCompanyName("國泰"), "Cathay United Bank 國泰世華銀行");
+  assert.equal(normalizeCompanyName("CHT"), "Chunghwa Telecom 中華電信");
+  assert.equal(normalizeCompanyName("新思科技"), "Synopsys 新思科技");
+  assert.equal(normalizeCompanyName("cyberlink"), "CyberLink 訊連科技");
+  assert.equal(normalizeCompanyName("三竹資訊股份有限公司"), "Mitake 三竹資訊");
 });
 
 test("company shortlist contains every unique company with at least three samples", () => {
-  assert.equal(companyRankings.length, 31);
-  assert.equal(new Set(companyRankings.map(({ company }) => company)).size, 31);
+  assert.equal(companyRankings.length, 32);
+  assert.equal(new Set(companyRankings.map(({ company }) => company)).size, 32);
   assert.ok(companyRankings.every(({ n }) => n >= 3));
-  assert.equal(companyRankings.at(-1)?.company, "Gamania 遊戲橘子");
+  assert.equal(companyRankings.at(-1)?.company, "Mitake 三竹資訊");
   assert.deepEqual(
     companyRankings.map(({ rank }) => rank),
-    Array.from({ length: 31 }, (_, index) => String(index + 1).padStart(2, "0")),
+    Array.from({ length: 32 }, (_, index) => String(index + 1).padStart(2, "0")),
   );
 });
 
