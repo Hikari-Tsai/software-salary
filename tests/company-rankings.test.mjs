@@ -37,7 +37,7 @@ test("top three companies retain logo presentation", () => {
 
 test("TSMC logo is served from a stable local asset", () => {
   const tsmc = companyRankings.find(({ company }) => company.startsWith("TSMC "));
-  assert.equal(tsmc?.logo, "/images/tsmc-wordmark.svg");
+  assert.equal(tsmc?.logo, "images/tsmc-wordmark.svg");
 });
 
 test("every company uses an English name followed by a Chinese name", () => {
