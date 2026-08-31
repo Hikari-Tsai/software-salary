@@ -29,8 +29,8 @@ test("server-renders the Taiwan software salary report", async () => {
   assert.match(html, /<html lang="zh-Hant">/);
   assert.match(html, /<title>台灣軟體工程師薪水分布｜薪資透視<\/title>/);
   assert.match(html, /台灣軟體(?:<br\/>|\s*)工程師/);
-  assert.match(html, /652 筆有效樣本/);
-  assert.match(html, /資料更新：2026 年 8 月 28 日 13:11/);
+  assert.match(html, /709 筆有效樣本/);
+  assert.match(html, /資料更新：2026 年 8 月 31 日 16:49/);
   assert.match(html, /同樣是軟體工程師，<br\/><span>薪資差距可以很大。<\/span>/);
   assert.match(html, /資料先拿來抓方向，<br\/>再回到職缺條件判斷。/);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/);

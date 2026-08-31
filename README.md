@@ -25,9 +25,10 @@
 - [DCard 科技業版－軟體工程師調查表](https://docs.google.com/spreadsheets/d/1GMYKVBxRlMv6oNVNzpXYoLUSyT8ZnLEjGcRbn0b4KsA/edit?gid=788239997#gid=788239997)
 - [自行調查匿名表單](https://docs.google.com/spreadsheets/d/134kDFDnJIBFJLr1HEHktWnlZ015ATELy8YwahHE3ZDo/edit?usp=sharing)
 
-- 原始資料：786 筆
-- 薪資分析樣本：652 筆
-- 資料更新：2026 年 8 月 28 日 13:11
+- 原始資料：844 筆
+- 薪資分析樣本：709 筆
+- 工時統計樣本：659 筆
+- 資料更新：2026 年 8 月 31 日 16:49
 - 金額單位：新台幣萬元
 
 資料由使用者匿名填寫，可能受到樣本組成、欄位理解和填寫時間影響。這些數字適合用來比較相對差異和大致區間，不能直接代表某個職缺的合理薪資。
@@ -55,7 +56,8 @@ software-salary/
 ├── public/                      # 圖片、Logo 與 favicon 等靜態資源
 ├── data/                        # 原始資料、清理結果與分析摘要
 ├── etl/
-│   └── csv_to_readable_json.py # 將表單 CSV 轉成網站分析用 JSON
+│   ├── csv_to_readable_json.py # 將表單 CSV 轉成網站分析用 JSON
+│   └── merge_json.py           # 依序合併多個 JSON 並加上時間戳記
 ├── scripts/
 │   └── cleanup.mjs             # 本地快取與舊檔清理工具
 ├── tests/                       # 頁面輸出、排行與計算邏輯測試
@@ -93,6 +95,29 @@ data/sheet_data_readable_keys_from_csv_20260828_131146.json
 python3 -m unittest tests/test_csv_to_readable_json.py
 ```
 
+### 合併多個 JSON
+
+`etl/merge_json.py` 接受兩個以上的 JSON 檔案，依照指令中的先後順序合併。每個輸入檔案的最外層必須是 JSON 陣列。內容完全相同的紀錄會自動去重並保留第一次出現的位置，執行結果會顯示移除的筆數。
+
+```bash
+python3 etl/merge_json.py \
+  data/sheet_data_readable_dcard.json \
+  data/sheet_data_readable_keys_from_csv_20260828_131146.json \
+  --output data/sheet_data_merged.json
+```
+
+輸出檔名同樣會自動加上執行時間，例如：
+
+```text
+data/sheet_data_merged_20260831_153000.json
+```
+
+執行合併程式測試：
+
+```bash
+python3 -m unittest tests/test_merge_json.py
+```
+
 ## 更新網站資料
 
 1. 從 Google 表單下載最新 CSV，放進 `data/`。
@@ -105,6 +130,7 @@ python3 -m unittest tests/test_csv_to_readable_json.py
 
 ```bash
 python3 -m unittest tests/test_csv_to_readable_json.py
+python3 -m unittest tests/test_merge_json.py
 npm test
 npm run lint
 ```
