@@ -35,6 +35,11 @@ test("top three companies retain logo presentation", () => {
   assert.ok(companyRankings.slice(0, 3).every(({ logo }) => Boolean(logo)));
 });
 
+test("TSMC logo is served from a stable local asset", () => {
+  const tsmc = companyRankings.find(({ company }) => company.startsWith("TSMC "));
+  assert.equal(tsmc?.logo, "/images/tsmc-wordmark.svg");
+});
+
 test("every company uses an English name followed by a Chinese name", () => {
   const bilingualName = /^[A-Za-z0-9][A-Za-z0-9.&+\- ]* [\p{Script=Han}]/u;
   assert.deepEqual(

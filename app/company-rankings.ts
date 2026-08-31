@@ -100,7 +100,7 @@ export function normalizeCompanyName(name: string) {
 export const companyRankings: CompanyRanking[] = [
   { rank: "01", company: "Google 谷歌", salary: 350, chill: 3, 工作強度: 3, hours: 8, n: 9, tag: "薪資中位數居前", tone: "blue", logo: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Google%202026%20logo.svg" },
   { rank: "02", company: "Synopsys 新思科技", salary: 240, chill: 4, 工作強度: 2, hours: 8, n: 11, tag: "高薪、負荷較低", tone: "lime", logo: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Synopsys%20Logo.svg" },
-  { rank: "03", company: "TSMC 台灣積體電路製造", salary: 390, chill: 2, 工作強度: 5, hours: 9, n: 6, tag: "高薪、強度 5/5", tone: "violet", logo: "https://commons.wikimedia.org/wiki/Special:Redirect/file/TSMC%20Logo.svg" },
+  { rank: "03", company: "TSMC 台灣積體電路製造", salary: 390, chill: 2, 工作強度: 5, hours: 9, n: 6, tag: "高薪、強度 5/5", tone: "violet", logo: "/images/tsmc-wordmark.svg" },
   { rank: "04", company: "Microsoft 微軟", salary: 245, chill: 4, 工作強度: 4, hours: 8, n: 7, tag: "高薪、爽度 4/5", tone: "plain" },
   { rank: "05", company: "Chunghwa Telecom 中華電信", salary: 145, chill: 5, 工作強度: 2, hours: 8, n: 11, tag: "爽度 5/5", tone: "plain" },
   { rank: "06", company: "GOGOX 高高客", salary: 176, chill: 3, 工作強度: 3, hours: 8, n: 3, tag: "各項接近中間", tone: "plain" },
