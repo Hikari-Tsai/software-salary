@@ -195,6 +195,7 @@ export default function Home() {
           <div className="chart-card">
             <div className="chart-legend"><span><i className="median-key"></i>年薪中位數</span><span><i className="p75-key"></i>P75</span><small>單位：萬元／年</small></div>
             <div className="bars">{currentData.map((d)=><div className="bar-row" key={d.label}><div className="bar-label"><b>{d.label}</b><small>n = {d.n}</small></div><div className="bar-track"><AnimatedBars outer={Math.max(12,d.p75/max*100)} inner={d.median/d.p75*100} /></div><div className="bar-value"><b><AnimatedNumber value={d.median} /></b><span>/ <AnimatedNumber value={d.p75} /></span></div></div>)}</div>
+            {view === "experience" && <p className="experience-data-note">註：0–1 年樣本多數填寫為 0 年，且包含部分高薪公司與資深職級，可能推高薪資中位數；此結果反映樣本組成，不代表年資增加會使薪資下降。</p>}
           </div>
         </div>
       </section>
@@ -204,7 +205,7 @@ export default function Home() {
         <div className="insight-grid">
           <article className="feature-insight"><div className="index">01</div><div className="visual-jump"><span>3–5 年</span><div><i></i><i></i><i className="hot"></i><i></i><i></i></div><strong>常見的第一次跳薪區間</strong></div><h3>3–5 年的議價空間<br />通常比前期更明顯。</h3><p>這個階段若能獨立負責功能、處理線上問題，或參與系統設計，履歷會比單純累積年資更有說服力。</p></article>
           <article><div className="index">02</div><div className="big-number"><AnimatedNumber value={2} /><span>×</span></div><h3>外商與大型科技公司的年薪中位數，約為一般軟體公司的 2.2 倍。</h3><p>這類職缺通常也要求英文溝通、系統設計和跨國協作。比較薪資時，記得把職級與績效制度一起算進去。</p><div className="compare"><span>一般軟體 <AnimatedNumber value={90} strong /> 萬</span><span>外商科技 <AnimatedNumber value={200} strong /> 萬</span></div></article>
-          <article><div className="index">03</div><div className="balance"><span>薪資</span><i></i><span>生活</span></div><h3>工作強度變高，<br />薪資未必等幅增加。</h3><p>高工作強度樣本的年薪中位數是 <strong>110</strong> 萬，低工作強度樣本是 <strong>88</strong> 萬，相差 <strong>22</strong> 萬。面試時可再確認工時、on-call 和加班補償。</p><div className="mini-stat"><b><AnimatedNumber value={90} /></b><span>筆高加班／高壓樣本<br />年薪中位數 <strong>115</strong> 萬</span></div></article>
+          <article><div className="index">03</div><div className="balance"><span>工作</span><i></i><span>生活</span></div><h3>工作強度變高，<br />薪資未必等幅增加。</h3><p>高工作強度樣本的年薪中位數是 <strong>110</strong> 萬，低工作強度樣本是 <strong>88</strong> 萬，相差 <strong>22</strong> 萬。面試時可再確認工時、on-call 和加班補償。</p><div className="mini-stat"><b><AnimatedNumber value={90} /></b><span>筆高加班／高壓樣本<br />年薪中位數 <strong>115</strong> 萬</span></div></article>
         </div>
       </section>
 

@@ -32,6 +32,7 @@ test("server-renders the Taiwan software salary report", async () => {
   assert.match(html, /709 筆有效樣本/);
   assert.match(html, /資料更新：2026 年 8 月 31 日 16:49/);
   assert.match(html, /同樣是軟體工程師，<br\/><span>薪資差距可以很大。<\/span>/);
+  assert.match(html, /0–1 年樣本多數填寫為 0 年/);
   assert.match(html, /資料先拿來抓方向，<br\/>再回到職缺條件判斷。/);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/);
   assert.doesNotMatch(html, /市場不是一條線|把資料當羅盤|要累積不同的/);

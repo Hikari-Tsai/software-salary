@@ -16,6 +16,8 @@ footer{padding:56px 0 24px}.footer-grid{display:grid!important;grid-template-col
 @media(max-width:800px){.hero-stats span{font-size:12px}.hero-stats b,.hero-stats strong{font-size:29px}.hero-stats small{font-size:12px}.github-star{right:14px;bottom:14px;padding:10px 14px;font-size:12px}}
 
 .result strong{font-size:35px}
+.experience-data-note{max-width:680px;margin:22px 0 0 auto;padding-top:16px;border-top:1px solid #d9ddd8;color:#748078;font-size:11px;line-height:1.75;text-align:right}
+@media(max-width:800px){.experience-data-note{max-width:none;text-align:left}}
 .hero-card .median strong{color:var(--lime)}
 .floating-actions{position:fixed;right:22px;bottom:22px;z-index:20;display:flex;gap:10px;align-items:center}.floating-actions .github-star{position:static}.floating-actions .contribute{background:var(--lime);color:var(--ink);border-color:rgba(23,37,31,.16)}.floating-actions .contribute:hover{background:#d7f879}.floating-actions .github-star span{font-size:16px;line-height:1}
 @media(max-width:800px){.floating-actions{right:14px;bottom:14px;gap:7px}.floating-actions .github-star{padding:10px 12px}}
