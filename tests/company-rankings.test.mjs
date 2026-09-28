@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import salaryData from "../app/salary-data.json" with { type: "json" };
 
 import { companyRankings, normalizeCompanyName } from "../app/company-rankings.ts";
 
@@ -21,13 +22,14 @@ test("company aliases resolve to one display name", () => {
 });
 
 test("company shortlist contains every unique company with at least three samples", () => {
-  assert.equal(companyRankings.length, 35);
-  assert.equal(new Set(companyRankings.map(({ company }) => company)).size, 35);
+  assert.equal(companyRankings.length, salaryData.rankings.length);
+  assert.equal(new Set(companyRankings.map(({ company }) => company)).size, companyRankings.length);
   assert.ok(companyRankings.every(({ n }) => n >= 3));
-  assert.equal(companyRankings.at(-1)?.company, "Mitake 三竹資訊");
+  assert.deepEqual(companyRankings.map(({ company }) => company), salaryData.rankings.map(({ company }) => company));
+  assert.ok(companyRankings.every((row, i, rows) => i === 0 || rows[i - 1].score >= row.score));
   assert.deepEqual(
     companyRankings.map(({ rank }) => rank),
-    Array.from({ length: 35 }, (_, index) => String(index + 1).padStart(2, "0")),
+    Array.from({ length: companyRankings.length }, (_, index) => String(index + 1).padStart(2, "0")),
   );
 });
 
@@ -40,16 +42,16 @@ test("TSMC logo is served from a stable local asset", () => {
   assert.equal(tsmc?.logo, "images/tsmc-wordmark.svg");
 });
 
-test("every company uses an English name followed by a Chinese name", () => {
+test("known bilingual names retain their canonical form; unknown names are not invented", () => {
   const bilingualName = /^[A-Za-z0-9][A-Za-z0-9.&+\- ]* [\p{Script=Han}]/u;
   assert.deepEqual(
     companyRankings.filter(({ company }) => !bilingualName.test(company)).map(({ company }) => company),
-    [],
+    ["ASML"],
   );
   assert.equal(companyRankings[0].company, "Google 谷歌");
-  assert.equal(companyRankings[2].company, "TSMC 台灣積體電路製造");
-  assert.equal(companyRankings[4].company, "Chunghwa Telecom 中華電信");
-  assert.equal(companyRankings[26].company, "TPIsoftware 昕力資訊");
+  assert.ok(companyRankings.some(({ company }) => company === "TSMC 台灣積體電路製造"));
+  assert.ok(companyRankings.some(({ company }) => company === "Chunghwa Telecom 中華電信"));
+  assert.ok(companyRankings.some(({ company }) => company === "TPIsoftware 昕力資訊"));
 });
 
 test("raw survey company names normalize to bilingual display names", () => {

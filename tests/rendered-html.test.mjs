@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import salaryData from "../app/salary-data.json" with { type: "json" };
 
 async function render() {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
@@ -29,10 +30,13 @@ test("server-renders the Taiwan software salary report", async () => {
   assert.match(html, /<html lang="zh-Hant">/);
   assert.match(html, /<title>台灣軟體工程師薪水分布｜薪資透視<\/title>/);
   assert.match(html, /台灣軟體(?:<br\/>|\s*)工程師/);
-  assert.match(html, /709 筆有效樣本/);
-  assert.match(html, /資料更新：2026 年 8 月 31 日 16:49/);
+  assert.ok(html.includes(`${salaryData.salary.n} 筆有效樣本`));
+  assert.ok(html.includes(`資料更新：${salaryData.updatedLabel}`));
   assert.match(html, /同樣是軟體工程師，<br\/><span>薪資差距可以很大。<\/span>/);
-  assert.match(html, /0–1 年樣本多數填寫為 0 年/);
+  assert.ok(html.includes(`其中 ${salaryData.experienceZero} 筆填寫為 0 年`));
+  assert.match(html, /統計口徑調整/);
+  assert.match(html, /薪資 60%、爽度 20%、低工作強度 15%、樣本數 5%/);
+  assert.doesNotMatch(html, /整理 709 筆|原始資料有 <b>844<\/b>/);
   assert.match(html, /資料先拿來抓方向，<br\/>再回到職缺條件判斷。/);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/);
   assert.doesNotMatch(html, /市場不是一條線|把資料當羅盤|要累積不同的/);

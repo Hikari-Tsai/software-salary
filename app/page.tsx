@@ -2,18 +2,12 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { animate } from "animejs";
+import salaryData from "./salary-data.json";
 import { companyRankings } from "./company-rankings";
 import { floatingActions, navStarAction } from "./floating-actions";
 import { interpolateSalary } from "./salary-interpolation";
 
-const experience = [
-  { label: "0–1 年", median: 84.5, p75: 120, n: 77 },
-  { label: "1–3 年", median: 78.2, p75: 109.5, n: 151 },
-  { label: "3–5 年", median: 98, p75: 130, n: 168 },
-  { label: "5–8 年", median: 120, p75: 180, n: 162 },
-  { label: "8–12 年", median: 150, p75: 202, n: 83 },
-  { label: "12 年＋", median: 190, p75: 307.5, n: 20 },
-];
+const experience = salaryData.experience;
 
 const experienceAnchors = experience.map((item, index) => ({
   year: [0, 2, 4, 6.5, 10, 14][index],
@@ -21,29 +15,11 @@ const experienceAnchors = experience.map((item, index) => ({
   p75: item.p75,
 }));
 
-const roleData = [
-  { label: "一般軟體", median: 115, p75: 160, n: 335 },
-  { label: "資料 / AI", median: 120, p75: 153, n: 35 },
-  { label: "DevOps / SRE", median: 120, p75: 145, n: 18 },
-  { label: "後端", median: 84, p75: 110, n: 57 },
-  { label: "全端", median: 90, p75: 102, n: 10 },
-  { label: "行動端", median: 90, p75: 125, n: 14 },
-  { label: "QA / 測試", median: 87, p75: 105, n: 16 },
-  { label: "前端", median: 72, p75: 95, n: 35 },
-];
+const roleData = salaryData.roles;
 
-const companyData = [
-  { label: "外商 / 大型科技", median: 205, p75: 302.5, n: 46 },
-  { label: "遊戲 / 博弈", median: 112.5, p75: 146.5, n: 21 },
-  { label: "電商 / 平台", median: 122, p75: 159.4, n: 27 },
-  { label: "資安", median: 116, p75: 140, n: 45 },
-  { label: "新創", median: 96.5, p75: 138.3, n: 49 },
-  { label: "傳統企業", median: 135, p75: 155, n: 28 },
-  { label: "半導體 / 硬體", median: 115, p75: 240, n: 30 },
-  { label: "金融", median: 103.5, p75: 120, n: 49 },
-  { label: "一般軟體公司", median: 90, p75: 131.5, n: 372 },
-  { label: "SI / 外包", median: 73, p75: 108, n: 42 },
-];
+const companyData = salaryData.companyTypes;
+const { salary, base, hours, insights } = salaryData;
+const companyRatio = Number((insights.bigTechSalary / insights.generalSalary).toFixed(1));
 
 const advice = [
   { range: "0–2 年", title: "先練到能獨立交付", text: "優先找有 code review、測試、部署流程和資深工程師帶領的團隊。起薪要看，能不能在一兩年後接下更難的工作也很重要。", accent: "lime" },
@@ -175,17 +151,17 @@ export default function Home() {
         <div className="hero-grid">
           <div>
             <h1>台灣軟體<br />工程師<span>薪水分布</span></h1>
-            <p className="hero-copy">整理 709 筆有效樣本，依年資、職務和公司類型比較薪資。先確認自己大致落在哪裡，再決定下一步怎麼談。</p>
+            <p className="hero-copy">{`整理 ${salary.n} 筆有效樣本，依年資、職務和公司類型比較薪資。先確認自己大致落在哪裡，再決定下一步怎麼談。`}</p>
             <div className="hero-actions"><a className="primary" href="#distribution">查看市場分布 <ArrowUpRight /></a><a className="text-link" href="#method">了解資料怎麼讀 <span>↓</span></a></div>
           </div>
           <div className="hero-card" aria-label="年薪分布摘要">
             <div className="card-kicker">TOTAL COMPENSATION · 萬／年</div>
-            <div className="median"><div><span>市場中位數</span><AnimatedNumber value={100} strong /><small>萬</small></div><div className="sample">有效樣本<br /><b><AnimatedNumber value={709} /></b> 筆</div></div>
-            <div className="range"><div className="range-line"><i style={{left:"8%"}}></i><i className="dot" style={{left:"29%"}}></i><i className="dot main" style={{left:"50%"}}></i><i className="dot" style={{left:"71%"}}></i><i style={{left:"92%"}}></i></div><div className="range-labels"><span>P10<br /><b><AnimatedNumber value={59} /></b></span><span>P25<br /><b><AnimatedNumber value={75} /></b></span><span className="active">P50<br /><b><AnimatedNumber value={100} /></b></span><span>P75<br /><b><AnimatedNumber value={150} /></b></span><span>P90<br /><b><AnimatedNumber value={210} /></b></span></div></div>
+            <div className="median"><div><span>市場中位數</span><AnimatedNumber value={salary.p50} strong /><small>萬</small></div><div className="sample">有效樣本<br /><b><AnimatedNumber value={salary.n} /></b> 筆</div></div>
+            <div className="range"><div className="range-line"><i style={{left:"8%"}}></i><i className="dot" style={{left:"29%"}}></i><i className="dot main" style={{left:"50%"}}></i><i className="dot" style={{left:"71%"}}></i><i style={{left:"92%"}}></i></div><div className="range-labels"><span>P10<br /><b><AnimatedNumber value={salary.p10} /></b></span><span>P25<br /><b><AnimatedNumber value={salary.p25} /></b></span><span className="active">P50<br /><b><AnimatedNumber value={salary.p50} /></b></span><span>P75<br /><b><AnimatedNumber value={salary.p75} /></b></span><span>P90<br /><b><AnimatedNumber value={salary.p90} /></b></span></div></div>
             <div className="card-note"><span>↑</span><p>P75 表示這筆年薪高於資料中 <b>75%</b> 的有效樣本。</p></div>
           </div>
         </div>
-        <div className="hero-stats"><div><span>月底薪中位數</span><AnimatedNumber value={6.8} strong /><small> 萬</small></div><div><span>年薪平均</span><AnimatedNumber value={123.4} strong /><small> 萬</small></div><div><span>每日工時中位數</span><AnimatedNumber value={8} strong /><small> 小時</small></div><div><span>年薪 P90</span><AnimatedNumber value={210} strong /><small> 萬</small></div></div>
+        <div className="hero-stats"><div><span>月底薪中位數</span><AnimatedNumber value={base.p50} strong /><small> 萬</small></div><div><span>年薪平均</span><AnimatedNumber value={salary.mean} strong /><small> 萬</small></div><div><span>每日工時中位數</span><AnimatedNumber value={hours.p50} strong /><small> 小時</small></div><div><span>年薪 P90</span><AnimatedNumber value={salary.p90} strong /><small> 萬</small></div></div>
       </section>
 
       <section className="distribution" id="distribution">
@@ -195,17 +171,18 @@ export default function Home() {
           <div className="chart-card">
             <div className="chart-legend"><span><i className="median-key"></i>年薪中位數</span><span><i className="p75-key"></i>P75</span><small>單位：萬元／年</small></div>
             <div className="bars">{currentData.map((d)=><div className="bar-row" key={d.label}><div className="bar-label"><b>{d.label}</b><small>n = {d.n}</small></div><div className="bar-track"><AnimatedBars outer={Math.max(12,d.p75/max*100)} inner={d.median/d.p75*100} /></div><div className="bar-value"><b><AnimatedNumber value={d.median} /></b><span>/ <AnimatedNumber value={d.p75} /></span></div></div>)}</div>
-            {view === "experience" && <p className="experience-data-note">註：0–1 年樣本多數填寫為 0 年，且包含部分高薪公司與資深職級，可能推高薪資中位數；此結果反映樣本組成，不代表年資增加會使薪資下降。</p>}
+            {view === "experience" && <p className="experience-data-note">{`註：0–1 年共 ${experience[0].n} 筆，其中 ${salaryData.experienceZero} 筆填寫為 0 年。此組中位數高於 1–3 年組，反映不同受訪者的樣本組成，不代表年資增加會使薪資下降。另有 ${salaryData.experienceMissing} 筆年資缺漏或無法判讀，未列入年資分組。`}</p>}
           </div>
+          <p className="experience-data-note">職務與公司類型依名稱關鍵字分類，每筆只歸入一類；無法辨識者保留為未分類。年資區間含下界、不含上界。</p>
         </div>
       </section>
 
       <section className="insights shell" id="insights">
         <div className="section-no">02 — WHAT THE DATA SAYS</div><div className="insights-title"><h2>資料裡有幾個<br />值得注意的差異。</h2><p>年資會影響薪資，但公司類型、專業能力和工作責任也會拉開差距。以下數字適合拿來檢查自己的假設。</p></div>
         <div className="insight-grid">
-          <article className="feature-insight"><div className="index">01</div><div className="visual-jump"><span>3–5 年</span><div><i></i><i></i><i className="hot"></i><i></i><i></i></div><strong>常見的第一次跳薪區間</strong></div><h3>3–5 年的議價空間<br />通常比前期更明顯。</h3><p>這個階段若能獨立負責功能、處理線上問題，或參與系統設計，履歷會比單純累積年資更有說服力。</p></article>
-          <article><div className="index">02</div><div className="big-number"><AnimatedNumber value={2} /><span>×</span></div><h3>外商與大型科技公司的年薪中位數，約為一般軟體公司的 2.2 倍。</h3><p>這類職缺通常也要求英文溝通、系統設計和跨國協作。比較薪資時，記得把職級與績效制度一起算進去。</p><div className="compare"><span>一般軟體 <AnimatedNumber value={90} strong /> 萬</span><span>外商科技 <AnimatedNumber value={200} strong /> 萬</span></div></article>
-          <article><div className="index">03</div><div className="balance"><span>工作</span><i></i><span>生活</span></div><h3>工作強度變高，<br />薪資未必等幅增加。</h3><p>高工作強度樣本的年薪中位數是 <strong>110</strong> 萬，低工作強度樣本是 <strong>88</strong> 萬，相差 <strong>22</strong> 萬。面試時可再確認工時、on-call 和加班補償。</p><div className="mini-stat"><b><AnimatedNumber value={90} /></b><span>筆高加班／高壓樣本<br />年薪中位數 <strong>115</strong> 萬</span></div></article>
+          <article className="feature-insight"><div className="index">01</div><div className="visual-jump"><span>3–5 年</span><div><i></i><i></i><i className="hot"></i><i></i><i></i></div><strong>年薪中位數的組間差異</strong></div><h3>3–5 年組的薪資中位數<br />高於 1–3 年組。</h3><p>兩組中位數分別為 <strong>{experience[2].median}</strong> 萬與 <strong>{experience[1].median}</strong> 萬。這是不同受訪者的比較，不能解讀為個人加薪幅度；求職時仍要用交付成果說明能力。</p></article>
+          <article><div className="index">02</div><div className="big-number"><AnimatedNumber value={companyRatio} /><span>×</span></div><h3>{`已分類的外商與大型科技公司，年薪中位數約為一般軟體公司的 ${companyRatio} 倍。`}</h3><p>此比較只涵蓋名稱可分類的樣本，且未控制職務與年資。差距不能單獨歸因於公司類型，仍需搭配職級、部門與薪酬組成判讀。</p><div className="compare"><span>一般軟體 <AnimatedNumber value={insights.generalSalary} strong /> 萬</span><span>外商科技 <AnimatedNumber value={insights.bigTechSalary} strong /> 萬</span></div></article>
+          <article><div className="index">03</div><div className="balance"><span>工作</span><i></i><span>生活</span></div><h3>工作強度變高，<br />薪資未必等幅增加。</h3><p>高工作強度樣本的年薪中位數是 <strong>{insights.highLoad.p50}</strong> 萬，低工作強度樣本是 <strong>{insights.lowLoad.p50}</strong> 萬，相差 <strong>{Number((insights.highLoad.p50 - insights.lowLoad.p50).toFixed(1))}</strong> 萬。高強度指自評 4–5 分，低強度為 1–2 分；高加班為頻率 4–5 分，並非客觀工時量測。</p><div className="mini-stat"><b><AnimatedNumber value={insights.heavy.n} /></b><span>筆高加班／高壓樣本<br />年薪中位數 <strong>{insights.heavy.p50}</strong> 萬</span></div></article>
         </div>
       </section>
 
@@ -215,13 +192,13 @@ export default function Home() {
         <div className="questions"><div><div className="section-no">INTERVIEW CHECKLIST</div><h3>談 offer 時，<br />這 6 題比月薪更有用。</h3><p>點開每一題，了解它能幫你確認哪些風險，以及面試時可以怎麼繼續追問。</p></div><div className="offer-questions">{offerQuestions.map((item,index)=><details className="offer-question" key={item.question}><summary><span>0{index + 1}</span><b>{item.question}</b><i aria-hidden="true"></i></summary><div className="offer-answer"><div><strong>為什麼要問</strong><p>{item.why}</p></div><div><strong>你能看出什麼</strong><p>{item.benefit}</p></div><div className="follow-up"><strong>可以這樣追問</strong><p>「{item.followUp}」</p></div></div></details>)}</div></div>
       </section>
 
-      <section className="method" id="method"><div className="shell method-grid"><div><div className="section-no">ABOUT THE DATA</div><h2>資料先拿來抓方向，<br />再回到職缺條件判斷。</h2></div><div><p>原始資料有 <b>844</b> 筆。排除測試資料、無效值和無法合理判讀的極端值後，薪資分析採用 <b>709</b> 筆，工時統計採用 <b>659</b> 筆。</p><p>這些資料由使用者匿名填寫，可能受到樣本組成、欄位理解和填寫時間影響。適合比較相對差異與大致區間，不能直接代表某一個職缺的合理薪資。</p><p><b>資料來源：</b><a href="https://docs.google.com/spreadsheets/d/1GMYKVBxRlMv6oNVNzpXYoLUSyT8ZnLEjGcRbn0b4KsA/edit?gid=788239997#gid=788239997" target="_blank" rel="noreferrer" style={{textDecoration:"underline",textUnderlineOffset:"4px",fontWeight:700}}>DCard 科技業版－軟體工程師調查表 ↗</a><br /><a href="https://docs.google.com/spreadsheets/d/134kDFDnJIBFJLr1HEHktWnlZ015ATELy8YwahHE3ZDo/edit?usp=sharing" target="_blank" rel="noreferrer" style={{textDecoration:"underline",textUnderlineOffset:"4px",fontWeight:700}}>自行調查匿名表單 ↗</a></p><div className="method-tags"><span>金額單位：新台幣萬元</span><span>統計：中位數與百分位</span><span>資料年度：2025–2026</span></div></div></div></section>
+      <section className="method" id="method"><div className="shell method-grid"><div><div className="section-no">ABOUT THE DATA</div><h2>資料先拿來抓方向，<br />再回到職缺條件判斷。</h2></div><div><p>原始資料有 <b>{salaryData.rawCount}</b> 筆，重複 <b>{salaryData.duplicateCount}</b> 筆、未納入分析 <b>{salaryData.excludedCount}</b> 筆；薪資分析採用 <b>{salary.n}</b> 筆，工時統計採用 <b>{hours.n}</b> 筆。</p><p>本次統一採用月底薪 2–30 萬、年薪 30–600 萬的數值樣本，排除明確測試填答與廚師職務；工時另限每日 4–16 小時。區間外不代表填答不實，只是不納入本報告。自 2026/9/28 起改為程式重新計算，與舊版差異同時包含新增資料與統計口徑調整，不能視為市場漲跌。</p><p>這些資料由使用者匿名填寫，可能受到樣本組成、欄位理解和填寫時間影響。適合比較相對差異與大致區間，不能直接代表某一個職缺的合理薪資。</p><p><b>資料來源：</b><a href="https://docs.google.com/spreadsheets/d/1GMYKVBxRlMv6oNVNzpXYoLUSyT8ZnLEjGcRbn0b4KsA/edit?gid=788239997#gid=788239997" target="_blank" rel="noreferrer" style={{textDecoration:"underline",textUnderlineOffset:"4px",fontWeight:700}}>DCard 科技業版－軟體工程師調查表 ↗</a><br /><a href="https://docs.google.com/spreadsheets/d/134kDFDnJIBFJLr1HEHktWnlZ015ATELy8YwahHE3ZDo/edit?usp=sharing" target="_blank" rel="noreferrer" style={{textDecoration:"underline",textUnderlineOffset:"4px",fontWeight:700}}>自行調查匿名表單 ↗</a></p><div className="method-tags"><span>金額單位：新台幣萬元</span><span>統計：中位數與百分位</span><span>資料年度：2025–2026</span></div></div></div></section>
       <section className="companies" id="companies"><div className="shell">
         <div className="section-head"><div><div className="section-no">COMPANY SHORTLIST</div><h2>哪些公司<br />值得<span>優先研究？</span></h2></div><p>排行綜合年薪中位數、爽度、工作強度和樣本數計算。只列入至少 3 筆有效回報的公司，常見中英文別名已合併。</p></div>
-        <div className="company-podium">{companyRankings.slice(0,3).map((c)=><article className={`company-card ${c.tone}`} key={c.company}><div className="company-rank">{c.rank}<span>{c.tag}</span></div>{c.logo && <div className="company-logo"><img src={c.logo} alt={`${c.company} Logo`} loading="lazy" /></div>}<div className="company-salary"><AnimatedNumber value={c.salary} strong /><span>萬／年<br />薪資中位數</span></div><div className="company-signals"><span>爽度 <b><AnimatedNumber value={c.chill} /></b>/5</span><span>工作強度 <b><AnimatedNumber value={c.工作強度} /></b>/5</span><span>工時 <b><AnimatedNumber value={c.hours} /></b>h</span></div><small>有效樣本 n = {c.n}</small></article>)}</div>
-        <div className="company-table" role="table" aria-label="符合樣本門檻的完整公司薪資比較"><div className="company-row head" role="row"><span>排名／公司</span><span>年薪中位數</span><span>爽度</span><span>工作強度</span><span>工時</span><span>樣本</span><span>觀察</span></div>{companyRankings.slice(3).map((c)=><div className="company-row" role="row" key={c.company}><span><i>{c.rank}</i><b>{c.company}</b></span><span><AnimatedNumber value={c.salary} strong /> 萬</span><span><AnimatedNumber value={c.chill} /> / 5</span><span><AnimatedNumber value={c.工作強度} /> / 5</span><span><AnimatedNumber value={c.hours} /> h</span><span>n = {c.n}</span><span><em>{c.tag}</em></span></div>)}</div>
-        <p className="company-threshold-note">僅列入有效樣本數 n ≥ 3 的公司。資料更新：2026 年 8 月 31 日 16:49。</p>
-        <div className="company-caveat"><b>這份排行怎麼看？</b><p>排名較前表示樣本中的薪資和工作體驗整體較好，不代表每個部門或職缺都一樣。職務、職級和填寫年份都會影響結果；n = 3 的數字尤其容易波動，面試時仍需逐項確認。</p></div>
+        <div className="company-podium">{companyRankings.slice(0,3).map((c)=><article className={`company-card ${c.tone}`} key={c.company}><div className="company-rank">{c.rank}<span>{c.tag}</span></div>{c.logo ? <div className="company-logo"><img src={c.logo} alt={`${c.company} Logo`} loading="lazy" /></div> : <h3>{c.company}</h3>}<div className="company-salary"><AnimatedNumber value={c.salary} strong /><span>萬／年<br />薪資中位數</span></div><div className="company-signals"><span>爽度 <b>{c.chill === null ? "—" : <AnimatedNumber value={c.chill} />}</b>/5</span><span>工作強度 <b>{c.工作強度 === null ? "—" : <AnimatedNumber value={c.工作強度} />}</b>/5</span><span>工時 <b>{c.hours === null ? "—" : <AnimatedNumber value={c.hours} />}</b>h</span></div><small>有效樣本 n = {c.n}</small></article>)}</div>
+        <div className="company-table" role="table" aria-label="符合樣本門檻的完整公司薪資比較"><div className="company-row head" role="row"><span>排名／公司</span><span>年薪中位數</span><span>爽度</span><span>工作強度</span><span>工時</span><span>樣本</span><span>觀察</span></div>{companyRankings.slice(3).map((c)=><div className="company-row" role="row" key={c.company}><span><i>{c.rank}</i><b>{c.company}</b></span><span><AnimatedNumber value={c.salary} strong /> 萬</span><span>{c.chill === null ? "—" : <AnimatedNumber value={c.chill} />} / 5</span><span>{c.工作強度 === null ? "—" : <AnimatedNumber value={c.工作強度} />} / 5</span><span>{c.hours === null ? "—" : <AnimatedNumber value={c.hours} />} h</span><span>n = {c.n}</span><span><em>{c.tag}</em></span></div>)}</div>
+        <p className="company-threshold-note">{`僅列入有效樣本數 n ≥ 3 的公司，共 ${companyRankings.length} 間。資料更新：${salaryData.updatedLabel}（最新填答時間）。`}</p>
+        <div className="company-caveat"><b>這份排行怎麼看？</b><p>本次改以公開公式計分：薪資 60%、爽度 20%、低工作強度 15%、樣本數 5%；薪資按入榜最高中位數正規化，評分以 1–5 分換算，樣本數滿 10 筆即達上限，缺漏評分不加分。工時僅供參考，不計入分數。這是本站設定的比較權重，不是客觀的公司品質評鑑；各指標只採有效值，樣本數可能不同，n = 3 尤其容易波動。</p></div>
       </div></section>
       <section className="career-summary" id="summary"><div className="shell">
         <div className="summary-intro"><div><div className="section-no light">05 — NEXT MOVE</div><h2>找到適合你的路線，<br />再把下一步走具體。</h2></div><p>市場數字只能提供座標，真正的選擇取決於你現在最想改善什麼。先確定優先順序，再用同一套標準比較職缺，會比追逐單一高薪數字更可靠。</p></div>

@@ -1,0 +1,635 @@
+{
+  "sourceFile": "salary_data_merged_20260928_125422.json",
+  "sourceSha256": "fd5c0c1f486a56659fe752854d187dbe56d2e6f21422c51d1d1b5442ecb365ef",
+  "methodVersion": "2026-09-28",
+  "exclusionCounts": {
+    "salary_not_numeric": 109,
+    "annual_outside_30_600": 7,
+    "test_submission": 5,
+    "base_outside_2_30": 2,
+    "non_technical_role": 1
+  },
+  "excluded": [
+    {
+      "index": 4,
+      "sheet_row": 6,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 29,
+      "sheet_row": 31,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 32,
+      "sheet_row": 34,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 53,
+      "sheet_row": 55,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 55,
+      "sheet_row": 57,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 71,
+      "sheet_row": 73,
+      "reason": "annual_outside_30_600"
+    },
+    {
+      "index": 76,
+      "sheet_row": 78,
+      "reason": "test_submission"
+    },
+    {
+      "index": 80,
+      "sheet_row": 82,
+      "reason": "test_submission"
+    },
+    {
+      "index": 82,
+      "sheet_row": 84,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 90,
+      "sheet_row": 92,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 92,
+      "sheet_row": 94,
+      "reason": "annual_outside_30_600"
+    },
+    {
+      "index": 93,
+      "sheet_row": 95,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 94,
+      "sheet_row": 96,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 97,
+      "sheet_row": 99,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 105,
+      "sheet_row": 107,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 119,
+      "sheet_row": 121,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 130,
+      "sheet_row": 132,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 137,
+      "sheet_row": 139,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 145,
+      "sheet_row": 147,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 147,
+      "sheet_row": 149,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 152,
+      "sheet_row": 154,
+      "reason": "annual_outside_30_600"
+    },
+    {
+      "index": 178,
+      "sheet_row": 180,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 184,
+      "sheet_row": 186,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 188,
+      "sheet_row": 190,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 189,
+      "sheet_row": 191,
+      "reason": "annual_outside_30_600"
+    },
+    {
+      "index": 201,
+      "sheet_row": 203,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 202,
+      "sheet_row": 204,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 204,
+      "sheet_row": 206,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 205,
+      "sheet_row": 207,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 209,
+      "sheet_row": 211,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 223,
+      "sheet_row": 225,
+      "reason": "test_submission"
+    },
+    {
+      "index": 235,
+      "sheet_row": 237,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 237,
+      "sheet_row": 239,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 245,
+      "sheet_row": 247,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 250,
+      "sheet_row": 252,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 252,
+      "sheet_row": 254,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 255,
+      "sheet_row": 257,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 259,
+      "sheet_row": 261,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 267,
+      "sheet_row": 269,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 273,
+      "sheet_row": 275,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 278,
+      "sheet_row": 280,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 280,
+      "sheet_row": 282,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 282,
+      "sheet_row": 284,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 286,
+      "sheet_row": 288,
+      "reason": "base_outside_2_30"
+    },
+    {
+      "index": 289,
+      "sheet_row": 291,
+      "reason": "annual_outside_30_600"
+    },
+    {
+      "index": 290,
+      "sheet_row": 292,
+      "reason": "test_submission"
+    },
+    {
+      "index": 293,
+      "sheet_row": 295,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 294,
+      "sheet_row": 296,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 316,
+      "sheet_row": 318,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 319,
+      "sheet_row": 321,
+      "reason": "annual_outside_30_600"
+    },
+    {
+      "index": 334,
+      "sheet_row": 336,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 343,
+      "sheet_row": 345,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 345,
+      "sheet_row": 347,
+      "reason": "annual_outside_30_600"
+    },
+    {
+      "index": 353,
+      "sheet_row": 355,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 364,
+      "sheet_row": 366,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 371,
+      "sheet_row": 373,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 382,
+      "sheet_row": 384,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 387,
+      "sheet_row": 389,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 389,
+      "sheet_row": 391,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 390,
+      "sheet_row": 392,
+      "reason": "non_technical_role"
+    },
+    {
+      "index": 391,
+      "sheet_row": 393,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 397,
+      "sheet_row": 399,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 404,
+      "sheet_row": 406,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 415,
+      "sheet_row": 417,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 418,
+      "sheet_row": 420,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 419,
+      "sheet_row": 421,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 435,
+      "sheet_row": 437,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 437,
+      "sheet_row": 439,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 448,
+      "sheet_row": 450,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 450,
+      "sheet_row": 452,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 452,
+      "sheet_row": 454,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 456,
+      "sheet_row": 458,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 457,
+      "sheet_row": 459,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 472,
+      "sheet_row": 474,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 484,
+      "sheet_row": 486,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 485,
+      "sheet_row": 487,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 486,
+      "sheet_row": 488,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 490,
+      "sheet_row": 492,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 494,
+      "sheet_row": 496,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 505,
+      "sheet_row": 507,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 517,
+      "sheet_row": 519,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 529,
+      "sheet_row": 531,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 532,
+      "sheet_row": 534,
+      "reason": "test_submission"
+    },
+    {
+      "index": 535,
+      "sheet_row": 537,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 541,
+      "sheet_row": 543,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 550,
+      "sheet_row": 552,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 561,
+      "sheet_row": 563,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 578,
+      "sheet_row": 580,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 580,
+      "sheet_row": 582,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 585,
+      "sheet_row": 587,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 602,
+      "sheet_row": 604,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 604,
+      "sheet_row": 606,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 623,
+      "sheet_row": 625,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 630,
+      "sheet_row": 632,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 633,
+      "sheet_row": 635,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 635,
+      "sheet_row": 637,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 637,
+      "sheet_row": 639,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 639,
+      "sheet_row": 641,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 642,
+      "sheet_row": 644,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 644,
+      "sheet_row": 646,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 646,
+      "sheet_row": 648,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 650,
+      "sheet_row": 652,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 655,
+      "sheet_row": 657,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 660,
+      "sheet_row": 662,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 661,
+      "sheet_row": 663,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 663,
+      "sheet_row": 665,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 664,
+      "sheet_row": 666,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 666,
+      "sheet_row": 668,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 667,
+      "sheet_row": 669,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 675,
+      "sheet_row": 677,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 676,
+      "sheet_row": 678,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 689,
+      "sheet_row": 691,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 698,
+      "sheet_row": 700,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 702,
+      "sheet_row": 704,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 722,
+      "sheet_row": 724,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 730,
+      "sheet_row": 732,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 734,
+      "sheet_row": 736,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 735,
+      "sheet_row": 737,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 740,
+      "sheet_row": 742,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 743,
+      "sheet_row": 745,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 749,
+      "sheet_row": 751,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 755,
+      "sheet_row": 757,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 757,
+      "sheet_row": 759,
+      "reason": "salary_not_numeric"
+    },
+    {
+      "index": 826,
+      "sheet_row": 59,
+      "reason": "base_outside_2_30"
+    }
+  ],
+  "duplicates": []
+}
