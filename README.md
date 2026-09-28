@@ -77,53 +77,6 @@ software-salary/
 
 一般文字與頁面區塊主要在 `app/page.tsx` 修改；視覺樣式集中在 `app/globals.css`。網站標題、說明與 `og:image` 等分享資訊則放在 `app/layout.tsx`。
 
-## ETL：將表單 CSV 轉成 JSON
-
-`etl/csv_to_readable_json.py` 會讀取 Google 表單匯出的 CSV，保留既有 JSON key，並將可辨識的數字轉成數值格式。薪資欄位統一使用「萬元」：例如 `54,000` 會轉成 `5.4`，`1,050,000` 會轉成 `105`；填成 `66萬` 或明顯多出一萬倍的數字也會自動修正。
-
-在專案根目錄執行：
-
-```bash
-python3 etl/csv_to_readable_json.py \
-  "data/軟體工程師薪資調查(匿名) (回覆) - 表單回覆 1.csv" \
-  --output data/sheet_data_readable_keys_from_csv.json
-```
-
-程式會自動在輸出檔名後加上執行時間，例如：
-
-```text
-data/sheet_data_readable_keys_from_csv_20260828_131146.json
-```
-
-執行 ETL 測試：
-
-```bash
-python3 -m unittest tests/test_csv_to_readable_json.py
-```
-
-### 合併多個 JSON
-
-`etl/merge_json.py` 接受兩個以上的 JSON 檔案，依照指令中的先後順序合併。每個輸入檔案的最外層必須是 JSON 陣列。內容完全相同的紀錄會自動去重並保留第一次出現的位置，執行結果會顯示移除的筆數。
-
-```bash
-python3 etl/merge_json.py \
-  data/sheet_data_readable_dcard.json \
-  data/sheet_data_readable_keys_from_csv_20260828_131146.json \
-  --output data/sheet_data_merged.json
-```
-
-輸出檔名同樣會自動加上執行時間，例如：
-
-```text
-data/sheet_data_merged_20260831_153000.json
-```
-
-執行合併程式測試：
-
-```bash
-python3 -m unittest tests/test_merge_json.py
-```
-
 ## 更新網站資料
 
 以下指令均在專案根目錄執行，Python 僅使用標準函式庫。
