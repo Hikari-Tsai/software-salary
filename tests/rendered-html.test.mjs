@@ -36,6 +36,10 @@ test("server-renders the Taiwan software salary report", async () => {
   assert.ok(html.includes(`其中 ${salaryData.experienceZero} 筆填寫為 0 年`));
   assert.match(html, /統計口徑調整/);
   assert.match(html, /薪資 60%、爽度 20%、低工作強度 15%、樣本數 5%/);
+  assert.doesNotMatch(html, /綜合分數|綜合評分/);
+  assert.match(html, /薪資中位數居前/);
+  assert.match(html, /高薪、負荷較低/);
+  assert.match(html, /工時友善/);
   assert.doesNotMatch(html, /整理 709 筆|原始資料有 <b>844<\/b>/);
   assert.match(html, /資料先拿來抓方向，<br\/>再回到職缺條件判斷。/);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/);

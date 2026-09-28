@@ -106,8 +106,53 @@ const logos: Record<string, string> = {
   "TSMC 台灣積體電路製造": "images/tsmc-wordmark.svg",
 };
 
+// Presentation-only observations, kept separate from ETL scores and ordering.
+// Reuse the previous report's style without restoring outdated numeric ratings.
+const companyObservations: Record<string, string> = {
+  "Google 谷歌": "薪資中位數居前",
+  "TSMC 台灣積體電路製造": "薪資中位數居前",
+  "Synopsys 新思科技": "高薪、負荷較低",
+  "Chunghwa Telecom 中華電信": "爽度高、負荷較低",
+  "Microsoft 微軟": "高薪、爽度較高",
+  "Amazon 亞馬遜": "薪資優勢",
+  "Trend Micro 趨勢科技": "回報樣本較多",
+  "GOGOX 高高客": "薪資高於整體中位數",
+  "Appier 沛星互動科技": "薪資優勢",
+  "ITRI 工業技術研究院": "薪資高於整體中位數",
+  "KKCompany 科科科技": "工時友善",
+  "Synology 群暉科技": "回報樣本較多",
+  "ASML": "薪資高於整體中位數",
+  "Taiwan Mobile 台灣大哥大": "爽度高、負荷較低",
+  "SHOPLINE 商線科技": "爽度較高",
+  "PChome 網路家庭": "爽度高、負荷較低",
+  "Wistron ITS 緯創軟體": "負荷較低",
+  "Hon Hai 鴻海精密工業": "硬體科技",
+  "CyberLink 訊連科技": "體驗均衡",
+  "Cathay United Bank 國泰世華銀行": "金融職涯",
+  "TPIsoftware 昕力資訊": "回報樣本較多",
+  "ViewSonic 優派國際": "爽度較高",
+  "IBM 國際商業機器": "薪資優勢",
+  "NEXT BANK 將來銀行": "金融科技",
+  "Provision Information 普鴻資訊": "金融資訊",
+  "CyCraft 奧義智慧": "資安職涯",
+  "SYSTEX 精誠資訊": "回報樣本較多",
+  "Heaven Games 天堂遊戲": "遊戲產業",
+  "Far EasTone 遠傳電信": "體驗均衡",
+  "Mitake 三竹資訊": "通訊軟體",
+  "DEInfo 德義資訊": "負荷較低",
+  "E.SUN Bank 玉山銀行": "金融職涯",
+  "ASUS 華碩": "硬體科技",
+  "91APP 九易宇軒": "薪資優勢",
+  "Gamania 遊戲橘子": "遊戲產業",
+  "Eastern Home Shopping 東森購物": "電商產業",
+  "Pinkoi 果翼科技": "產品職涯",
+  "Galaxy Software Services 叡揚資訊": "企業軟體",
+  "TXOne Networks 睿控網安": "資安職涯",
+};
+
 export const companyRankings: CompanyRanking[] = salaryData.rankings.map((company, index) => ({
   ...company,
+  tag: companyObservations[company.company] ?? `年薪中位數 ${company.salary} 萬`,
   tone: (["blue", "lime", "violet"] as const)[index] ?? "plain",
   logo: logos[company.company],
 }));

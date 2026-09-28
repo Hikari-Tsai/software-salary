@@ -37,6 +37,20 @@ test("top three companies retain logo presentation", () => {
   assert.ok(companyRankings.slice(0, 3).every(({ logo }) => Boolean(logo)));
 });
 
+test("company observations replace score badges without changing ranking data", () => {
+  for (const company of companyRankings) {
+    assert.ok(company.tag.trim());
+    assert.doesNotMatch(company.tag, /綜合分數|綜合評分/);
+    const source = salaryData.rankings.find((row) => row.company === company.company);
+    for (const key of ["rank", "score", "salary", "chill", "工作強度", "hours", "n"]) {
+      assert.equal(company[key], source[key]);
+    }
+  }
+  assert.equal(companyRankings.find((c) => c.company === "Google 谷歌").tag, "薪資中位數居前");
+  assert.equal(companyRankings.find((c) => c.company === "Synopsys 新思科技").tag, "高薪、負荷較低");
+  assert.equal(companyRankings.find((c) => c.company === "KKCompany 科科科技").tag, "工時友善");
+});
+
 test("TSMC logo is served from a stable local asset", () => {
   const tsmc = companyRankings.find(({ company }) => company.startsWith("TSMC "));
   assert.equal(tsmc?.logo, "images/tsmc-wordmark.svg");
