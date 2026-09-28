@@ -21,6 +21,39 @@ def row(index=0, **fields):
 
 
 class AnalyzeSalaryTest(unittest.TestCase):
+    def test_company_quartiles_and_detail_metrics_use_eligible_rows(self):
+        records = [row(i, total_comp_10k=value, daily_hours=8 if i < 4 else 42,
+                       notes="一則回饋" if i == 0 else "", overtime_freq=2)
+                   for i, value in enumerate([50, 80, 100, 120, 300])]
+        records.append(row(9, total_comp_10k=900, notes="不應列入"))
+        data, _ = analyze(records)
+        company = data["rankings"][0]
+        self.assertEqual((company["p25"], company["p75"]), (80, 120))
+        self.assertEqual(company["details"]["hours"], {"median": 8, "n": 4})
+        self.assertEqual(company["details"]["experience"], {"median": 2, "n": 5})
+        self.assertEqual(company["details"]["overtime"], {"median": 2, "n": 5})
+        self.assertEqual(company["details"]["feedbackCount"], 1)
+        self.assertEqual(company["details"]["roles"], [{"label": "一般軟體", "n": 5}])
+        self.assertNotIn("一則回饋", json.dumps(data, ensure_ascii=False))
+
+    def test_company_interval_is_suppressed_below_five_samples(self):
+        for n in [3, 4]:
+            data, _ = analyze([row(i, daily_hours=None, chill=None, loading=None) for i in range(n)])
+            company = data["rankings"][0]
+            self.assertIsNone(company["p25"])
+            self.assertIsNone(company["p75"])
+            self.assertEqual(company["details"]["hours"], {"median": None, "n": 0})
+
+    def test_reviewed_feedback_requires_matching_source_and_nonempty_responses(self):
+        records = [row(i, notes="回饋" if i == 0 else "") for i in range(5)]
+        reviews = {"sourceSha256": "current", "companies": {"Google 谷歌": "整理後的回饋"}}
+        data, _ = analyze(records, source_sha256="current", feedback_reviews=reviews)
+        self.assertEqual(data["rankings"][0]["details"]["feedback"], {"status": "reviewed", "text": "整理後的回饋"})
+        data, _ = analyze(records, source_sha256="changed", feedback_reviews=reviews)
+        self.assertEqual(data["rankings"][0]["details"]["feedback"], {"status": "pending", "text": ""})
+        data, _ = analyze([row(i, notes="無") for i in range(5)], source_sha256="current", feedback_reviews=reviews)
+        self.assertEqual(data["rankings"][0]["details"]["feedback"], {"status": "empty", "text": ""})
+
     def test_percentiles_use_linear_interpolation(self):
         self.assertEqual(percentile([40, 10, 30, 20], .25), 17.5)
         self.assertEqual(percentile([40, 10, 30, 20], .5), 25)
@@ -71,7 +104,8 @@ class AnalyzeSalaryTest(unittest.TestCase):
     def test_checked_in_snapshot_matches_source_and_current_rules(self):
         saved = json.loads((ROOT / "app/salary-data.json").read_text())
         source = ROOT / "data" / saved["sourceFile"]
-        data, audit = analyze(json.loads(source.read_text()), source.name, hashlib.sha256(source.read_bytes()).hexdigest())
+        reviews = json.loads((ROOT / "data/company_feedback_reviews.json").read_text())
+        data, audit = analyze(json.loads(source.read_text()), source.name, hashlib.sha256(source.read_bytes()).hexdigest(), reviews)
         self.assertEqual(data, saved)
         self.assertEqual(audit, json.loads((ROOT / "data/salary_analysis_audit.json").read_text()))
         self.assertEqual(data["rawCount"], data["salary"]["n"] + data["excludedCount"] + data["duplicateCount"])

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "methodVersion": "2026-09-28",
   "sourceFile": "salary_data_merged_20260928_125422.json",
   "sourceSha256": "fd5c0c1f486a56659fe752854d187dbe56d2e6f21422c51d1d1b5442ecb365ef",
@@ -232,6 +232,53 @@
       "hours": 8.0,
       "n": 10,
       "hoursN": 10,
+      "p25": 285.0,
+      "p75": 390.0,
+      "details": {
+        "base": {
+          "median": 19.0,
+          "n": 10
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 10
+        },
+        "chill": {
+          "median": 3.0,
+          "n": 10
+        },
+        "loading": {
+          "median": 3.0,
+          "n": 10
+        },
+        "experience": {
+          "median": 5.5,
+          "n": 10
+        },
+        "overtime": {
+          "median": 1.0,
+          "n": 10
+        },
+        "roles": [
+          {
+            "label": "一般軟體",
+            "n": 8
+          },
+          {
+            "label": "其他 / 未分類",
+            "n": 1
+          },
+          {
+            "label": "資料 / AI",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 2,
+        "feedback": {
+          "status": "reviewed",
+          "text": "有回報給予正面推薦，也有人肯定工時彈性與內部轉組機會，但對起薪、調薪及升等空間有保留。工作內容與跨國協作感受可能因部門而異。"
+        }
+      },
       "score": 75.0,
       "tag": "綜合分數 75",
       "rank": "01"
@@ -244,6 +291,49 @@
       "hours": 9.0,
       "n": 9,
       "hoursN": 8,
+      "p25": 350.0,
+      "p75": 400.0,
+      "details": {
+        "base": {
+          "median": 8.4,
+          "n": 9
+        },
+        "hours": {
+          "median": 9.0,
+          "n": 8
+        },
+        "chill": {
+          "median": 2.0,
+          "n": 9
+        },
+        "loading": {
+          "median": 4.0,
+          "n": 9
+        },
+        "experience": {
+          "median": 7.0,
+          "n": 8
+        },
+        "overtime": {
+          "median": 3.0,
+          "n": 9
+        },
+        "roles": [
+          {
+            "label": "其他 / 未分類",
+            "n": 5
+          },
+          {
+            "label": "一般軟體",
+            "n": 4
+          }
+        ],
+        "feedbackCount": 2,
+        "feedback": {
+          "status": "reviewed",
+          "text": "文字回饋集中在薪酬吸引力，有人表示主要因收入考量加入。其他工作體驗資訊有限，仍需另外確認實際工時與團隊要求。"
+        }
+      },
       "score": 73.3,
       "tag": "綜合分數 73.3",
       "rank": "02"
@@ -256,6 +346,53 @@
       "hours": 8.0,
       "n": 13,
       "hoursN": 10,
+      "p25": 170.0,
+      "p75": 320.0,
+      "details": {
+        "base": {
+          "median": 14.0,
+          "n": 13
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 10
+        },
+        "chill": {
+          "median": 4.0,
+          "n": 13
+        },
+        "loading": {
+          "median": 2.0,
+          "n": 13
+        },
+        "experience": {
+          "median": 4.0,
+          "n": 13
+        },
+        "overtime": {
+          "median": 1.0,
+          "n": 13
+        },
+        "roles": [
+          {
+            "label": "一般軟體",
+            "n": 8
+          },
+          {
+            "label": "其他 / 未分類",
+            "n": 4
+          },
+          {
+            "label": "管理 / PM",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 10,
+        "feedback": {
+          "status": "reviewed",
+          "text": "回饋提到工作步調、生活平衡、福利與同事氣氛，也有部分遠端工作的經驗。另有回報提醒初期學習曲線、年資對談薪的影響，以及與其他高薪公司的待遇差距；並非所有人對薪酬或管理都有相同看法。"
+        }
+      },
       "score": 65.0,
       "tag": "綜合分數 65",
       "rank": "03"
@@ -268,6 +405,49 @@
       "hours": 8.0,
       "n": 13,
       "hoursN": 9,
+      "p25": 135.0,
+      "p75": 150.0,
+      "details": {
+        "base": {
+          "median": 7.5,
+          "n": 13
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 9
+        },
+        "chill": {
+          "median": 5.0,
+          "n": 13
+        },
+        "loading": {
+          "median": 2.0,
+          "n": 13
+        },
+        "experience": {
+          "median": 6.0,
+          "n": 13
+        },
+        "overtime": {
+          "median": 1.0,
+          "n": 13
+        },
+        "roles": [
+          {
+            "label": "其他 / 未分類",
+            "n": 12
+          },
+          {
+            "label": "一般軟體",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 7,
+        "feedback": {
+          "status": "reviewed",
+          "text": "有回報肯定生活平衡與較低壓力，也有人覺得工作較缺乏挑戰或成就感，並希望績效及薪酬制度改善。多則意見提醒單位之間可能有差異。"
+        }
+      },
       "score": 58.8,
       "tag": "綜合分數 58.8",
       "rank": "04"
@@ -280,6 +460,53 @@
       "hours": 8.0,
       "n": 8,
       "hoursN": 7,
+      "p25": 193.8,
+      "p75": 337.5,
+      "details": {
+        "base": {
+          "median": 13.3,
+          "n": 8
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 7
+        },
+        "chill": {
+          "median": 4.0,
+          "n": 8
+        },
+        "loading": {
+          "median": 4.0,
+          "n": 8
+        },
+        "experience": {
+          "median": 5.5,
+          "n": 8
+        },
+        "overtime": {
+          "median": 1.0,
+          "n": 8
+        },
+        "roles": [
+          {
+            "label": "一般軟體",
+            "n": 6
+          },
+          {
+            "label": "其他 / 未分類",
+            "n": 1
+          },
+          {
+            "label": "管理 / PM",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 4,
+        "feedback": {
+          "status": "reviewed",
+          "text": "文字回饋多從生活步調與薪酬相對投入的角度給予正面評價，另有個別簽約獎金回報。這些經驗不代表所有職缺的工作量，也不表示每份 offer 都包含同樣獎金。"
+        }
+      },
       "score": 56.9,
       "tag": "綜合分數 56.9",
       "rank": "05"
@@ -292,6 +519,53 @@
       "hours": 8.0,
       "n": 3,
       "hoursN": 2,
+      "p25": null,
+      "p75": null,
+      "details": {
+        "base": {
+          "median": 15.0,
+          "n": 3
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 2
+        },
+        "chill": {
+          "median": 3.0,
+          "n": 3
+        },
+        "loading": {
+          "median": 3.0,
+          "n": 3
+        },
+        "experience": {
+          "median": 6.0,
+          "n": 3
+        },
+        "overtime": {
+          "median": 1.0,
+          "n": 3
+        },
+        "roles": [
+          {
+            "label": "一般軟體",
+            "n": 1
+          },
+          {
+            "label": "其他 / 未分類",
+            "n": 1
+          },
+          {
+            "label": "後端",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 0,
+        "feedback": {
+          "status": "empty",
+          "text": ""
+        }
+      },
       "score": 49.0,
       "tag": "綜合分數 49",
       "rank": "06"
@@ -304,6 +578,61 @@
       "hours": 8.0,
       "n": 27,
       "hoursN": 23,
+      "p25": 105.5,
+      "p75": 140.0,
+      "details": {
+        "base": {
+          "median": 8.6,
+          "n": 27
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 23
+        },
+        "chill": {
+          "median": 4.0,
+          "n": 27
+        },
+        "loading": {
+          "median": 3.0,
+          "n": 27
+        },
+        "experience": {
+          "median": 3.0,
+          "n": 25
+        },
+        "overtime": {
+          "median": 1.0,
+          "n": 27
+        },
+        "roles": [
+          {
+            "label": "其他 / 未分類",
+            "n": 13
+          },
+          {
+            "label": "一般軟體",
+            "n": 10
+          },
+          {
+            "label": "DevOps / SRE",
+            "n": 2
+          },
+          {
+            "label": "QA / 測試",
+            "n": 1
+          },
+          {
+            "label": "後端",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 17,
+        "feedback": {
+          "status": "reviewed",
+          "text": "回饋肯定福利、社團活動、團隊氣氛、學習資源及部分團隊的生活平衡，也有人對薪資與成長幅度有保留。約聘與正職、不同部門的經驗不一；另有回報提到政策與工作量變化，遠端安排需依應徵職缺確認。"
+        }
+      },
       "score": 45.5,
       "tag": "綜合分數 45.5",
       "rank": "07"
@@ -316,6 +645,49 @@
       "hours": 8.0,
       "n": 3,
       "hoursN": 3,
+      "p25": null,
+      "p75": null,
+      "details": {
+        "base": {
+          "median": 13.0,
+          "n": 3
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 3
+        },
+        "chill": {
+          "median": 3.0,
+          "n": 3
+        },
+        "loading": {
+          "median": 3.0,
+          "n": 3
+        },
+        "experience": {
+          "median": 7.0,
+          "n": 3
+        },
+        "overtime": {
+          "median": 1.0,
+          "n": 3
+        },
+        "roles": [
+          {
+            "label": "資料 / AI",
+            "n": 2
+          },
+          {
+            "label": "其他 / 未分類",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 2,
+        "feedback": {
+          "status": "reviewed",
+          "text": "兩則文字回饋都提到全遠端工作，其中一則也肯定薪資。回報數少，遠端條件仍須以當下職缺與 offer 為準。"
+        }
+      },
       "score": 45.4,
       "tag": "綜合分數 45.4",
       "rank": "08"
@@ -328,6 +700,57 @@
       "hours": 9.0,
       "n": 9,
       "hoursN": 7,
+      "p25": 166.0,
+      "p75": 185.0,
+      "details": {
+        "base": {
+          "median": 12.0,
+          "n": 9
+        },
+        "hours": {
+          "median": 9.0,
+          "n": 7
+        },
+        "chill": {
+          "median": 3.0,
+          "n": 9
+        },
+        "loading": {
+          "median": 4.0,
+          "n": 9
+        },
+        "experience": {
+          "median": 6.0,
+          "n": 9
+        },
+        "overtime": {
+          "median": 3.0,
+          "n": 9
+        },
+        "roles": [
+          {
+            "label": "其他 / 未分類",
+            "n": 4
+          },
+          {
+            "label": "一般軟體",
+            "n": 3
+          },
+          {
+            "label": "QA / 測試",
+            "n": 1
+          },
+          {
+            "label": "資料 / AI",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 3,
+        "feedback": {
+          "status": "reviewed",
+          "text": "回饋肯定同事能力與相處氣氛，有人認為表現能帶來加薪或升等機會，也有對人員流動的觀察。加班與追求績效的取捨是個別經驗，面試時可確認團隊近況與考核期待。"
+        }
+      },
       "score": 45.3,
       "tag": "綜合分數 45.3",
       "rank": "09"
@@ -340,6 +763,57 @@
       "hours": 9.0,
       "n": 7,
       "hoursN": 7,
+      "p25": 155.0,
+      "p75": 170.0,
+      "details": {
+        "base": {
+          "median": 10.0,
+          "n": 7
+        },
+        "hours": {
+          "median": 9.0,
+          "n": 7
+        },
+        "chill": {
+          "median": 3.0,
+          "n": 7
+        },
+        "loading": {
+          "median": 3.0,
+          "n": 7
+        },
+        "experience": {
+          "median": 10.0,
+          "n": 7
+        },
+        "overtime": {
+          "median": 2.0,
+          "n": 7
+        },
+        "roles": [
+          {
+            "label": "其他 / 未分類",
+            "n": 3
+          },
+          {
+            "label": "一般軟體",
+            "n": 2
+          },
+          {
+            "label": "管理 / PM",
+            "n": 1
+          },
+          {
+            "label": "資料 / AI",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 3,
+        "feedback": {
+          "status": "reviewed",
+          "text": "回饋反覆提醒單位差異，不能僅憑網路評價判斷。另有對績效分配與人才銜接的保留意見，宜直接了解應徵單位的研究方向、責任與成長機會。"
+        }
+      },
       "score": 45.0,
       "tag": "綜合分數 45",
       "rank": "10"
@@ -352,6 +826,57 @@
       "hours": 6.0,
       "n": 4,
       "hoursN": 3,
+      "p25": null,
+      "p75": null,
+      "details": {
+        "base": {
+          "median": 7.4,
+          "n": 4
+        },
+        "hours": {
+          "median": 6.0,
+          "n": 3
+        },
+        "chill": {
+          "median": 4.5,
+          "n": 4
+        },
+        "loading": {
+          "median": 2.5,
+          "n": 4
+        },
+        "experience": {
+          "median": 3.0,
+          "n": 3
+        },
+        "overtime": {
+          "median": 1.0,
+          "n": 4
+        },
+        "roles": [
+          {
+            "label": "一般軟體",
+            "n": 1
+          },
+          {
+            "label": "全端",
+            "n": 1
+          },
+          {
+            "label": "其他 / 未分類",
+            "n": 1
+          },
+          {
+            "label": "行動端",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 3,
+        "feedback": {
+          "status": "reviewed",
+          "text": "有回報肯定同事、主管、福利及學習環境，也有人對轉型方向、技術更新與薪資成長有保留。新事業與不同資歷可能有不同工作負荷，不能將單一團隊經驗套用全公司。"
+        }
+      },
       "score": 44.3,
       "tag": "綜合分數 44.3",
       "rank": "11"
@@ -364,6 +889,57 @@
       "hours": 8.0,
       "n": 13,
       "hoursN": 13,
+      "p25": 87.0,
+      "p75": 170.0,
+      "details": {
+        "base": {
+          "median": 8.0,
+          "n": 13
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 13
+        },
+        "chill": {
+          "median": 3.0,
+          "n": 13
+        },
+        "loading": {
+          "median": 4.0,
+          "n": 13
+        },
+        "experience": {
+          "median": 1.2,
+          "n": 13
+        },
+        "overtime": {
+          "median": 1.0,
+          "n": 13
+        },
+        "roles": [
+          {
+            "label": "一般軟體",
+            "n": 7
+          },
+          {
+            "label": "QA / 測試",
+            "n": 3
+          },
+          {
+            "label": "其他 / 未分類",
+            "n": 2
+          },
+          {
+            "label": "管理 / PM",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 6,
+        "feedback": {
+          "status": "reviewed",
+          "text": "回饋提到福利、主管互動及新人累積經驗的機會，也有人對薪資與維運值班工作有保留。不同團隊的氣氛和加班情況並不一致，應先確認實際職責與 on-call 安排。"
+        }
+      },
       "score": 42.8,
       "tag": "綜合分數 42.8",
       "rank": "12"
@@ -376,6 +952,49 @@
       "hours": 8.0,
       "n": 3,
       "hoursN": 3,
+      "p25": null,
+      "p75": null,
+      "details": {
+        "base": {
+          "median": 7.9,
+          "n": 3
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 3
+        },
+        "chill": {
+          "median": 3.0,
+          "n": 3
+        },
+        "loading": {
+          "median": 3.0,
+          "n": 3
+        },
+        "experience": {
+          "median": 4.0,
+          "n": 3
+        },
+        "overtime": {
+          "median": 1.0,
+          "n": 3
+        },
+        "roles": [
+          {
+            "label": "一般軟體",
+            "n": 2
+          },
+          {
+            "label": "顧問 / FAE",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 2,
+        "feedback": {
+          "status": "reviewed",
+          "text": "有回報認為適合追求穩定，但文字資訊不多。加班描述中另有跨時區會議的經驗，可在面試時確認會議時間與補償安排。"
+        }
+      },
       "score": 42.7,
       "tag": "綜合分數 42.7",
       "rank": "13"
@@ -388,6 +1007,53 @@
       "hours": 8.0,
       "n": 5,
       "hoursN": 5,
+      "p25": 91.0,
+      "p75": 100.0,
+      "details": {
+        "base": {
+          "median": 5.1,
+          "n": 5
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 5
+        },
+        "chill": {
+          "median": 4.0,
+          "n": 5
+        },
+        "loading": {
+          "median": 2.0,
+          "n": 5
+        },
+        "experience": {
+          "median": 4.0,
+          "n": 5
+        },
+        "overtime": {
+          "median": 2.0,
+          "n": 5
+        },
+        "roles": [
+          {
+            "label": "其他 / 未分類",
+            "n": 3
+          },
+          {
+            "label": "一般軟體",
+            "n": 1
+          },
+          {
+            "label": "全端",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 5,
+        "feedback": {
+          "status": "reviewed",
+          "text": "有回報推薦新人嘗試，並認為工作步調較可預期；也有人指出調薪與薪資成長有限。部門體驗及獎金發放仍需確認，不能只依招募時的年薪月數估算收入。"
+        }
+      },
       "score": 42.5,
       "tag": "綜合分數 42.5",
       "rank": "14"
@@ -400,6 +1066,49 @@
       "hours": 8.0,
       "n": 3,
       "hoursN": 3,
+      "p25": null,
+      "p75": null,
+      "details": {
+        "base": {
+          "median": 10.0,
+          "n": 3
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 3
+        },
+        "chill": {
+          "median": 4.0,
+          "n": 3
+        },
+        "loading": {
+          "median": 3.0,
+          "n": 3
+        },
+        "experience": {
+          "median": 4.0,
+          "n": 3
+        },
+        "overtime": {
+          "median": 1.0,
+          "n": 3
+        },
+        "roles": [
+          {
+            "label": "一般軟體",
+            "n": 2
+          },
+          {
+            "label": "其他 / 未分類",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 1,
+        "feedback": {
+          "status": "reviewed",
+          "text": "一則回饋肯定公司活動與舒適的工作體驗，同時提到可能降低轉職動力。只有少量文字資訊，仍需確認工作內容是否符合自己的成長目標。"
+        }
+      },
       "score": 42.0,
       "tag": "綜合分數 42",
       "rank": "15"
@@ -412,6 +1121,49 @@
       "hours": 8.0,
       "n": 3,
       "hoursN": 3,
+      "p25": null,
+      "p75": null,
+      "details": {
+        "base": {
+          "median": 4.3,
+          "n": 3
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 3
+        },
+        "chill": {
+          "median": 5.0,
+          "n": 3
+        },
+        "loading": {
+          "median": 2.0,
+          "n": 3
+        },
+        "experience": {
+          "median": 2.0,
+          "n": 3
+        },
+        "overtime": {
+          "median": 1.0,
+          "n": 3
+        },
+        "roles": [
+          {
+            "label": "其他 / 未分類",
+            "n": 2
+          },
+          {
+            "label": "後端",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 2,
+        "feedback": {
+          "status": "reviewed",
+          "text": "有回報認為適合新人累積經驗，也有對獎金、技術重視程度與系統維護負擔的負面意見。看法有落差，建議核對所屬團隊、薪酬發放條件及維運責任。"
+        }
+      },
       "score": 41.0,
       "tag": "綜合分數 41",
       "rank": "16"
@@ -424,6 +1176,53 @@
       "hours": 8.0,
       "n": 8,
       "hoursN": 8,
+      "p25": 83.3,
+      "p75": 97.6,
+      "details": {
+        "base": {
+          "median": 6.5,
+          "n": 8
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 8
+        },
+        "chill": {
+          "median": 3.5,
+          "n": 8
+        },
+        "loading": {
+          "median": 2.0,
+          "n": 8
+        },
+        "experience": {
+          "median": 5.0,
+          "n": 8
+        },
+        "overtime": {
+          "median": 1.0,
+          "n": 8
+        },
+        "roles": [
+          {
+            "label": "其他 / 未分類",
+            "n": 3
+          },
+          {
+            "label": "後端",
+            "n": 3
+          },
+          {
+            "label": "一般軟體",
+            "n": 2
+          }
+        ],
+        "feedbackCount": 2,
+        "feedback": {
+          "status": "reviewed",
+          "text": "有回報描述工作內容熟悉、步調較平穩，但也有不推薦的意見，未提供明確原因。若重視技術成長，可進一步確認專案內容與學習機會。"
+        }
+      },
       "score": 40.7,
       "tag": "綜合分數 40.7",
       "rank": "17"
@@ -436,6 +1235,45 @@
       "hours": 8.0,
       "n": 3,
       "hoursN": 3,
+      "p25": null,
+      "p75": null,
+      "details": {
+        "base": {
+          "median": 6.3,
+          "n": 3
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 3
+        },
+        "chill": {
+          "median": 4.0,
+          "n": 3
+        },
+        "loading": {
+          "median": 3.0,
+          "n": 3
+        },
+        "experience": {
+          "median": 5.0,
+          "n": 3
+        },
+        "overtime": {
+          "median": 1.0,
+          "n": 3
+        },
+        "roles": [
+          {
+            "label": "其他 / 未分類",
+            "n": 3
+          }
+        ],
+        "feedbackCount": 1,
+        "feedback": {
+          "status": "reviewed",
+          "text": "目前只有一則簡短的正面推薦，未說明具體原因；不足以據此歸納團隊文化、工作量或成長機會。"
+        }
+      },
       "score": 40.2,
       "tag": "綜合分數 40.2",
       "rank": "18"
@@ -448,6 +1286,57 @@
       "hours": 8.0,
       "n": 9,
       "hoursN": 7,
+      "p25": 110.0,
+      "p75": 120.0,
+      "details": {
+        "base": {
+          "median": 8.0,
+          "n": 9
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 7
+        },
+        "chill": {
+          "median": 3.0,
+          "n": 9
+        },
+        "loading": {
+          "median": 3.0,
+          "n": 9
+        },
+        "experience": {
+          "median": 1.0,
+          "n": 9
+        },
+        "overtime": {
+          "median": 2.0,
+          "n": 9
+        },
+        "roles": [
+          {
+            "label": "其他 / 未分類",
+            "n": 6
+          },
+          {
+            "label": "一般軟體",
+            "n": 1
+          },
+          {
+            "label": "前端",
+            "n": 1
+          },
+          {
+            "label": "後端",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 5,
+        "feedback": {
+          "status": "reviewed",
+          "text": "多則回饋提到專案時程緊、需求變動與工作壓力，也有對加班補償及工程品質取捨的保留意見。另有簡短正面回覆；其中一筆明確表示尚未入職，僅提供薪資參考，不能當作在職體驗。"
+        }
+      },
       "score": 39.3,
       "tag": "綜合分數 39.3",
       "rank": "19"
@@ -460,6 +1349,57 @@
       "hours": 8.0,
       "n": 11,
       "hoursN": 10,
+      "p25": 87.5,
+      "p75": 120.0,
+      "details": {
+        "base": {
+          "median": 5.7,
+          "n": 11
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 10
+        },
+        "chill": {
+          "median": 3.0,
+          "n": 11
+        },
+        "loading": {
+          "median": 3.0,
+          "n": 11
+        },
+        "experience": {
+          "median": 5.5,
+          "n": 10
+        },
+        "overtime": {
+          "median": 1.0,
+          "n": 11
+        },
+        "roles": [
+          {
+            "label": "其他 / 未分類",
+            "n": 7
+          },
+          {
+            "label": "一般軟體",
+            "n": 2
+          },
+          {
+            "label": "DevOps / SRE",
+            "n": 1
+          },
+          {
+            "label": "前端",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 7,
+        "feedback": {
+          "status": "reviewed",
+          "text": "有回報肯定穩定上下班、團隊氣氛與薪酬，也有人認為技術挑戰有限。不同單位在工作量、工具及技術新舊上有差異，宜先確認實際負責的系統。"
+        }
+      },
       "score": 39.0,
       "tag": "綜合分數 39",
       "rank": "20"
@@ -472,6 +1412,49 @@
       "hours": 8.0,
       "n": 12,
       "hoursN": 12,
+      "p25": 66.5,
+      "p75": 80.0,
+      "details": {
+        "base": {
+          "median": 5.5,
+          "n": 12
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 12
+        },
+        "chill": {
+          "median": 3.5,
+          "n": 12
+        },
+        "loading": {
+          "median": 2.5,
+          "n": 12
+        },
+        "experience": {
+          "median": 3.3,
+          "n": 12
+        },
+        "overtime": {
+          "median": 1.0,
+          "n": 12
+        },
+        "roles": [
+          {
+            "label": "一般軟體",
+            "n": 6
+          },
+          {
+            "label": "其他 / 未分類",
+            "n": 6
+          }
+        ],
+        "feedbackCount": 11,
+        "feedback": {
+          "status": "reviewed",
+          "text": "多則回饋把這裡視為新人或轉職者累積專案經驗的地方，也提到學習資源。另一方面，部門、主管、駐點與專案品質差異明顯，有人提醒技能容易廣而不深，需主動規劃成長與薪資目標。"
+        }
+      },
       "score": 37.9,
       "tag": "綜合分數 37.9",
       "rank": "21"
@@ -484,6 +1467,53 @@
       "hours": 8.0,
       "n": 3,
       "hoursN": 3,
+      "p25": null,
+      "p75": null,
+      "details": {
+        "base": {
+          "median": 6.0,
+          "n": 3
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 3
+        },
+        "chill": {
+          "median": 4.0,
+          "n": 3
+        },
+        "loading": {
+          "median": 3.0,
+          "n": 3
+        },
+        "experience": {
+          "median": 3.0,
+          "n": 3
+        },
+        "overtime": {
+          "median": 1.0,
+          "n": 3
+        },
+        "roles": [
+          {
+            "label": "QA / 測試",
+            "n": 1
+          },
+          {
+            "label": "前端",
+            "n": 1
+          },
+          {
+            "label": "後端",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 0,
+        "feedback": {
+          "status": "empty",
+          "text": ""
+        }
+      },
       "score": 36.6,
       "tag": "綜合分數 36.6",
       "rank": "22"
@@ -496,6 +1526,49 @@
       "hours": 9.0,
       "n": 9,
       "hoursN": 9,
+      "p25": 135.0,
+      "p75": 230.0,
+      "details": {
+        "base": {
+          "median": 11.0,
+          "n": 9
+        },
+        "hours": {
+          "median": 9.0,
+          "n": 9
+        },
+        "chill": {
+          "median": 2.0,
+          "n": 9
+        },
+        "loading": {
+          "median": 4.0,
+          "n": 9
+        },
+        "experience": {
+          "median": 6.5,
+          "n": 8
+        },
+        "overtime": {
+          "median": 2.0,
+          "n": 9
+        },
+        "roles": [
+          {
+            "label": "一般軟體",
+            "n": 6
+          },
+          {
+            "label": "顧問 / FAE",
+            "n": 3
+          }
+        ],
+        "feedbackCount": 2,
+        "feedback": {
+          "status": "reviewed",
+          "text": "文字回饋有不推薦的意見，也指出工作量取決於專案，部分案子時程較緊。加班描述另涉及較長工時或補償疑慮，建議確認派案方式與加班申報制度。"
+        }
+      },
       "score": 35.8,
       "tag": "綜合分數 35.8",
       "rank": "23"
@@ -508,6 +1581,49 @@
       "hours": 9.0,
       "n": 4,
       "hoursN": 4,
+      "p25": null,
+      "p75": null,
+      "details": {
+        "base": {
+          "median": 7.2,
+          "n": 4
+        },
+        "hours": {
+          "median": 9.0,
+          "n": 4
+        },
+        "chill": {
+          "median": 3.0,
+          "n": 4
+        },
+        "loading": {
+          "median": 3.5,
+          "n": 4
+        },
+        "experience": {
+          "median": 8.0,
+          "n": 4
+        },
+        "overtime": {
+          "median": 4.5,
+          "n": 4
+        },
+        "roles": [
+          {
+            "label": "其他 / 未分類",
+            "n": 2
+          },
+          {
+            "label": "後端",
+            "n": 2
+          }
+        ],
+        "feedbackCount": 4,
+        "feedback": {
+          "status": "reviewed",
+          "text": "回饋從感到疲累、普通到輕鬆都有，沒有一致的工作體驗結論。宜對照應徵單位的工作量、時程及人力配置判斷。"
+        }
+      },
       "score": 35.6,
       "tag": "綜合分數 35.6",
       "rank": "24"
@@ -520,6 +1636,49 @@
       "hours": 8.0,
       "n": 3,
       "hoursN": 3,
+      "p25": null,
+      "p75": null,
+      "details": {
+        "base": {
+          "median": 5.5,
+          "n": 3
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 3
+        },
+        "chill": {
+          "median": 4.0,
+          "n": 3
+        },
+        "loading": {
+          "median": 3.0,
+          "n": 3
+        },
+        "experience": {
+          "median": 3.0,
+          "n": 3
+        },
+        "overtime": {
+          "median": 1.0,
+          "n": 3
+        },
+        "roles": [
+          {
+            "label": "其他 / 未分類",
+            "n": 2
+          },
+          {
+            "label": "一般軟體",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 2,
+        "feedback": {
+          "status": "reviewed",
+          "text": "有回報指出工作體驗取決於駐點單位，部分工作量較少，但也擔心技術累積與長期競爭力。另有對工程師角色的不滿，建議確認駐點內容、學習資源與發展安排。"
+        }
+      },
       "score": 35.6,
       "tag": "綜合分數 35.6",
       "rank": "25"
@@ -532,6 +1691,49 @@
       "hours": 8.0,
       "n": 4,
       "hoursN": 4,
+      "p25": null,
+      "p75": null,
+      "details": {
+        "base": {
+          "median": 8.3,
+          "n": 4
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 4
+        },
+        "chill": {
+          "median": 2.5,
+          "n": 4
+        },
+        "loading": {
+          "median": 3.0,
+          "n": 4
+        },
+        "experience": {
+          "median": 4.5,
+          "n": 4
+        },
+        "overtime": {
+          "median": 2.0,
+          "n": 4
+        },
+        "roles": [
+          {
+            "label": "一般軟體",
+            "n": 2
+          },
+          {
+            "label": "資安",
+            "n": 2
+          }
+        ],
+        "feedbackCount": 4,
+        "feedback": {
+          "status": "reviewed",
+          "text": "有回報肯定分享文化、讀書會、同事能力與學習資源；也有對溝通方式、管理及薪酬透明度的保留意見。多產品線的學習負擔亦被提及，團隊感受並不一致。"
+        }
+      },
       "score": 35.0,
       "tag": "綜合分數 35",
       "rank": "26"
@@ -544,6 +1746,53 @@
       "hours": 8.0,
       "n": 10,
       "hoursN": 10,
+      "p25": 56.0,
+      "p75": 63.8,
+      "details": {
+        "base": {
+          "median": 4.5,
+          "n": 10
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 10
+        },
+        "chill": {
+          "median": 3.5,
+          "n": 10
+        },
+        "loading": {
+          "median": 3.0,
+          "n": 10
+        },
+        "experience": {
+          "median": 2.3,
+          "n": 10
+        },
+        "overtime": {
+          "median": 1.0,
+          "n": 10
+        },
+        "roles": [
+          {
+            "label": "一般軟體",
+            "n": 7
+          },
+          {
+            "label": "其他 / 未分類",
+            "n": 2
+          },
+          {
+            "label": "全端",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 8,
+        "feedback": {
+          "status": "reviewed",
+          "text": "回饋提到新人累積經驗與部分團隊較平穩的步調，也提醒部門、主管、專案和駐點會影響工作量及待遇。有人認為適合階段性學習，但長期技術與薪資成長仍需自行評估。"
+        }
+      },
       "score": 34.0,
       "tag": "綜合分數 34",
       "rank": "27"
@@ -556,6 +1805,49 @@
       "hours": 8.0,
       "n": 3,
       "hoursN": 3,
+      "p25": null,
+      "p75": null,
+      "details": {
+        "base": {
+          "median": 6.0,
+          "n": 3
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 3
+        },
+        "chill": {
+          "median": 3.0,
+          "n": 3
+        },
+        "loading": {
+          "median": 3.0,
+          "n": 3
+        },
+        "experience": {
+          "median": 4.0,
+          "n": 3
+        },
+        "overtime": {
+          "median": 1.0,
+          "n": 3
+        },
+        "roles": [
+          {
+            "label": "前端",
+            "n": 2
+          },
+          {
+            "label": "後端",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 3,
+        "feedback": {
+          "status": "reviewed",
+          "text": "有回報肯定福利、氣氛與產品迭代帶來的學習機會，也有人對管理、薪酬及人員流動有保留。工作挑戰與步調的描述不一，部分薪資評論涉及較早時期，不宜當作目前制度。"
+        }
+      },
       "score": 33.4,
       "tag": "綜合分數 33.4",
       "rank": "28"
@@ -568,6 +1860,53 @@
       "hours": 8.0,
       "n": 4,
       "hoursN": 3,
+      "p25": null,
+      "p75": null,
+      "details": {
+        "base": {
+          "median": 5.6,
+          "n": 4
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 3
+        },
+        "chill": {
+          "median": 3.0,
+          "n": 4
+        },
+        "loading": {
+          "median": 3.0,
+          "n": 4
+        },
+        "experience": {
+          "median": 7.0,
+          "n": 4
+        },
+        "overtime": {
+          "median": 1.0,
+          "n": 4
+        },
+        "roles": [
+          {
+            "label": "其他 / 未分類",
+            "n": 2
+          },
+          {
+            "label": "前端",
+            "n": 1
+          },
+          {
+            "label": "資料 / AI",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 3,
+        "feedback": {
+          "status": "reviewed",
+          "text": "回饋肯定福利、彈性及部分團隊的生活步調，也有人對薪資、會議文件、稽核流程和開發效率有保留。遠端與補助是個別填答時的經驗，實際條件應依現行職缺確認。"
+        }
+      },
       "score": 33.3,
       "tag": "綜合分數 33.3",
       "rank": "29"
@@ -580,6 +1919,57 @@
       "hours": 8.0,
       "n": 4,
       "hoursN": 4,
+      "p25": null,
+      "p75": null,
+      "details": {
+        "base": {
+          "median": 5.9,
+          "n": 4
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 4
+        },
+        "chill": {
+          "median": 3.5,
+          "n": 4
+        },
+        "loading": {
+          "median": 3.5,
+          "n": 4
+        },
+        "experience": {
+          "median": 3.0,
+          "n": 4
+        },
+        "overtime": {
+          "median": 1.0,
+          "n": 4
+        },
+        "roles": [
+          {
+            "label": "一般軟體",
+            "n": 1
+          },
+          {
+            "label": "其他 / 未分類",
+            "n": 1
+          },
+          {
+            "label": "前端",
+            "n": 1
+          },
+          {
+            "label": "後端",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 3,
+        "feedback": {
+          "status": "reviewed",
+          "text": "有回報認為能累積實務經驗，也有人對採用新技術的空間有保留。工作氣氛與壓力被描述為部門相關，加班申報和實際安排需向所屬團隊確認。"
+        }
+      },
       "score": 32.4,
       "tag": "綜合分數 32.4",
       "rank": "30"
@@ -592,6 +1982,53 @@
       "hours": 8.0,
       "n": 3,
       "hoursN": 3,
+      "p25": null,
+      "p75": null,
+      "details": {
+        "base": {
+          "median": 4.8,
+          "n": 3
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 3
+        },
+        "chill": {
+          "median": 3.0,
+          "n": 3
+        },
+        "loading": {
+          "median": 2.0,
+          "n": 3
+        },
+        "experience": {
+          "median": 3.0,
+          "n": 3
+        },
+        "overtime": {
+          "median": 1.0,
+          "n": 3
+        },
+        "roles": [
+          {
+            "label": "其他 / 未分類",
+            "n": 1
+          },
+          {
+            "label": "前端",
+            "n": 1
+          },
+          {
+            "label": "後端",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 2,
+        "feedback": {
+          "status": "reviewed",
+          "text": "回饋提到同事相處、公司活動及新人或轉職者累積經驗的機會，也提醒技術內容取決於駐點單位。有人對調薪幅度與招募時的工作描述有落差感，建議先核對派駐內容、薪資組成及加班申請流程。"
+        }
+      },
       "score": 32.1,
       "tag": "綜合分數 32.1",
       "rank": "31"
@@ -604,6 +2041,57 @@
       "hours": 8.1,
       "n": 8,
       "hoursN": 8,
+      "p25": 72.8,
+      "p75": 112.5,
+      "details": {
+        "base": {
+          "median": 4.8,
+          "n": 8
+        },
+        "hours": {
+          "median": 8.1,
+          "n": 8
+        },
+        "chill": {
+          "median": 2.5,
+          "n": 8
+        },
+        "loading": {
+          "median": 3.0,
+          "n": 8
+        },
+        "experience": {
+          "median": 0.5,
+          "n": 6
+        },
+        "overtime": {
+          "median": 2.5,
+          "n": 8
+        },
+        "roles": [
+          {
+            "label": "其他 / 未分類",
+            "n": 5
+          },
+          {
+            "label": "一般軟體",
+            "n": 1
+          },
+          {
+            "label": "全端",
+            "n": 1
+          },
+          {
+            "label": "資料 / AI",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 4,
+        "feedback": {
+          "status": "reviewed",
+          "text": "有回報肯定前輩帶領新人及團隊氣氛，也有人對雜務、工作量、技術深度與工程師受到的重視有保留。適合與否需同時考量學習資源及實際任務分配。"
+        }
+      },
       "score": 31.4,
       "tag": "綜合分數 31.4",
       "rank": "32"
@@ -616,6 +2104,49 @@
       "hours": 7.3,
       "n": 5,
       "hoursN": 4,
+      "p25": 76.0,
+      "p75": 110.0,
+      "details": {
+        "base": {
+          "median": 6.0,
+          "n": 5
+        },
+        "hours": {
+          "median": 7.3,
+          "n": 4
+        },
+        "chill": {
+          "median": 3.0,
+          "n": 5
+        },
+        "loading": {
+          "median": 4.0,
+          "n": 5
+        },
+        "experience": {
+          "median": 3.0,
+          "n": 5
+        },
+        "overtime": {
+          "median": 2.0,
+          "n": 5
+        },
+        "roles": [
+          {
+            "label": "一般軟體",
+            "n": 4
+          },
+          {
+            "label": "前端",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 2,
+        "feedback": {
+          "status": "reviewed",
+          "text": "有回報認為工作量與休假安排較友善，適合累積初期經驗；另有對薪資、成長性及組織互動的負面意見。這些都是個別經驗，不代表各事業單位一致。"
+        }
+      },
       "score": 31.3,
       "tag": "綜合分數 31.3",
       "rank": "33"
@@ -628,6 +2159,45 @@
       "hours": 8.0,
       "n": 3,
       "hoursN": 3,
+      "p25": null,
+      "p75": null,
+      "details": {
+        "base": {
+          "median": 8.5,
+          "n": 3
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 3
+        },
+        "chill": {
+          "median": 2.0,
+          "n": 3
+        },
+        "loading": {
+          "median": 4.0,
+          "n": 3
+        },
+        "experience": {
+          "median": 8.0,
+          "n": 3
+        },
+        "overtime": {
+          "median": 3.0,
+          "n": 3
+        },
+        "roles": [
+          {
+            "label": "其他 / 未分類",
+            "n": 3
+          }
+        ],
+        "feedbackCount": 3,
+        "feedback": {
+          "status": "reviewed",
+          "text": "回饋肯定電商實務、開發流程與學習機會，也普遍提到商業需求多、時程壓力及較高工作強度。部分意見關注技術債、跨部門調動及人力流動，需確認團隊是否有改善資源。"
+        }
+      },
       "score": 28.9,
       "tag": "綜合分數 28.9",
       "rank": "34"
@@ -640,6 +2210,57 @@
       "hours": 8.0,
       "n": 6,
       "hoursN": 5,
+      "p25": 70.6,
+      "p75": 95.0,
+      "details": {
+        "base": {
+          "median": 6.0,
+          "n": 6
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 5
+        },
+        "chill": {
+          "median": 2.0,
+          "n": 6
+        },
+        "loading": {
+          "median": 3.5,
+          "n": 6
+        },
+        "experience": {
+          "median": 5.0,
+          "n": 5
+        },
+        "overtime": {
+          "median": 2.5,
+          "n": 6
+        },
+        "roles": [
+          {
+            "label": "一般軟體",
+            "n": 2
+          },
+          {
+            "label": "其他 / 未分類",
+            "n": 2
+          },
+          {
+            "label": "QA / 測試",
+            "n": 1
+          },
+          {
+            "label": "資料 / AI",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 5,
+        "feedback": {
+          "status": "reviewed",
+          "text": "有簡短正面回饋與輕鬆氣氛的描述，但也有對產品方向、管理方式、工作強度及下班後支援的負面經驗。建議確認專案目標、技術品質要求與加班補償。"
+        }
+      },
       "score": 26.6,
       "tag": "綜合分數 26.6",
       "rank": "35"
@@ -652,6 +2273,49 @@
       "hours": 8.5,
       "n": 3,
       "hoursN": 2,
+      "p25": null,
+      "p75": null,
+      "details": {
+        "base": {
+          "median": 4.5,
+          "n": 3
+        },
+        "hours": {
+          "median": 8.5,
+          "n": 2
+        },
+        "chill": {
+          "median": 2.0,
+          "n": 3
+        },
+        "loading": {
+          "median": 3.0,
+          "n": 3
+        },
+        "experience": {
+          "median": 2.0,
+          "n": 2
+        },
+        "overtime": {
+          "median": 1.0,
+          "n": 3
+        },
+        "roles": [
+          {
+            "label": "其他 / 未分類",
+            "n": 2
+          },
+          {
+            "label": "一般軟體",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 3,
+        "feedback": {
+          "status": "reviewed",
+          "text": "回饋提到部分工作以穩定維護為主，也有對主管溝通、獎金、調薪、人力不足與交接的保留意見。團隊差異被反覆提及，宜確認直屬主管與實際維護責任。"
+        }
+      },
       "score": 23.8,
       "tag": "綜合分數 23.8",
       "rank": "36"
@@ -664,6 +2328,49 @@
       "hours": 9.0,
       "n": 3,
       "hoursN": 3,
+      "p25": null,
+      "p75": null,
+      "details": {
+        "base": {
+          "median": 6.5,
+          "n": 3
+        },
+        "hours": {
+          "median": 9.0,
+          "n": 3
+        },
+        "chill": {
+          "median": 2.0,
+          "n": 3
+        },
+        "loading": {
+          "median": 4.0,
+          "n": 3
+        },
+        "experience": {
+          "median": 3.0,
+          "n": 3
+        },
+        "overtime": {
+          "median": 4.0,
+          "n": 3
+        },
+        "roles": [
+          {
+            "label": "後端",
+            "n": 2
+          },
+          {
+            "label": "一般軟體",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 2,
+        "feedback": {
+          "status": "reviewed",
+          "text": "有回報肯定新人學習機會，但對薪資相對工作量及獎金取得條件有保留。面試時可確認績效目標、獎金發放規則與自己能影響的範圍。"
+        }
+      },
       "score": 23.0,
       "tag": "綜合分數 23",
       "rank": "37"
@@ -676,6 +2383,49 @@
       "hours": 8.3,
       "n": 6,
       "hoursN": 6,
+      "p25": 51.5,
+      "p75": 58.8,
+      "details": {
+        "base": {
+          "median": 4.2,
+          "n": 6
+        },
+        "hours": {
+          "median": 8.3,
+          "n": 6
+        },
+        "chill": {
+          "median": 2.0,
+          "n": 6
+        },
+        "loading": {
+          "median": 3.5,
+          "n": 6
+        },
+        "experience": {
+          "median": 2.8,
+          "n": 6
+        },
+        "overtime": {
+          "median": 1.5,
+          "n": 6
+        },
+        "roles": [
+          {
+            "label": "一般軟體",
+            "n": 4
+          },
+          {
+            "label": "其他 / 未分類",
+            "n": 2
+          }
+        ],
+        "feedbackCount": 6,
+        "feedback": {
+          "status": "reviewed",
+          "text": "回饋提到新人累積經驗與同事互動，也有對薪資成長、老舊系統、工作量及臨時支援的負面意見。待遇與任務可能因部門而異，宜確認專案配置、加班安排及學習方向。"
+        }
+      },
       "score": 22.0,
       "tag": "綜合分數 22",
       "rank": "38"
@@ -688,6 +2438,53 @@
       "hours": 8.0,
       "n": 6,
       "hoursN": 4,
+      "p25": 96.3,
+      "p75": 141.3,
+      "details": {
+        "base": {
+          "median": 7.7,
+          "n": 6
+        },
+        "hours": {
+          "median": 8.0,
+          "n": 4
+        },
+        "chill": {
+          "median": 1.0,
+          "n": 6
+        },
+        "loading": {
+          "median": 4.5,
+          "n": 6
+        },
+        "experience": {
+          "median": 3.0,
+          "n": 6
+        },
+        "overtime": {
+          "median": 4.5,
+          "n": 6
+        },
+        "roles": [
+          {
+            "label": "資安",
+            "n": 3
+          },
+          {
+            "label": "一般軟體",
+            "n": 2
+          },
+          {
+            "label": "其他 / 未分類",
+            "n": 1
+          }
+        ],
+        "feedbackCount": 5,
+        "feedback": {
+          "status": "reviewed",
+          "text": "有回報肯定同事關係或對未來報酬抱有期待，但多則意見對管理溝通與工作氣氛有保留。加班描述亦有專案繁忙的經驗，未來報酬期待不能當作已實現或保證收入。"
+        }
+      },
       "score": 21.9,
       "tag": "綜合分數 21.9",
       "rank": "39"

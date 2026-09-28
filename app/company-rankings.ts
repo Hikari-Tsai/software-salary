@@ -1,9 +1,24 @@
 import salaryData from "./salary-data.json" with { type: "json" };
 
+export type CompanyMetric = { median: number | null; n: number };
+
 export type CompanyRanking = {
   rank: string;
   company: string;
   salary: number;
+  p25: number | null;
+  p75: number | null;
+  details: {
+    base: CompanyMetric;
+    hours: CompanyMetric;
+    chill: CompanyMetric;
+    loading: CompanyMetric;
+    experience: CompanyMetric;
+    overtime: CompanyMetric;
+    roles: { label: string; n: number }[];
+    feedbackCount: number;
+    feedback: { status: string; text: string };
+  };
   chill: number | null;
   工作強度: number | null;
   hours: number | null;

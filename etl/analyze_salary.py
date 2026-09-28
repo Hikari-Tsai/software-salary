@@ -129,6 +129,27 @@ def valid_metric(rows, key, low, high):
     return [r[key] for r in rows if number(r.get(key)) and low <= r[key] <= high]
 
 
+def metric_summary(rows, key, low, high):
+    values = valid_metric(rows, key, low, high)
+    median = percentile(values, .5)
+    return {"median": rounded(median) if median is not None else None, "n": len(values)}
+
+
+def has_feedback(row):
+    value = row.get("notes")
+    return isinstance(value, str) and value.strip().casefold() not in {"", "無", "沒有", "-", "n/a", "na", "none"}
+
+
+def feedback_summary(name, count, source_sha256, reviews):
+    if not count:
+        return {"status": "empty", "text": ""}
+    if reviews and source_sha256 and reviews.get("sourceSha256") == source_sha256:
+        text = reviews.get("companies", {}).get(name, "")
+        if isinstance(text, str) and text.strip():
+            return {"status": "reviewed", "text": text.strip()}
+    return {"status": "pending", "text": ""}
+
+
 def survey_time(value):
     match = re.fullmatch(r"(\d{4})/(\d{1,2})/(\d{1,2})\s+(上午|下午)\s+(\d{1,2}):(\d{2}):(\d{2})", str(value))
     if not match:
@@ -140,7 +161,7 @@ def survey_time(value):
         return None
 
 
-def analyze(records, source_name="", source_sha256=""):
+def analyze(records, source_name="", source_sha256="", feedback_reviews=None):
     valid, excluded, duplicates, seen = [], [], [], set()
     for index, original in enumerate(records):
         row = {**original, "company": normalize_company_name(original.get("company", ""))}
@@ -173,9 +194,24 @@ def analyze(records, source_name="", source_sha256=""):
         chill = percentile(valid_metric(rows, "chill", 1, 5), .5)
         loading = percentile(valid_metric(rows, "loading", 1, 5), .5)
         hours = percentile(valid_metric(rows, "daily_hours", 4, 16), .5)
+        salaries = [r["total_comp_10k"] for r in rows]
+        feedback_count = sum(has_feedback(r) for r in rows)
         rankings.append({"company": name, "salary": rounded(salary), "chill": rounded(chill) if chill is not None else None,
                          "工作強度": rounded(loading) if loading is not None else None, "hours": rounded(hours) if hours is not None else None,
-                         "n": len(rows), "hoursN": len(valid_metric(rows, "daily_hours", 4, 16))})
+                         "n": len(rows), "hoursN": len(valid_metric(rows, "daily_hours", 4, 16)),
+                         "p25": rounded(percentile(salaries, .25)) if len(rows) >= 5 else None,
+                         "p75": rounded(percentile(salaries, .75)) if len(rows) >= 5 else None,
+                         "details": {
+                             "base": metric_summary(rows, "base_salary_10k", 2, 30),
+                             "hours": metric_summary(rows, "daily_hours", 4, 16),
+                             "chill": metric_summary(rows, "chill", 1, 5),
+                             "loading": metric_summary(rows, "loading", 1, 5),
+                             "experience": metric_summary(rows, "total_exp_years", 0, 60),
+                             "overtime": metric_summary(rows, "overtime_freq", 1, 5),
+                             "roles": [{"label": label, "n": n} for label, n in sorted(Counter(role_group(r) for r in rows).items(), key=lambda x: (-x[1], x[0]))],
+                             "feedbackCount": feedback_count,
+                             "feedback": feedback_summary(name, feedback_count, source_sha256, feedback_reviews),
+                         }})
     max_salary = max((r["salary"] for r in rankings), default=1)
     for row in rankings:
         # A missing self-rating contributes no points, and is displayed as missing.
@@ -193,7 +229,7 @@ def analyze(records, source_name="", source_sha256=""):
     low_load = [r["total_comp_10k"] for r in valid if number(r.get("loading")) and 1 <= r["loading"] <= 2]
     heavy = [r["total_comp_10k"] for r in valid if (number(r.get("loading")) and 4 <= r["loading"] <= 5) or (number(r.get("overtime_freq")) and 4 <= r["overtime_freq"] <= 5)]
     snapshot = {
-        "schemaVersion": 1, "methodVersion": "2026-09-28", "sourceFile": source_name, "sourceSha256": source_sha256,
+        "schemaVersion": 2, "methodVersion": "2026-09-28", "sourceFile": source_name, "sourceSha256": source_sha256,
         "updatedAt": latest.isoformat() + "+08:00", "updatedLabel": f"{latest.year} 年 {latest.month} 月 {latest.day} 日 {latest:%H:%M}",
         "rawCount": len(records), "duplicateCount": len(duplicates), "excludedCount": len(excluded),
         "salary": stats([r["total_comp_10k"] for r in valid]), "base": stats([r["base_salary_10k"] for r in valid]),
@@ -216,10 +252,12 @@ def main():
     parser.add_argument("input", type=Path)
     parser.add_argument("--output", type=Path, default=ROOT / "app" / "salary-data.json")
     parser.add_argument("--audit", type=Path, default=ROOT / "data" / "salary_analysis_audit.json")
+    parser.add_argument("--feedback", type=Path, default=ROOT / "data" / "company_feedback_reviews.json")
     args = parser.parse_args()
     try:
         records = read_json_records(args.input)
-        snapshot, audit = analyze(records, args.input.name, hashlib.sha256(args.input.read_bytes()).hexdigest())
+        reviews = json.loads(args.feedback.read_text(encoding="utf-8")) if args.feedback.exists() else None
+        snapshot, audit = analyze(records, args.input.name, hashlib.sha256(args.input.read_bytes()).hexdigest(), reviews)
         for path, value in [(args.output, snapshot), (args.audit, audit)]:
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")

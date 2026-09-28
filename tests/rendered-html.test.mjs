@@ -55,6 +55,22 @@ test("renders an absolute social sharing image", async () => {
   assert.match(html, new RegExp(`<meta name="twitter:image" content="${imageUrl}"`));
 });
 
+test("renders company quartile ranges and collapsed anonymized feedback for all ranked companies", async () => {
+  const html = await (await render()).text();
+  assert.equal((html.match(/<details class="company-details"/g) ?? []).length, 3);
+  assert.equal((html.match(/class="company-detail-content"/g) ?? []).length, salaryData.rankings.length);
+  assert.equal((html.match(/class="company-expand-button" aria-expanded="false"/g) ?? []).length, salaryData.rankings.length - 3);
+  assert.equal((html.match(/id="company-report-\d+" hidden=""/g) ?? []).length, salaryData.rankings.length - 3);
+  assert.doesNotMatch(html, /<details class="company-details"[^>]*\sopen(?:=|>)/);
+  assert.match(html, /P25–P75/);
+  assert.match(html, /樣本不足/);
+  assert.match(html, /匿名文字回饋摘要/);
+  assert.match(html, /沒有可整理的文字回饋/);
+  assert.match(html, /不是薪資上下限/);
+  assert.match(html, /不代表公司整體制度/);
+  assert.doesNotMatch(html, /綜合分數|主管根本腦包|CEO快下台/);
+});
+
 test("renders contribution and GitHub Star actions", async () => {
   const response = await render();
   const html = await response.text();
