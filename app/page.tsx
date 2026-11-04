@@ -6,6 +6,7 @@ import salaryData from "./salary-data.json";
 import { companyRankings } from "./company-rankings";
 import { CompanyDetails, CompanyRankingRow, CompanySalaryRange } from "./company-details";
 import { floatingActions, navStarAction } from "./floating-actions";
+import { loadGithubStars } from "./github-stars";
 import { interpolateSalary } from "./salary-interpolation";
 
 const experience = salaryData.experience;
@@ -119,6 +120,14 @@ function AnimatedBars({ outer, inner }: { outer: number; inner: number }) {
 export default function Home() {
   const [view, setView] = useState<"experience" | "role" | "company">("experience");
   const [years, setYears] = useState(4);
+  const [starCount, setStarCount] = useState<number | null>(null);
+  useEffect(() => {
+    let active = true;
+    void loadGithubStars().then(count => { if (active) setStarCount(count); });
+    return () => { active = false; };
+  }, []);
+  const formattedStars = starCount === null ? null : new Intl.NumberFormat("zh-TW").format(starCount);
+  const starAriaLabel = formattedStars === null ? "前往 GitHub 賞個 Star" : `前往 GitHub 賞個 Star，目前 ${formattedStars} 顆星星`;
   const currentData = view === "experience" ? experience : view === "role" ? roleData : companyData;
   const max = Math.max(...currentData.map((d) => d.p75));
   const benchmark = useMemo(() => {
@@ -137,7 +146,7 @@ export default function Home() {
         <a className="brand" href="#top" aria-label="軟工薪資透視首頁"><span className="brand-mark">S</span>軟工薪資透視<span className="brand-en">SALARY LENS</span></a>
         <div className="nav-links"><a href="#distribution">薪資分布</a><a href="#insights">市場洞察</a><a href="#companies">推薦公司</a><a href="#advice">求職建議</a></div>
         <div className="nav-actions">
-          <a className="nav-star" href={navStarAction.href} target="_blank" rel="noreferrer" aria-label="前往 GitHub 賞個 Star"><span aria-hidden="true">★</span><b>{navStarAction.label}</b><i>{navStarAction.shortLabel}</i></a>
+          <a className="nav-star" href={navStarAction.href} target="_blank" rel="noreferrer" aria-label={starAriaLabel}><span aria-hidden="true">★</span><b>{navStarAction.label}</b><i>{navStarAction.shortLabel}</i>{starCount !== null && starCount > 0 ? <span className="star-count" aria-hidden="true">{formattedStars}</span> : null}</a>
           <a className="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSex_qWWtuEYO0rmxFs7bsJof4KAzlQ4qveLH4IGxhff7FXcDg/viewform?usp=publish-editor" target="_blank" rel="noreferrer">匿名貢獻資料 <ArrowUpRight /></a>
         </div>
       </nav>
@@ -229,7 +238,7 @@ export default function Home() {
         <a className="footer-top" href="#top">回到頂端 ↑</a>
       </div><div className="shell footer-bottom"><span>© 2026 Hikari Tsai</span><span>公開資料僅供市場趨勢參考</span></div></footer>
       <div className="floating-actions" aria-label="專案快速連結">
-        {floatingActions.map((action) => <a className={`github-star ${action.kind}`} href={action.href} target="_blank" rel="noreferrer" key={action.kind}><span aria-hidden="true">{action.icon}</span>{action.label}</a>)}
+        {floatingActions.map((action) => <a className={`github-star ${action.kind}`} href={action.href} target="_blank" rel="noreferrer" key={action.kind} aria-label={action.kind === "star" ? starAriaLabel : undefined}><span aria-hidden="true">{action.icon}</span>{action.label}{action.kind === "star" && starCount !== null && starCount > 0 ? <span className="star-count" aria-hidden="true">{formattedStars}</span> : null}</a>)}
       </div>
     </main>
   );
